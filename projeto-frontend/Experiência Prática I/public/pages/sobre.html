@@ -1,0 +1,1478 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Security Headers for HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https:; connect-src 'self' https:; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    
+    <meta name="description" content="Conheça a ONGConnect: nossa missão, valores, equipe e história de conectar organizações e transformar vidas através do voluntariado e responsabilidade social.">
+    <meta name="keywords" content="sobre ONGConnect, missão, valores, equipe, história, transparência, impacto social, terceiro setor, voluntariado">
+    <meta name="author" content="ONGConnect">
+    <meta name="theme-color" content="#1e40af">
+    <meta name="color-scheme" content="light dark">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Sobre Nós - ONGConnect">
+    <meta property="og:description" content="Conheça nossa história, missão e valores. Descubra como conectamos ONGs e pessoas para transformar o mundo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ongconnect.org/sobre">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:locale" content="pt_BR">
+    
+    <title>Sobre Nós - ONGConnect</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/cross-browser.css">
+    <link rel="stylesheet" href="../../src/styles/globals.css">
+    <link rel="stylesheet" href="../styles/ong-color-palette.css">
+    <link rel="stylesheet" href="../../src/styles/components/layout.css">
+    <link rel="stylesheet" href="../../src/styles/components/ui-components.css">
+    <link rel="stylesheet" href="../../src/styles/components/forms.css">
+    <link rel="stylesheet" href="../styles/ongs-custom.css">
+    <link rel="stylesheet" href="../styles/inicio-custom.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ONGConnect",
+        "description": "Plataforma digital para conectar ONGs, divulgar atividades e promover transparência no terceiro setor",
+        "url": "https://ongconnect.org",
+        "foundingDate": "2020",
+        "mission": "Conectar organizações não governamentais e promover transparência e impacto social",
+        "sameAs": [
+            "https://facebook.com/ongconnect",
+            "https://instagram.com/ongconnect",
+            "https://linkedin.com/company/ongconnect"
+        ]
+    }
+    </script>
+    
+    <style>
+        /* About Page Styles */
+        :root {
+            --primary-purple: #7c3aed;
+            --primary-purple-dark: #6d28d9;
+            --primary-purple-light: #8b5cf6;
+            --accent-teal: #06b6d4;
+            --text-primary: #111827;
+            --text-secondary: #374151;
+            --text-muted: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-accent: #f3f4f6;
+            --border-light: #e5e7eb;
+            --success: #059669;
+            --warning: #d97706;
+            --info: #3b82f6;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --gradient-purple: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-dark) 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        /* Skip Links */
+        .skip-links {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            z-index: 1000;
+        }
+
+        .skip-link {
+            position: absolute;
+            padding: 8px 16px;
+            background: var(--text-primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .skip-link:focus {
+            position: static;
+            top: 6px;
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        /* Hero Section */
+        .hero-about {
+            background: var(--gradient-purple);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="3" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="40" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="40" cy="80" r="2.5" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            background-size: 100px 100px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.6;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Mission Section */
+        .mission-section {
+            padding: 5rem 0;
+            background: var(--bg-primary);
+        }
+
+        .mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .mission-content {
+            order: 1;
+        }
+
+        .mission-visual {
+            order: 2;
+            position: relative;
+        }
+
+        .mission-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-text {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .highlight-box {
+            background: var(--bg-accent);
+            padding: 2rem;
+            border-radius: 1rem;
+            border-left: 4px solid var(--primary-purple);
+            margin: 2rem 0;
+        }
+
+        .highlight-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-purple);
+            margin-bottom: 1rem;
+        }
+
+        .highlight-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 5rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .values-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 1rem auto 0;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .value-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .value-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-purple);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .value-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .value-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+            z-index: 1;
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+            min-height: 200px; /* Garantir altura mínima para debug */
+        }
+
+        .story-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(124, 58, 237, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .story-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-timeline {
+            position: relative;
+            margin-top: 4rem;
+        }
+
+        .story-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: linear-gradient(180deg, var(--primary-purple) 0%, var(--accent-teal) 100%);
+            transform: translateX(-50%);
+            border-radius: 3px;
+            box-shadow: 0 0 10px rgba(124, 58, 237, 0.2);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 5rem;
+            position: relative;
+            align-items: center;
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(odd) {
+            text-align: left;
+        }
+
+        .timeline-content {
+            width: calc(50% - 3rem);
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1.25rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 2px solid rgba(124, 58, 237, 0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), 0 6px 15px rgba(0, 0, 0, 0.08);
+            border-color: rgba(124, 58, 237, 0.2);
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 12px solid transparent;
+            z-index: 3;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 6rem;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: 100%;
+            transform: translateY(-50%);
+            border-right-color: white;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-right: 6rem;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: 100%;
+            transform: translateY(-50%);
+            border-left-color: white;
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-purple-dark) 100%);
+            color: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.25rem;
+            z-index: 4;
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3), 0 3px 8px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.25rem;
+            line-height: 1.3;
+            letter-spacing: -0.025em;
+        }
+
+        .timeline-description {
+            color: #374151;
+            line-height: 1.75;
+            font-size: 1.0625rem;
+            font-weight: 400;
+            text-align: justify;
+            hyphens: auto;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 5rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .team-member:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .member-photo {
+            width: 120px;
+            height: 120px;
+            background: var(--gradient-purple);
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
+
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .member-role {
+            color: var(--primary-purple);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .member-bio {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-purple);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-purple-dark);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Impact Section */
+        .impact-section {
+            padding: 5rem 0;
+            background: var(--bg-primary);
+        }
+
+        .impact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .impact-stat {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        .impact-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-purple);
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .impact-description {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-purple);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-description {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            min-width: 200px;
+            justify-content: center;
+        }
+
+        .btn-cta-primary {
+            background: white;
+            color: var(--primary-purple);
+        }
+
+        .btn-cta-primary:hover {
+            background: var(--bg-accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-cta-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .mission-content {
+                order: 2;
+            }
+
+            .mission-visual {
+                order: 1;
+            }
+
+            .story-section {
+                padding: 4rem 0;
+            }
+
+            .story-timeline::before {
+                left: 2.5rem;
+                width: 4px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                flex-direction: column;
+                margin-left: 5rem;
+                margin-bottom: 4rem;
+                text-align: left;
+            }
+
+            .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content {
+                width: 100%;
+                margin: 0;
+                margin-top: 1rem;
+            }
+
+            .timeline-content::before {
+                display: none;
+            }
+
+            .timeline-year {
+                left: 2.5rem;
+                width: 70px;
+                height: 70px;
+                font-size: 1.1rem;
+                transform: translateX(-50%);
+            }
+
+            .timeline-title {
+                font-size: 1.35rem;
+            }
+
+            .timeline-description {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-cta {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content,
+            .mission-container,
+            .values-container,
+            .story-container,
+            .team-container,
+            .impact-container,
+            .cta-container {
+                padding: 0 1rem;
+            }
+
+            .story-section {
+                padding: 3rem 0;
+            }
+
+            .values-grid,
+            .team-grid,
+            .impact-stats {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .timeline-item {
+                margin-left: 3.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .timeline-year {
+                left: 2rem;
+                width: 60px;
+                height: 60px;
+                font-size: 1rem;
+            }
+
+            .story-timeline::before {
+                left: 2rem;
+            }
+
+            .timeline-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .timeline-title {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .timeline-description {
+                font-size: 0.95rem;
+                line-height: 1.65;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body data-theme="about-page">
+    <!-- Skip Links -->
+    <div class="skip-links" aria-label="Links de navegação rápida">
+        <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+        <a href="#nav-menu" class="skip-link">Pular para o menu de navegação</a>
+        <a href="#mission" class="skip-link">Pular para nossa missão</a>
+        <a href="#values" class="skip-link">Pular para nossos valores</a>
+        <a href="#story" class="skip-link">Pular para nossa história</a>
+        <a href="#team" class="skip-link">Pular para nossa equipe</a>
+    </div>
+
+    <!-- Live Region -->
+    <div id="live-region" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+
+    <!-- Header and Navigation -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Menu principal do site">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html" aria-label="ONGConnect - Página inicial">
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
+                        <span>ONGConnect</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu" role="menubar" aria-label="Menu de navegação principal">
+                    <li class="nav-item" role="none">
+                        <a href="index.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-home nav-icon" aria-hidden="true"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="ONGs.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-hands-helping nav-icon" aria-hidden="true"></i>
+                            <span>ONGs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="voluntario-portal.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-user-friends nav-icon" aria-hidden="true"></i>
+                            <span>Voluntário</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="doador-portal.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-heart nav-icon" aria-hidden="true"></i>
+                            <span>Doador</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="sobre.html"
+                           class="nav-link active"
+                           role="menuitem"
+                           aria-current="page"
+                           tabindex="0">
+                            <i class="fas fa-info-circle nav-icon" aria-hidden="true"></i>
+                            <span>Sobre</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="contato.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-envelope nav-icon" aria-hidden="true"></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Social Media Links -->
+                <div class="nav-social" role="region" aria-label="Links para redes sociais">
+                    <a href="https://instagram.com/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no Instagram (abre em nova aba)">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no LinkedIn (abre em nova aba)">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://facebook.com/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no Facebook (abre em nova aba)">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <button class="nav-toggle"
+                        id="mobile-menu" 
+                        aria-label="Abrir menu de navegação" 
+                        aria-expanded="false" 
+                        aria-controls="nav-menu"
+                        aria-haspopup="true">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" tabindex="-1">
+        <!-- Hero Section -->
+        <section class="hero-about" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title" class="hero-title">
+                    Conectando Corações,
+                    <br>Transformando Realidades
+                </h1>
+                <p class="hero-subtitle">
+                    Somos uma plataforma dedicada a conectar organizações não governamentais com pessoas 
+                    que desejam fazer a diferença. Nossa missão é democratizar o acesso ao voluntariado 
+                    e tornar o impacto social transparente e mensurável.
+                </p>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission" class="mission-section" aria-labelledby="mission-title">
+            <div class="mission-container">
+                <div class="mission-grid">
+                    <div class="mission-content">
+                        <h2 id="mission-title" class="section-title">Nossa Missão</h2>
+                        <p class="section-text">
+                            Acreditamos que todos têm o poder de transformar o mundo. Nossa missão é 
+                            conectar organizações não governamentais com voluntários e doadores, 
+                            criando uma rede sólida de impacto social positivo.
+                        </p>
+                        <p class="section-text">
+                            Através da tecnologia e transparência, facilitamos o encontro entre quem 
+                            quer ajudar e quem precisa de ajuda, promovendo uma sociedade mais justa, 
+                            igualitária e sustentável.
+                        </p>
+                        
+                        <div class="highlight-box">
+                            <h3 class="highlight-title">Nossa Visão</h3>
+                            <p class="highlight-text">
+                                Ser a principal plataforma de conexão social do Brasil, onde cada pessoa 
+                                possa encontrar sua forma única de contribuir para um mundo melhor, 
+                                criando um ecossistema de transformação social sustentável e transparente.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mission-visual">
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                             alt="Pessoas de mãos dadas em círculo simbolizando união e conexão"
+                             class="mission-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Section -->
+        <section id="values" class="values-section" aria-labelledby="values-title">
+            <div class="values-container">
+                <div class="section-header">
+                    <h2 id="values-title" class="section-title">Nossos Valores</h2>
+                    <p class="section-subtitle">
+                        Os princípios que guiam cada decisão e ação em nossa jornada
+                    </p>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="value-title">Transparência</h3>
+                        <p class="value-description">
+                            Acreditamos na transparência total. Todas as ONGs em nossa plataforma passam 
+                            por rigorosa verificação e compartilham relatórios de impacto regulares.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="value-title">Inclusão</h3>
+                        <p class="value-description">
+                            Promovemos um ambiente inclusivo onde todas as pessoas, independente de 
+                            origem, podem encontrar formas de contribuir e fazer a diferença.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-seedling" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="value-title">Sustentabilidade</h3>
+                        <p class="value-description">
+                            Buscamos soluções que geram impacto duradouro, priorizando projetos que 
+                            promovem desenvolvimento sustentável e autonomia das comunidades.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="value-title">Inovação</h3>
+                        <p class="value-description">
+                            Utilizamos tecnologia de ponta para otimizar conexões, facilitar processos 
+                            e maximizar o impacto social de cada ação voluntária.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="value-title">Empatia</h3>
+                        <p class="value-description">
+                            Colocamos as pessoas no centro de tudo que fazemos, entendendo suas 
+                            necessidades e criando experiências humanizadas e significativas.
+                        </p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">
+                            <i class="fas fa-handshake" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="value-title">Colaboração</h3>
+                        <p class="value-description">
+                            Acreditamos que juntos somos mais fortes. Fomentamos parcerias e 
+                            colaborações que multiplicam o impacto positivo na sociedade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Team Section -->
+        <section id="team" class="team-section" aria-labelledby="team-title">
+            <div class="team-container">
+                <div class="section-header">
+                    <h2 id="team-title" class="section-title">Nossa Equipe</h2>
+                    <p class="section-subtitle">
+                        Conheça as pessoas apaixonadas que tornam nossa missão possível
+                    </p>
+                </div>
+
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="member-name">Ana Carolina Silva</h3>
+                        <div class="member-role">CEO & Fundadora</div>
+                        <p class="member-bio">
+                            Especialista em gestão social com 10 anos de experiência no terceiro setor. 
+                            Formada em Administração Pública e pós-graduada em Impacto Social.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" aria-label="LinkedIn de Ana Carolina">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email de Ana Carolina">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="member-name">Marcus Santos</h3>
+                        <div class="member-role">CTO</div>
+                        <p class="member-bio">
+                            Engenheiro de software com expertise em plataformas de alto impacto. 
+                            Especialista em IA aplicada a causas sociais e desenvolvimento sustentável.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" aria-label="LinkedIn de Marcus">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="GitHub de Marcus">
+                                <i class="fab fa-github" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="member-name">Juliana Rocha</h3>
+                        <div class="member-role">Diretora de Parcerias</div>
+                        <p class="member-bio">
+                            Especialista em desenvolvimento de parcerias estratégicas no terceiro setor. 
+                            Mestre em Gestão de ONGs com foco em sustentabilidade financeira.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" aria-label="LinkedIn de Juliana">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email de Juliana">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="member-name">Rafael Oliveira</h3>
+                        <div class="member-role">Diretor de Produto</div>
+                        <p class="member-bio">
+                            Product Manager com foco em experiência do usuário e design thinking aplicado 
+                            a soluções sociais. Especialista em metodologias ágeis e inovação.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" aria-label="LinkedIn de Rafael">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Dribbble de Rafael">
+                                <i class="fab fa-dribbble" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="member-name">Camila Montenegro</h3>
+                        <div class="member-role">Diretora de Marketing</div>
+                        <p class="member-bio">
+                            Especialista em marketing digital para causas sociais. Formada em Comunicação 
+                            Social com pós em Marketing para o Terceiro Setor.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" aria-label="LinkedIn de Camila">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram de Camila">
+                                <i class="fab fa-instagram" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="member-name">Felipe Carvalho</h3>
+                        <div class="member-role">Diretor Financeiro</div>
+                        <p class="member-bio">
+                            Contador com especialização em gestão financeira de organizações do terceiro 
+                            setor. Expertise em transparência e prestação de contas.
+                        </p>
+                        <div class="member-social">
+                            <a href="#" class="social-link" aria-label="LinkedIn de Felipe">
+                                <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Email de Felipe">
+                                <i class="fas fa-envelope" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Section -->
+        <section class="impact-section" aria-labelledby="impact-title">
+            <div class="impact-container">
+                <div class="section-header">
+                    <h2 id="impact-title" class="section-title">Nosso Impacto</h2>
+                    <p class="section-subtitle">
+                        Números que refletem nossa contribuição para um mundo melhor
+                    </p>
+                </div>
+
+                <div class="impact-stats">
+                    <div class="impact-stat">
+                        <div class="impact-number">247+</div>
+                        <div class="impact-label">ONGs Verificadas</div>
+                        <p class="impact-description">
+                            Organizações rigorosamente verificadas e com transparência comprovada
+                        </p>
+                    </div>
+
+                    <div class="impact-stat">
+                        <div class="impact-number">12.5k+</div>
+                        <div class="impact-label">Voluntários Ativos</div>
+                        <p class="impact-description">
+                            Pessoas engajadas fazendo a diferença em suas comunidades
+                        </p>
+                    </div>
+
+                    <div class="impact-stat">
+                        <div class="impact-number">45k+</div>
+                        <div class="impact-label">Vidas Impactadas</div>
+                        <p class="impact-description">
+                            Pessoas diretamente beneficiadas por projetos da nossa rede
+                        </p>
+                    </div>
+
+                    <div class="impact-stat">
+                        <div class="impact-number">R$ 2.8M</div>
+                        <div class="impact-label">Recursos Mobilizados</div>
+                        <p class="impact-description">
+                            Total de doações e recursos direcionados através da plataforma
+                        </p>
+                    </div>
+
+                    <div class="impact-stat">
+                        <div class="impact-number">89%</div>
+                        <div class="impact-label">Taxa de Transparência</div>
+                        <p class="impact-description">
+                            Média de transparência das ONGs em nossa plataforma
+                        </p>
+                    </div>
+
+                    <div class="impact-stat">
+                        <div class="impact-number">27</div>
+                        <div class="impact-label">Estados Atendidos</div>
+                        <p class="impact-description">
+                            Presença nacional com projetos em todo o Brasil
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <div class="cta-container">
+                <h2 id="cta-title" class="cta-title">Faça Parte da Nossa Jornada</h2>
+                <p class="cta-description">
+                    Seja você uma ONG, voluntário, doador ou empresa, há um lugar para você 
+                    em nossa rede de transformação social.
+                </p>
+                <div class="cta-buttons">
+                    <a href="voluntario-portal.html" class="btn-cta btn-cta-primary">
+                        <i class="fas fa-user-plus" aria-hidden="true"></i>
+                        Seja Voluntário
+                    </a>
+                    <a href="contato.html" class="btn-cta btn-cta-secondary">
+                        <i class="fas fa-envelope" aria-hidden="true"></i>
+                        Entre em Contato
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">ONGConnect</h3>
+                    <p class="footer-description">
+                        Conectando organizações e pessoas para transformar o mundo através 
+                        do voluntariado e responsabilidade social.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Sobre</h4>
+                    <ul class="footer-links">
+                        <li><a href="#mission">Nossa Missão</a></li>
+                        <li><a href="#values">Nossos Valores</a></li>
+                        <li><a href="#team">Nossa Equipe</a></li>
+                        <li><a href="#">Transparência</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Plataforma</h4>
+                    <ul class="footer-links">
+                        <li><a href="ONGs.html">ONGs</a></li>
+                        <li><a href="voluntario-portal.html">Voluntários</a></li>
+                        <li><a href="doador-portal.html">Doadores</a></li>
+                        <li><a href="#">Empresas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Suporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Central de Ajuda</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    © 2025 ONGConnect. Todos os direitos reservados.
+                </p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // About page enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            const liveRegion = document.getElementById('live-region');
+            
+            // Debug: verificar se a seção story existe
+            const storySection = document.getElementById('story');
+            console.log('Story section found:', storySection);
+            if (storySection) {
+                console.log('Story section display:', window.getComputedStyle(storySection).display);
+                console.log('Story section visibility:', window.getComputedStyle(storySection).visibility);
+                console.log('Story section opacity:', window.getComputedStyle(storySection).opacity);
+            }
+
+            function announceToScreenReader(message) {
+                if (liveRegion) {
+                    liveRegion.textContent = message;
+                    setTimeout(() => {
+                        liveRegion.textContent = '';
+                    }, 1000);
+                }
+            }
+
+            // Language selector
+            const languageBtns = document.querySelectorAll('.language-btn');
+            languageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    languageBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    languageBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+                    this.setAttribute('aria-pressed', 'true');
+                    
+                    const lang = this.getAttribute('data-lang');
+                    const langNames = { 'pt': 'Português', 'en': 'English', 'es': 'Español' };
+                    announceToScreenReader(`Idioma alterado para ${langNames[lang]}`);
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        target.focus();
+                    }
+                });
+            });
+
+            // Intersection Observer for timeline animations
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.classList.add('timeline-visible');
+                    }
+                });
+            }, observerOptions);
+
+            timelineItems.forEach(item => {
+                // Garantir que os elementos sejam visíveis por padrão
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                // Aplicar animação apenas em telas maiores
+                if (window.innerWidth > 768) {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    timelineObserver.observe(item);
+                } else {
+                    // Em telas menores, mostrar diretamente
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }
+            });
+
+            // Team member card interactions
+            const teamMembers = document.querySelectorAll('.team-member');
+            teamMembers.forEach(member => {
+                member.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+                
+                member.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

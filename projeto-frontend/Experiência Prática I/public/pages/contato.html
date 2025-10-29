@@ -1,0 +1,1245 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Security Headers for HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https:; connect-src 'self' https:; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    
+
+    <!-- Security Headers for HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https:; connect-src 'self' https:; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    
+    <meta name="description" content="Entre em contato com a ONGConnect. Fale conosco através de nossos canais de atendimento, envie sugestões ou tire suas dúvidas sobre nossa plataforma.">
+    <meta name="keywords" content="contato ONGConnect, fale conosco, suporte, atendimento, dúvidas, sugestões, terceiro setor, voluntariado">
+    <meta name="author" content="ONGConnect">
+    <meta name="theme-color" content="#1e40af">
+    <meta name="color-scheme" content="light dark">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contato - ONGConnect">
+    <meta property="og:description" content="Entre em contato conosco. Estamos aqui para ajudar com qualquer dúvida sobre nossa plataforma.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ongconnect.org/contato">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:locale" content="pt_BR">
+    
+    <title>Contato - ONGConnect</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/cross-browser.css">
+    <link rel="stylesheet" href="../../src/styles/globals.css">
+    <link rel="stylesheet" href="../styles/ong-color-palette.css">
+    <link rel="stylesheet" href="../../src/styles/components/layout.css">
+    <link rel="stylesheet" href="../../src/styles/components/ui-components.css">
+    <link rel="stylesheet" href="../../src/styles/components/forms.css">
+    <link rel="stylesheet" href="../styles/ongs-custom.css">
+    <link rel="stylesheet" href="../styles/inicio-custom.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contato - ONGConnect",
+        "description": "Página de contato da ONGConnect",
+        "url": "https://ongconnect.org/contato",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "ONGConnect",
+            "url": "https://ongconnect.org"
+        }
+    }
+    </script>
+    
+    <style>
+        /* Contact Page Styles */
+        :root {
+            --primary-indigo: #6366f1;
+            --primary-indigo-dark: #4f46e5;
+            --primary-indigo-light: #818cf8;
+            --accent-cyan: #06b6d4;
+            --text-primary: #111827;
+            --text-secondary: #374151;
+            --text-muted: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-accent: #f0f9ff;
+            --border-light: #e5e7eb;
+            --success: #059669;
+            --warning: #d97706;
+            --error: #dc2626;
+            --info: #3b82f6;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --gradient-indigo: linear-gradient(135deg, var(--primary-indigo) 0%, var(--primary-indigo-dark) 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        /* Skip Links */
+        .skip-links {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            z-index: 1000;
+        }
+
+        .skip-link {
+            position: absolute;
+            padding: 8px 16px;
+            background: var(--text-primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .skip-link:focus {
+            position: static;
+            top: 6px;
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        /* Hero Section */
+        .hero-contact {
+            background: var(--gradient-indigo);
+            color: white;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20 20 L30 10 L40 20 L30 30 Z" fill="rgba(255,255,255,0.05)"/><path d="M60 60 L70 50 L80 60 L70 70 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+            background-size: 100px 100px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Contact Options */
+        .contact-options {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-indigo);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .contact-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .contact-info {
+            color: var(--primary-indigo);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .contact-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--primary-indigo);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .contact-action:hover {
+            background: var(--primary-indigo-dark);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Contact Form Section */
+        .form-section {
+            padding: 4rem 0;
+            background: var(--bg-primary);
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            padding: 1rem;
+            border: 2px solid var(--border-light);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary-indigo);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-help {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .form-error {
+            font-size: 0.75rem;
+            color: var(--error);
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            padding: 1rem 2rem;
+            background: var(--primary-indigo);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-indigo-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .btn-secondary {
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--text-secondary);
+            border: 2px solid var(--border-light);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-indigo);
+            color: var(--primary-indigo);
+        }
+
+        /* Office Info */
+        .office-section {
+            padding: 4rem 0;
+            background: var(--bg-primary);
+        }
+
+        .office-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .office-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .office-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+        }
+
+        .office-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+
+        .office-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .office-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .office-item-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--bg-accent);
+            color: var(--primary-indigo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .office-item-content h4 {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .office-item-content p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .map-placeholder {
+            height: 400px;
+            background: var(--bg-accent);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            border: 1px solid var(--border-light);
+        }
+
+        /* Success Message */
+        .success-message {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #a7f3d0;
+            display: none;
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-actions {
+                justify-content: stretch;
+                flex-direction: column;
+            }
+
+            .office-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content,
+            .contact-container,
+            .form-container,
+            .office-container {
+                padding: 0 1rem;
+            }
+
+            .contact-form {
+                padding: 1.5rem;
+            }
+
+            .office-info {
+                padding: 2rem;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+<body data-theme="contact-page">
+    <!-- Skip Links -->
+    <div class="skip-links" aria-label="Links de navegação rápida">
+        <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+        <a href="#nav-menu" class="skip-link">Pular para o menu de navegação</a>
+        <a href="#contact-options" class="skip-link">Pular para opções de contato</a>
+        <a href="#contact-form" class="skip-link">Pular para formulário de contato</a>
+    </div>
+
+    <!-- Live Region -->
+    <div id="live-region" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+
+    <!-- Header and Navigation -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Menu principal do site">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html" aria-label="ONGConnect - Página inicial">
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
+                        <span>ONGConnect</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu" role="menubar" aria-label="Menu de navegação principal">
+                    <li class="nav-item" role="none">
+                        <a href="index.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-home nav-icon" aria-hidden="true"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="ONGs.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-hands-helping nav-icon" aria-hidden="true"></i>
+                            <span>ONGs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="voluntario-portal.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-user-friends nav-icon" aria-hidden="true"></i>
+                            <span>Voluntário</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="doador-portal.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-heart nav-icon" aria-hidden="true"></i>
+                            <span>Doador</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="sobre.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-info-circle nav-icon" aria-hidden="true"></i>
+                            <span>Sobre</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="contato.html"
+                           class="nav-link active"
+                           role="menuitem"
+                           aria-current="page"
+                           tabindex="0">
+                            <i class="fas fa-envelope nav-icon" aria-hidden="true"></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Social Media Links -->
+                <div class="nav-social" role="region" aria-label="Links para redes sociais">
+                    <a href="https://instagram.com/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no Instagram (abre em nova aba)">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no LinkedIn (abre em nova aba)">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://facebook.com/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no Facebook (abre em nova aba)">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <button class="nav-toggle"
+                        id="mobile-menu" 
+                        aria-label="Abrir menu de navegação" 
+                        aria-expanded="false" 
+                        aria-controls="nav-menu"
+                        aria-haspopup="true">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" tabindex="-1">
+        <!-- Hero Section -->
+        <section class="hero-contact" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title" class="hero-title">Fale Conosco</h1>
+                <p class="hero-subtitle">
+                    Estamos aqui para ajudar! Entre em contato conosco através de nossos canais de atendimento. 
+                    Sua opinião, dúvida ou sugestão é muito importante para continuarmos melhorando.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Options -->
+        <section id="contact-options" class="contact-options" aria-labelledby="options-title">
+            <div class="contact-container">
+                <div class="section-header">
+                    <h2 id="options-title" class="section-title">Como Podemos Ajudar?</h2>
+                    <p class="section-subtitle">
+                        Escolha a forma de contato que melhor atende sua necessidade
+                    </p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-headset" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="contact-title">Suporte Geral</h3>
+                        <p class="contact-description">
+                            Dúvidas sobre como usar a plataforma, problemas técnicos ou questões gerais sobre nossos serviços.
+                        </p>
+                        <div class="contact-info">
+                            suporte@ongconnect.org
+                        </div>
+                        <a href="mailto:suporte@ongconnect.org" class="contact-action">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            Enviar Email
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-handshake" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="contact-title">Parcerias e ONGs</h3>
+                        <p class="contact-description">
+                            Para organizações interessadas em se cadastrar na plataforma ou estabelecer parcerias estratégicas.
+                        </p>
+                        <div class="contact-info">
+                            parcerias@ongconnect.org
+                        </div>
+                        <a href="mailto:parcerias@ongconnect.org" class="contact-action">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            Enviar Email
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-newspaper" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="contact-title">Imprensa</h3>
+                        <p class="contact-description">
+                            Solicitações de entrevistas, material para imprensa, dados sobre impacto social e comunicados oficiais.
+                        </p>
+                        <div class="contact-info">
+                            imprensa@ongconnect.org
+                        </div>
+                        <a href="mailto:imprensa@ongconnect.org" class="contact-action">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            Enviar Email
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="contact-title">Atendimento por Telefone</h3>
+                        <p class="contact-description">
+                            Para questões urgentes ou se preferir falar diretamente com nossa equipe de atendimento.
+                        </p>
+                        <div class="contact-info">
+                            (11) 9999-8888
+                        </div>
+                        <a href="tel:+5511999998888" class="contact-action">
+                            <i class="fas fa-phone" aria-hidden="true"></i>
+                            Ligar Agora
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="contact-title">WhatsApp</h3>
+                        <p class="contact-description">
+                            Atendimento rápido e prático pelo WhatsApp. Horário de funcionamento: Segunda a Sexta, 9h às 18h.
+                        </p>
+                        <div class="contact-info">
+                            (11) 9 8888-7777
+                        </div>
+                        <a href="https://wa.me/5511988887777" class="contact-action" target="_blank" rel="noopener">
+                            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+                            Enviar Mensagem
+                        </a>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-bug" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="contact-title">Relatar Problemas</h3>
+                        <p class="contact-description">
+                            Encontrou um bug ou problema técnico na plataforma? Nos ajude a melhorar reportando o problema.
+                        </p>
+                        <div class="contact-info">
+                            bugs@ongconnect.org
+                        </div>
+                        <a href="mailto:bugs@ongconnect.org" class="contact-action">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            Reportar Bug
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section id="contact-form" class="form-section" aria-labelledby="form-title">
+            <div class="form-container">
+                <div class="section-header">
+                    <h2 id="form-title" class="section-title">Envie sua Mensagem</h2>
+                    <p class="section-subtitle">
+                        Preencha o formulário abaixo e nossa equipe retornará em até 24 horas
+                    </p>
+                </div>
+
+                <form class="contact-form" novalidate aria-labelledby="form-title">
+                    <div id="success-message" class="success-message">
+                        <i class="fas fa-check-circle" aria-hidden="true"></i>
+                        Mensagem enviada com sucesso! Nossa equipe entrará em contato em breve.
+                    </div>
+
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label">Nome *</label>
+                            <input type="text" 
+                                   id="firstName" 
+                                   name="firstName" 
+                                   class="form-input" 
+                                   required
+                                   aria-describedby="firstName-error">
+                            <div id="firstName-error" class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lastName" class="form-label">Sobrenome *</label>
+                            <input type="text" 
+                                   id="lastName" 
+                                   name="lastName" 
+                                   class="form-input" 
+                                   required
+                                   aria-describedby="lastName-error">
+                            <div id="lastName-error" class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   class="form-input" 
+                                   required
+                                   aria-describedby="email-error email-help">
+                            <div id="email-help" class="form-help">Utilize um email válido para receber nossa resposta</div>
+                            <div id="email-error" class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Telefone</label>
+                            <input type="tel" 
+                                   id="phone" 
+                                   name="phone" 
+                                   class="form-input"
+                                   placeholder="(11) 99999-8888"
+                                   aria-describedby="phone-help">
+                            <div id="phone-help" class="form-help">Opcional - Para contato por telefone</div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="subject" class="form-label">Assunto *</label>
+                            <select id="subject" 
+                                    name="subject" 
+                                    class="form-select" 
+                                    required
+                                    aria-describedby="subject-error">
+                                <option value="">Selecione o assunto</option>
+                                <option value="suporte">Suporte Técnico</option>
+                                <option value="parcerias">Parcerias e ONGs</option>
+                                <option value="voluntario">Dúvidas sobre Voluntariado</option>
+                                <option value="doacao">Questões sobre Doações</option>
+                                <option value="imprensa">Contato de Imprensa</option>
+                                <option value="feedback">Feedback e Sugestões</option>
+                                <option value="bug">Relatar Problema/Bug</option>
+                                <option value="outros">Outros Assuntos</option>
+                            </select>
+                            <div id="subject-error" class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="message" class="form-label">Mensagem *</label>
+                            <textarea id="message" 
+                                      name="message" 
+                                      class="form-textarea" 
+                                      required
+                                      placeholder="Descreva sua dúvida, sugestão ou problema detalhadamente..."
+                                      aria-describedby="message-error message-help"></textarea>
+                            <div id="message-help" class="form-help">Mínimo de 10 caracteres</div>
+                            <div id="message-error" class="form-error" role="alert"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">
+                            Limpar Formulário
+                        </button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+                            Enviar Mensagem
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Office Info -->
+        <section class="office-section" aria-labelledby="office-title">
+            <div class="office-container">
+                <div class="section-header">
+                    <h2 id="office-title" class="section-title">Nosso Escritório</h2>
+                    <p class="section-subtitle">
+                        Visite-nos pessoalmente ou agende uma reunião
+                    </p>
+                </div>
+
+                <div class="office-grid">
+                    <div class="office-info">
+                        <h3 class="office-title">Informações de Contato</h3>
+                        
+                        <div class="office-item">
+                            <div class="office-item-icon">
+                                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            </div>
+                            <div class="office-item-content">
+                                <h4>Endereço</h4>
+                                <p>Rua da Solidariedade, 456<br>Vila Madalena - São Paulo, SP<br>CEP: 05432-000</p>
+                            </div>
+                        </div>
+
+                        <div class="office-item">
+                            <div class="office-item-icon">
+                                <i class="fas fa-clock" aria-hidden="true"></i>
+                            </div>
+                            <div class="office-item-content">
+                                <h4>Horário de Funcionamento</h4>
+                                <p>Segunda à Sexta: 9h às 18h<br>Sábado: 9h às 14h<br>Domingo: Fechado</p>
+                            </div>
+                        </div>
+
+                        <div class="office-item">
+                            <div class="office-item-icon">
+                                <i class="fas fa-subway" aria-hidden="true"></i>
+                            </div>
+                            <div class="office-item-content">
+                                <h4>Transporte Público</h4>
+                                <p>Estação Vila Madalena (Linha 2-Verde)<br>Diversos pontos de ônibus nas proximidades</p>
+                            </div>
+                        </div>
+
+                        <div class="office-item">
+                            <div class="office-item-icon">
+                                <i class="fas fa-car" aria-hidden="true"></i>
+                            </div>
+                            <div class="office-item-content">
+                                <h4>Estacionamento</h4>
+                                <p>Estacionamento conveniado disponível<br>Vagas para visitantes no local</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-placeholder">
+                        <i class="fas fa-map" aria-hidden="true"></i>
+                        Mapa do Google integrado aqui
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">ONGConnect</h3>
+                    <p class="footer-description">
+                        Conectando organizações e pessoas para transformar o mundo através 
+                        do voluntariado e responsabilidade social.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Contato</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contato@ongconnect.org">contato@ongconnect.org</a></li>
+                        <li><a href="tel:+5511999998888">(11) 9999-8888</a></li>
+                        <li><a href="https://wa.me/5511988887777" target="_blank" rel="noopener">WhatsApp</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="#">Central de Ajuda</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="ONGs.html">ONGs Verificadas</a></li>
+                        <li><a href="voluntario-portal.html">Portal do Voluntário</a></li>
+                        <li><a href="doador-portal.html">Portal do Doador</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Institucional</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Transparência</a></li>
+                        <li><a href="#">Relatórios</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    © 2025 ONGConnect. Todos os direitos reservados.
+                </p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Contact page enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            const liveRegion = document.getElementById('live-region');
+            const contactForm = document.querySelector('.contact-form');
+            const successMessage = document.getElementById('success-message');
+
+            function announceToScreenReader(message) {
+                if (liveRegion) {
+                    liveRegion.textContent = message;
+                    setTimeout(() => {
+                        liveRegion.textContent = '';
+                    }, 1000);
+                }
+            }
+
+            // FAQ Accordion
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    const answer = document.getElementById(this.getAttribute('aria-controls'));
+                    
+                    // Close all other FAQs
+                    faqQuestions.forEach(q => {
+                        q.setAttribute('aria-expanded', 'false');
+                        const a = document.getElementById(q.getAttribute('aria-controls'));
+                        a.classList.remove('show');
+                    });
+                    
+                    // Toggle current FAQ
+                    if (!isExpanded) {
+                        this.setAttribute('aria-expanded', 'true');
+                        answer.classList.add('show');
+                        announceToScreenReader('FAQ expandido');
+                    } else {
+                        this.setAttribute('aria-expanded', 'false');
+                        answer.classList.remove('show');
+                        announceToScreenReader('FAQ recolhido');
+                    }
+                });
+            });
+
+            // Form Validation
+            function validateField(field) {
+                const value = field.value.trim();
+                const fieldName = field.getAttribute('name');
+                const errorElement = document.getElementById(fieldName + '-error');
+                let isValid = true;
+                let errorMessage = '';
+
+                // Clear previous error
+                errorElement.textContent = '';
+                field.setAttribute('aria-invalid', 'false');
+
+                if (field.hasAttribute('required') && !value) {
+                    isValid = false;
+                    errorMessage = 'Este campo é obrigatório';
+                } else if (fieldName === 'email' && value) {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        isValid = false;
+                        errorMessage = 'Por favor, insira um email válido';
+                    }
+                } else if (fieldName === 'message' && value && value.length < 10) {
+                    isValid = false;
+                    errorMessage = 'A mensagem deve ter pelo menos 10 caracteres';
+                }
+
+                if (!isValid) {
+                    errorElement.textContent = errorMessage;
+                    field.setAttribute('aria-invalid', 'true');
+                }
+
+                return isValid;
+            }
+
+            // Real-time validation
+            const formFields = contactForm.querySelectorAll('input, select, textarea');
+            formFields.forEach(field => {
+                field.addEventListener('blur', () => validateField(field));
+                field.addEventListener('input', () => {
+                    if (field.getAttribute('aria-invalid') === 'true') {
+                        validateField(field);
+                    }
+                });
+            });
+
+            // Form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isFormValid = true;
+                formFields.forEach(field => {
+                    if (!validateField(field)) {
+                        isFormValid = false;
+                    }
+                });
+
+                if (isFormValid) {
+                    // Simulate form submission
+                    const submitBtn = contactForm.querySelector('.btn-primary');
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Enviando...';
+                    
+                    setTimeout(() => {
+                        successMessage.classList.add('show');
+                        contactForm.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = '<i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensagem';
+                        announceToScreenReader('Mensagem enviada com sucesso');
+                        
+                        // Hide success message after 5 seconds
+                        setTimeout(() => {
+                            successMessage.classList.remove('show');
+                        }, 5000);
+                    }, 2000);
+                } else {
+                    announceToScreenReader('Existem erros no formulário que precisam ser corrigidos');
+                    // Focus first invalid field
+                    const firstInvalid = contactForm.querySelector('[aria-invalid="true"]');
+                    if (firstInvalid) {
+                        firstInvalid.focus();
+                    }
+                }
+            });
+
+            // Clear form button
+            const clearBtn = contactForm.querySelector('.btn-secondary');
+            clearBtn.addEventListener('click', function() {
+                contactForm.reset();
+                // Clear all error messages
+                const errorElements = contactForm.querySelectorAll('.form-error');
+                errorElements.forEach(error => error.textContent = '');
+                // Reset aria-invalid
+                formFields.forEach(field => field.setAttribute('aria-invalid', 'false'));
+                announceToScreenReader('Formulário limpo');
+            });
+
+            // Language selector
+            const languageBtns = document.querySelectorAll('.language-btn');
+            languageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    languageBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    languageBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+                    this.setAttribute('aria-pressed', 'true');
+                    
+                    const lang = this.getAttribute('data-lang');
+                    const langNames = { 'pt': 'Português', 'en': 'English', 'es': 'Español' };
+                    announceToScreenReader(`Idioma alterado para ${langNames[lang]}`);
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        target.focus();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

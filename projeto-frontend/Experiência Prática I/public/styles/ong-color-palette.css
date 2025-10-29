@@ -1,0 +1,231 @@
+/* 
+ * ONGConnect Global Color Palette
+ * Paleta de cores unificada baseada no design do início.html
+ * Aplicada consistentemente em todo o projeto
+ */
+
+:root {
+    /* ========================================
+       CORES PRIMÁRIAS
+    ======================================== */
+    
+    /* Azuis principais - gradiente hero */
+    --ong-primary-dark: #0f1a28;           /* rgba(15, 26, 40, 1) */
+    --ong-primary-medium: #1e40af;         /* rgba(30, 64, 175, 1) */
+    --ong-primary-light: #60a5fa;          /* rgba(96, 165, 250, 1) */
+    
+    /* Dourado/Amarelo - destaque */
+    --ong-accent-primary: #fbbf24;         /* Cor principal de destaque */
+    --ong-accent-secondary: #f59e0b;       /* Variação mais escura do dourado */
+    
+    /* ========================================
+       GRADIENTES
+    ======================================== */
+    
+    --ong-gradient-hero: linear-gradient(135deg, 
+        rgba(15, 26, 40, 0.9) 0%, 
+        rgba(30, 64, 175, 0.8) 50%, 
+        rgba(96, 165, 250, 0.7) 100%);
+    
+    --ong-gradient-overlay: linear-gradient(135deg, 
+        rgba(15, 26, 40, 0.3) 0%, 
+        rgba(30, 64, 175, 0.2) 100%);
+    
+    --ong-gradient-accent: linear-gradient(90deg, #fbbf24, #f59e0b);
+    
+    --ong-gradient-secondary: linear-gradient(135deg, 
+        var(--ong-bg-secondary), 
+        var(--ong-bg-tertiary));
+    
+    /* ========================================
+       SISTEMA DE CORES DE TEXTO
+    ======================================== */
+    
+    --ong-text-primary: #1f2937;          /* Texto principal escuro */
+    --ong-text-secondary: #6b7280;        /* Texto secundário */
+    --ong-text-muted: #9ca3af;           /* Texto com menos destaque */
+    --ong-text-light: #f9fafb;           /* Texto claro para fundos escuros */
+    --ong-text-white: #ffffff;           /* Texto branco */
+    
+    /* Estados de texto */
+    --ong-text-link: var(--ong-primary-medium);
+    --ong-text-link-hover: var(--ong-primary-light);
+    --ong-text-success: #10b981;
+    --ong-text-warning: #f59e0b;
+    --ong-text-error: #ef4444;
+    
+    /* ========================================
+       SISTEMA DE CORES DE FUNDO
+    ======================================== */
+    
+    --ong-bg-primary: #ffffff;            /* Fundo principal */
+    --ong-bg-secondary: #f8fafc;          /* Fundo secundário */
+    --ong-bg-tertiary: #f1f5f9;           /* Fundo terciário */
+    --ong-bg-overlay: rgba(0, 0, 0, 0.3); /* Overlay para vídeos/imagens */
+    
+    /* Fundos escuros */
+    --ong-bg-dark: #0f1419;              /* Navegação escura */
+    --ong-bg-dark-secondary: #1e3a5f;    /* Borda navegação */
+    
+    /* ========================================
+       SISTEMA DE BORDAS
+    ======================================== */
+    
+    --ong-border-light: #e5e7eb;         /* Bordas sutis */
+    --ong-border-medium: #d1d5db;        /* Bordas normais */
+    --ong-border-dark: #6b7280;          /* Bordas escuras */
+    --ong-border-accent: var(--ong-accent-primary);
+    
+    /* ========================================
+       CORES DE ESTADO E INTERAÇÃO
+    ======================================== */
+    
+    /* Estados de sucesso */
+    --ong-success: #10b981;
+    --ong-success-light: #d1fae5;
+    --ong-success-dark: #047857;
+    
+    /* Estados de aviso */
+    --ong-warning: #f59e0b;
+    --ong-warning-light: #fef3c7;
+    --ong-warning-dark: #d97706;
+    
+    /* Estados de erro */
+    --ong-error: #ef4444;
+    --ong-error-light: #fee2e2;
+    --ong-error-dark: #dc2626;
+    
+    /* Estados de informação */
+    --ong-info: var(--ong-primary-medium);
+    --ong-info-light: #dbeafe;
+    --ong-info-dark: var(--ong-primary-dark);
+    
+    /* ========================================
+       CORES DE NAVEGAÇÃO E UI
+    ======================================== */
+    
+    /* Navegação */
+    --ong-nav-bg: var(--ong-bg-dark);
+    --ong-nav-text: #e2e8f0;
+    --ong-nav-text-hover: var(--ong-primary-light);
+    --ong-nav-text-active: var(--ong-text-white);
+    --ong-nav-border: var(--ong-bg-dark-secondary);
+    --ong-nav-icon-active: var(--ong-accent-primary);
+    
+    /* Botões */
+    --ong-btn-primary-bg: var(--ong-primary-medium);
+    --ong-btn-primary-text: var(--ong-text-white);
+    --ong-btn-primary-hover: var(--ong-primary-dark);
+    
+    --ong-btn-secondary-bg: var(--ong-accent-primary);
+    --ong-btn-secondary-text: var(--ong-text-primary);
+    --ong-btn-secondary-hover: var(--ong-accent-secondary);
+    
+    /* Cards e componentes */
+    --ong-card-bg: var(--ong-bg-primary);
+    --ong-card-border: var(--ong-border-light);
+    --ong-card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --ong-card-shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.15);
+    
+    /* ========================================
+       CORES DE REDES SOCIAIS (ORIGINAIS)
+    ======================================== */
+    
+    --ong-social-instagram: #e4405f;
+    --ong-social-instagram-gradient: linear-gradient(45deg, 
+        #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    --ong-social-linkedin: #0077b5;
+    --ong-social-facebook: #1877f2;
+    
+    /* ========================================
+       CORES PARA ACESSIBILIDADE
+    ======================================== */
+    
+    /* Focus states */
+    --ong-focus-ring: var(--ong-primary-light);
+    --ong-focus-ring-offset: 2px;
+    
+    /* Alto contraste */
+    --ong-contrast-bg: #000000;
+    --ong-contrast-text: #ffffff;
+    --ong-contrast-border: #ffffff;
+    
+    /* ========================================
+       SOMBRAS E EFEITOS
+    ======================================== */
+    
+    --ong-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --ong-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --ong-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --ong-shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+    --ong-shadow-2xl: 0 30px 60px rgba(0, 0, 0, 0.2);
+    
+    /* Text shadows */
+    --ong-text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    --ong-text-shadow-light: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   MODO ESCURO
+======================================== */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Inversão das cores de fundo para modo escuro */
+        --ong-bg-primary: #1f2937;
+        --ong-bg-secondary: #374151;
+        --ong-bg-tertiary: #4b5563;
+        
+        /* Inversão das cores de texto para modo escuro */
+        --ong-text-primary: #f9fafb;
+        --ong-text-secondary: #d1d5db;
+        --ong-text-muted: #9ca3af;
+        
+        /* Ajuste das bordas para modo escuro */
+        --ong-border-light: #4b5563;
+        --ong-border-medium: #6b7280;
+        
+        /* Cards no modo escuro */
+        --ong-card-bg: #374151;
+        --ong-card-border: #4b5563;
+    }
+}
+
+/* ========================================
+   ALTO CONTRASTE
+======================================== */
+
+@media (prefers-contrast: high) {
+    :root {
+        --ong-bg-primary: var(--ong-contrast-bg);
+        --ong-text-primary: var(--ong-contrast-text);
+        --ong-border-light: var(--ong-contrast-border);
+        --ong-border-medium: var(--ong-contrast-border);
+        --ong-card-border: var(--ong-contrast-border);
+    }
+}
+
+/* ========================================
+   CLASSES UTILITÁRIAS DE CORES
+======================================== */
+
+/* Cores de texto */
+.text-primary { color: var(--ong-text-primary) !important; }
+.text-secondary { color: var(--ong-text-secondary) !important; }
+.text-muted { color: var(--ong-text-muted) !important; }
+.text-white { color: var(--ong-text-white) !important; }
+.text-accent { color: var(--ong-accent-primary) !important; }
+
+/* Cores de fundo */
+.bg-primary { background-color: var(--ong-bg-primary) !important; }
+.bg-secondary { background-color: var(--ong-bg-secondary) !important; }
+.bg-dark { background-color: var(--ong-bg-dark) !important; }
+.bg-accent { background-color: var(--ong-accent-primary) !important; }
+
+/* Gradientes */
+.bg-gradient-hero { background: var(--ong-gradient-hero) !important; }
+.bg-gradient-accent { background: var(--ong-gradient-accent) !important; }
+
+/* Bordas */
+.border-light { border-color: var(--ong-border-light) !important; }
+.border-accent { border-color: var(--ong-border-accent) !important; }

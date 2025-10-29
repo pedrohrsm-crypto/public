@@ -1,0 +1,574 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard administrativo da ONGConnect - Gerencie sua ONG, projetos, voluntários e doações.">
+    <meta name="keywords" content="dashboard, administraçéo ONG, gestéo projetos, voluntários, doações, métricas">
+    <meta name="author" content="ONGConnect">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#1e40af">
+    <meta name="color-scheme" content="light dark">
+
+    <title>Dashboard Administrativo - ONGConnect</title>
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
+          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+
+    <!-- Chart.js for metrics -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../../src/styles/cross-browser.css">
+    <link rel="stylesheet" href="../../../src/styles/globals.css">
+    <link rel="stylesheet" href="../../styles/ong-color-palette.css">
+    <link rel="stylesheet" href="../../../src/styles/components/layout.css">
+    <link rel="stylesheet" href="../../../src/styles/components/ui-components.css">
+    <link rel="stylesheet" href="../../../src/styles/components/forms.css">
+    <link rel="stylesheet" href="../../styles/ongs-custom.css">
+    <link rel="stylesheet" href="../../styles/admin-dashboard.css">
+
+    <!-- Custom Dashboard Styles -->
+    <style>
+        .admin-layout {
+            display: grid;
+            grid-template-areas: 
+                "sidebar header"
+                "sidebar main";
+            grid-template-columns: 280px 1fr;
+            grid-template-rows: 70px 1fr;
+            min-height: 100vh;
+            background: var(--bg-secondary);
+        }
+
+        .admin-sidebar {
+            grid-area: sidebar;
+            background: var(--bg-dark);
+            padding: 2rem 0;
+            border-right: 1px solid var(--border-light);
+        }
+
+        .admin-header {
+            grid-area: header;
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+        }
+
+        .admin-main {
+            grid-area: main;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .sidebar-nav {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--bg-primary-subtle);
+            color: var(--text-white);
+        }
+
+        .nav-icon {
+            margin-right: 1rem;
+            width: 20px;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--text-primary);
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .metric-icon {
+            font-size: 2rem;
+            color: var(--primary-500);
+        }
+
+        .chart-container {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            height: 400px;
+        }
+
+        .recent-activities {
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--accent-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-600);
+            margin-right: 1rem;
+        }
+
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .action-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+            background: var(--bg-white);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-light);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: var(--primary-600);
+        }
+
+        .action-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-500);
+        }
+
+        @media (max-width: 768px) {
+            .admin-layout {
+                grid-template-areas: 
+                    "header"
+                    "main";
+                grid-template-columns: 1fr;
+                grid-template-rows: 70px 1fr;
+            }
+
+            .admin-sidebar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body data-theme="admin-dashboard">
+    <!-- Skip Links -->
+    <div class="skip-links" aria-label="Links de navegaçéo rápida">
+        <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+        <a href="#admin-nav" class="skip-link">Pular para a navegaçéo administrativa</a>
+    </div>
+
+    <!-- Admin Layout -->
+    <div class="admin-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar" role="navigation" aria-label="Menu administrativo">
+            <div class="sidebar-brand">
+                <div style="padding: 0 2rem; margin-bottom: 2rem;">
+                    <h2 class="text-white" style="font-size: 1.2rem;">
+                        <i class="fas fa-handshake text-accent"></i>
+                        ONGConnect Admin
+                    </h2>
+                </div>
+            </div>
+
+            <nav id="admin-nav">
+                <ul class="sidebar-nav" role="menubar">
+                    <li class="nav-item" role="none">
+                        <a href="dashboard.html" class="nav-link active" role="menuitem">
+                            <i class="fas fa-chart-pie nav-icon" aria-hidden="true"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="perfil-ong.html" class="nav-link" role="menuitem">
+                            <i class="fas fa-building nav-icon" aria-hidden="true"></i>
+                            <span>Perfil da ONG</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="projetos.html" class="nav-link" role="menuitem">
+                            <i class="fas fa-project-diagram nav-icon" aria-hidden="true"></i>
+                            <span>Projetos</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="voluntarios.html" class="nav-link" role="menuitem">
+                            <i class="fas fa-users nav-icon" aria-hidden="true"></i>
+                            <span>Voluntários</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="doacoes.html" class="nav-link" role="menuitem">
+                            <i class="fas fa-heart nav-icon" aria-hidden="true"></i>
+                            <span>Doações</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="relatorios.html" class="nav-link" role="menuitem">
+                            <i class="fas fa-chart-bar nav-icon" aria-hidden="true"></i>
+                            <span>Relatórios</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="transparencia.html" class="nav-link" role="menuitem">
+                            <i class="fas fa-eye nav-icon" aria-hidden="true"></i>
+                            <span>Transparência</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="comunicacao.html" class="nav-link" role="menuitem">
+                            <i class="fas fa-bullhorn nav-icon" aria-hidden="true"></i>
+                            <span>Comunicaçéo</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Header -->
+        <header class="admin-header" role="banner">
+            <div class="header-left">
+                <h1 class="text-primary" style="font-size: 1.5rem; margin: 0;">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-menu">
+                    <button class="btn-ghost" onclick="toggleUserMenu()" aria-expanded="false" aria-haspopup="true">
+                        <i class="fas fa-user-circle" style="font-size: 1.5rem;"></i>
+                        <span class="text-secondary">Administrador</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main id="main-content" class="admin-main" tabindex="-1">
+            <!-- Quick Actions -->
+            <section class="quick-actions" aria-labelledby="quick-actions-title">
+                <h2 id="quick-actions-title" class="visually-hidden">Ações rápidas</h2>
+                
+                <a href="projetos.html?action=new" class="action-btn">
+                    <i class="fas fa-plus action-icon" aria-hidden="true"></i>
+                    <span>Novo Projeto</span>
+                </a>
+                
+                <a href="voluntarios.html?action=manage" class="action-btn">
+                    <i class="fas fa-user-plus action-icon" aria-hidden="true"></i>
+                    <span>Gerenciar Voluntários</span>
+                </a>
+                
+                <a href="doacoes.html?action=campaign" class="action-btn">
+                    <i class="fas fa-bullseye action-icon" aria-hidden="true"></i>
+                    <span>Nova Campanha</span>
+                </a>
+                
+                <a href="relatorios.html?type=impact" class="action-btn">
+                    <i class="fas fa-file-chart-line action-icon" aria-hidden="true"></i>
+                    <span>Relatório de Impacto</span>
+                </a>
+            </section>
+
+            <!-- Metrics Dashboard -->
+            <section class="dashboard-grid" aria-labelledby="metrics-title">
+                <h2 id="metrics-title" class="visually-hidden">Métricas principais</h2>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-value">15</div>
+                            <div class="metric-label">Projetos Ativos</div>
+                        </div>
+                        <i class="fas fa-project-diagram metric-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="metric-trend text-success">
+                        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                        +3 este mês
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-value">247</div>
+                            <div class="metric-label">Voluntários Ativos</div>
+                        </div>
+                        <i class="fas fa-users metric-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="metric-trend text-success">
+                        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                        +18 este mês
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-value">R$ 45.2K</div>
+                            <div class="metric-label">Arrecadado este mês</div>
+                        </div>
+                        <i class="fas fa-heart metric-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="metric-trend text-success">
+                        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                        +12% vs mês anterior
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-value">1,543</div>
+                            <div class="metric-label">Pessoas Impactadas</div>
+                        </div>
+                        <i class="fas fa-hand-holding-heart metric-icon" aria-hidden="true"></i>
+                    </div>
+                    <div class="metric-trend text-success">
+                        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                        +89 esta semana
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts and Analytics -->
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <!-- Engagement Chart -->
+                <section class="chart-container" aria-labelledby="engagement-chart-title">
+                    <h3 id="engagement-chart-title" class="text-primary" style="margin-bottom: 1rem;">
+                        Engajamento dos Últimos 6 Meses
+                    </h3>
+                    <canvas id="engagementChart" width="400" height="200"></canvas>
+                </section>
+
+                <!-- Recent Activities -->
+                <section class="recent-activities" aria-labelledby="recent-activities-title">
+                    <h3 id="recent-activities-title" class="text-primary" style="margin-bottom: 1rem;">
+                        Atividades Recentes
+                    </h3>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-user-plus" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div class="text-primary">Novo voluntário cadastrado</div>
+                            <div class="text-secondary" style="font-size: 0.85rem;">Maria Silva - há 2 horas</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div class="text-primary">Doaçéo recebida</div>
+                            <div class="text-secondary" style="font-size: 0.85rem;">R$ 500 - Joéo Santos - há 4 horas</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div class="text-primary">Projeto atualizado</div>
+                            <div class="text-secondary" style="font-size: 0.85rem;">"Educaçéo para Todos" - ontem</div>
+                        </div>
+                    </div>
+
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
+                        </div>
+                        <div>
+                            <div class="text-primary">Certificado emitido</div>
+                            <div class="text-secondary" style="font-size: 0.85rem;">Ana Costa - 2 dias atrás</div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Donation Goals Progress -->
+            <section class="metric-card" aria-labelledby="donation-goals-title" style="margin-bottom: 2rem;">
+                <h3 id="donation-goals-title" class="text-primary" style="margin-bottom: 1rem;">
+                    Metas de Arrecadaçéo
+                </h3>
+                
+                <div style="display: grid; gap: 1rem;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span class="text-secondary">Campanha "Natal Solidário"</span>
+                            <span class="text-primary font-weight-bold">R$ 15.000 / R$ 25.000</span>
+                        </div>
+                        <div class="progress-bar" style="background: var(--bg-secondary); height: 8px; border-radius: 4px;">
+                            <div style="width: 60%; height: 100%; background: var(--accent-500); border-radius: 4px;"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span class="text-secondary">Projeto "Escola Nova"</span>
+                            <span class="text-primary font-weight-bold">R$ 8.300 / R$ 10.000</span>
+                        </div>
+                        <div class="progress-bar" style="background: var(--bg-secondary); height: 8px; border-radius: 4px;">
+                            <div style="width: 83%; height: 100%; background: var(--primary-500); border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize engagement chart
+        const ctx = document.getElementById('engagementChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out'],
+                datasets: [{
+                    label: 'Voluntários',
+                    data: [180, 195, 220, 235, 240, 247],
+                    borderColor: '#1e40af',
+                    backgroundColor: '#1e40af20',
+                    tension: 0.4
+                }, {
+                    label: 'Doações (R$)',
+                    data: [35000, 38000, 42000, 39000, 44000, 45200],
+                    borderColor: '#f59e0b',
+                    backgroundColor: '#f59e0b20',
+                    tension: 0.4,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        grid: {
+                            drawOnChartArea: false,
+                        },
+                    }
+                }
+            }
+        });
+
+        // User menu toggle
+        function toggleUserMenu() {
+            // Implementation for user menu dropdown
+            console.log('Toggle user menu');
+        }
+
+        // Mobile sidebar toggle
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.admin-sidebar');
+            sidebar.style.display = sidebar.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Accessibility enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add keyboard navigation for cards
+            const actionBtns = document.querySelectorAll('.action-btn');
+            actionBtns.forEach(btn => {
+                btn.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.click();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
