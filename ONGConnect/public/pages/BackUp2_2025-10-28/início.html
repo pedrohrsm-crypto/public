@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ONGConnect - Conheça nossa missão de conectar ONGs e transformar vidas através do trabalho voluntário e responsabilidade social.">
+    <meta name="keywords" content="ONGConnect, missão, propósito, ONGs, organizações não governamentais, transparência, impacto social, terceiro setor, voluntariado, doações">
+    <meta name="author" content="ONGConnect">
+    <meta name="theme-color" content="#1e40af">
+    <meta name="color-scheme" content="light dark">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ONGConnect - Nossa Missão e Propósito">
+    <meta property="og:description" content="Descubra como conectamos ONGs e transformamos vidas através do trabalho voluntário e responsabilidade social.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ongconnect.org/inicio">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:locale" content="pt_BR">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ONGConnect - Nossa Missão e Propósito">
+    <meta name="twitter:description" content="Descubra como conectamos ONGs e transformamos vidas através do trabalho voluntário.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+    
+    <title>ONGConnect - Nossa Missão e Propósito</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/cross-browser.css">
+    <link rel="stylesheet" href="../../src/styles/globals.css">
+    <link rel="stylesheet" href="../styles/ong-color-palette.css">
+    <link rel="stylesheet" href="../../src/styles/components/layout.css">
+    <link rel="stylesheet" href="../../src/styles/components/ui-components.css">
+    <link rel="stylesheet" href="../../src/styles/components/forms.css">
+    <link rel="stylesheet" href="../styles/ongs-custom.css">
+    <link rel="stylesheet" href="../styles/inicio-custom.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ONGConnect",
+        "description": "Plataforma digital para conectar ONGs, divulgar atividades e promover transparência no terceiro setor",
+        "url": "https://ongconnect.org",
+        "telephone": "+5511999998888",
+        "email": "contato@ongconnect.org",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Rua da Solidariedade, 456",
+            "@addressLocality": "São Paulo",
+            "addressRegion": "SP",
+            "addressCountry": "BR"
+        },
+        "foundingDate": "2020",
+        "mission": "Conectar organizações não governamentais e promover transparência e impacto social",
+        "sameAs": [
+            "https://facebook.com/ongconnect",
+            "https://instagram.com/ongconnect",
+            "https://linkedin.com/company/ongconnect"
+        ]
+    }
+    </script>
+    
+    <!-- Remove Background Image Override -->
+    <style>
+        body, 
+        html, 
+        .hero-inicio,
+        .story-section,
+        main,
+        * {
+            background-image: none !important;
+        }
+
+        /* CTA Section Hero Cards Styles */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+
+        .cta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .cta-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .cta-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: white;
+            background-color: #1f2937;    
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .cta-description {
+            font-size: 1.25rem;
+            color: #6b7280;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .cta-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .cta-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem 2.5rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08), 0 4px 10px rgba(0, 0, 0, 0.05);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #7c3aed, #06b6d4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 0 8px 20px rgba(0, 0, 0, 0.08);
+            border-color: rgba(124, 58, 237, 0.2);
+        }
+
+        .cta-card:hover::before {
+            opacity: 1;
+        }
+
+        .primary-card {
+            border-color: rgba(124, 58, 237, 0.1);
+        }
+
+        .primary-card .card-icon {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+        }
+
+        .secondary-card {
+            border-color: rgba(239, 68, 68, 0.1);
+        }
+
+        .secondary-card .card-icon {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        .tertiary-card {
+            border-color: rgba(6, 182, 212, 0.1);
+        }
+
+        .tertiary-card .card-icon {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+        }
+
+        .card-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            color: white;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-content {
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .card-stats {
+            background: #f9fafb;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            border: 1px solid #e5e7eb;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #7c3aed;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            font-weight: 500;
+        }
+
+        .card-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            color: #1f2937;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+        }
+
+        .card-button:hover {
+            background: linear-gradient(135deg, #6d28d9 0%, #5b21b6 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(124, 58, 237, 0.35);
+            color: #1f2937;
+        }
+
+        .secondary-card .card-button {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.25);
+        }
+
+        .secondary-card .card-button:hover {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.35);
+        }
+
+        .tertiary-card .card-button {
+            background: linear-gradient(135deg, #06b6d4 0%, #0891b2 100%);
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);
+        }
+
+        .tertiary-card .card-button:hover {
+            background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+            box-shadow: 0 8px 25px rgba(6, 182, 212, 0.35);
+        }
+
+        .cta-footer {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-guarantee {
+            font-size: 1rem;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .cta-guarantee i {
+            color: #10b981;
+            font-size: 1.25rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .cta-title {
+                font-size: 2.25rem;
+            }
+
+            .cta-cards {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .cta-card {
+                padding: 2.5rem 2rem;
+            }
+
+            .card-title {
+                font-size: 1.5rem;
+            }
+
+            .cta-guarantee {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cta-container {
+                margin-top: 3rem;
+                padding: 0 1rem;
+            }
+
+            .cta-section {
+                padding: 4rem 0;
+            }
+
+            .cta-header {
+                margin-top: 3rem;
+                margin-bottom: 3rem;
+            }
+
+            .cta-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .card-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body data-theme="inicio-page">
+    <!-- Skip Links for Accessibility -->
+    <div class="skip-links" aria-label="Links de navegação rápida">
+        <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+        <a href="#nav-menu" class="skip-link">Pular para o menu de navegação</a>
+        <a href="#nossa-missao" class="skip-link">Pular para nossa missão</a>
+        <a href="#como-ajudamos" class="skip-link">Pular para como ajudamos</a>
+        <a href="#parcerias" class="skip-link">Pular para parcerias</a>
+        <a href="#impacto" class="skip-link">Pular para nosso impacto</a>
+        <a href="#video-institucional" class="skip-link">Pular para vídeo institucional</a>
+        <a href="#footer" class="skip-link">Pular para o rodapé</a>
+    </div>
+    
+    <!-- Live Regions for Dynamic Announcements -->
+    <div id="live-region" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+    <div id="alert-region" aria-live="assertive" aria-atomic="true" class="visually-hidden"></div>
+    
+    <!-- Header and Navigation -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Menu principal do site">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="início.html" aria-label="ONGConnect - Página inicial">
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
+                        <span>ONGConnect</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu" role="menubar" aria-label="Menu de navegação principal">
+                    <li class="nav-item" role="none">
+                        <a href="início.html"
+                           class="nav-link active"
+                           role="menuitem"
+                           aria-current="page"
+                           tabindex="0">
+                            <i class="fas fa-home nav-icon" aria-hidden="true"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="ONGs.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-hands-helping nav-icon" aria-hidden="true"></i>
+                            <span>ONGs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="voluntario-portal.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-user-friends nav-icon" aria-hidden="true"></i>
+                            <span>Voluntário</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="doador-portal.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-heart nav-icon" aria-hidden="true"></i>
+                            <span>Doador</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="sobre.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-info-circle nav-icon" aria-hidden="true"></i>
+                            <span>Sobre</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="contato.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-envelope nav-icon" aria-hidden="true"></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                    
+                                    </ul>
+
+                <!-- Social Media Links -->
+                <div class="nav-social" role="region" aria-label="Links para redes sociais">
+                    <a href="https://instagram.com/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no Instagram (abre em nova aba)">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no LinkedIn (abre em nova aba)">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://facebook.com/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no Facebook (abre em nova aba)">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <button class="nav-toggle"
+                        id="mobile-menu" 
+                        aria-label="Abrir menu de navegação" 
+                        aria-expanded="false" 
+                        aria-controls="nav-menu"
+                        aria-haspopup="true">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+        
+        <!-- Hero Section -->
+        <section class="hero-inicio" aria-labelledby="hero-title">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1 id="hero-title" class="hero-title">
+                        Conectando <span class="highlight">ONGs</span> e 
+                        <span class="highlight">Pessoas</span> para 
+                        <span class="highlight">Transformar</span> o Mundo
+                    </h1>
+                    <p class="hero-description">
+                        O ONGConnect é a plataforma digital que revoluciona o terceiro setor brasileiro, 
+                        conectando organizações não governamentais com voluntários apaixonados e doadores 
+                        comprometidos em fazer a diferença. Junte-se a nós na construção de um futuro melhor!
+                    </p>
+                    <div class="hero-cta">
+                        <a href="voluntario-portal.html" class="btn btn-primary">
+                            <i class="fas fa-user-friends" aria-hidden="true"></i>
+                            Seja Voluntário
+                        </a>
+                        <a href="doador-portal.html" class="btn btn-secondary">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                            Faça uma Doação
+                        </a>
+                        <a href="ONGs.html" class="btn btn-tertiary">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                            Explorar ONGs
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-scroll-indicator" aria-hidden="true">
+                    <span class="scroll-text">Descubra nossa missão</span>
+                    <i class="fas fa-chevron-down scroll-arrow"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1: Nossa Missão (Image Left, Text Right) -->
+        <section id="nossa-missao" class="story-section left-image" aria-labelledby="missao-title">
+            <div class="story-container">
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Voluntários trabalhando juntos em projeto social, demonstrando união e propósito"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-heart overlay-icon" aria-hidden="true"></i>
+                            <span class="overlay-text">Conectando Corações</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2 id="missao-title" class="story-title">Nossa Missão</h2>
+                        <p class="story-description">
+                            O ONGConnect nasceu da convicção de que cada pessoa possui um potencial único para 
+                            transformar o mundo ao seu redor. Nossa plataforma inovadora elimina as barreiras 
+                            entre organizações sociais e cidadãos engajados, criando um ecossistema digital 
+                            onde a solidariedade encontra a eficiência.
+                        </p>
+                        <p class="story-description">
+                            Através de tecnologia de ponta e uma interface intuitiva, facilitamos conexões 
+                            significativas entre ONGs que precisam de apoio e pessoas dispostas a contribuir 
+                            com seu tempo, recursos e conhecimento. Nossa missão é democratizar o acesso ao 
+                            voluntariado e fortalecer o terceiro setor brasileiro.
+                        </p>
+                        <div class="story-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">1.200+</span>
+                                <span class="stat-label">ONGs Conectadas</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">15.000+</span>
+                                <span class="stat-label">Voluntários Ativos</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">500K+</span>
+                                <span class="stat-label">Vidas Impactadas</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-- Section 2: Como Ajudamos (Image Right, Text Left) -->
+        <section id="como-ajudamos" class="story-section right-image" aria-labelledby="ajuda-title">
+            <div class="story-container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2 id="ajuda-title" class="story-title">Como Ajudamos ONGs</h2>
+                        <p class="story-description">
+                            Fornecemos um conjunto completo de ferramentas digitais especialmente desenvolvidas 
+                            para potencializar o alcance e a efetividade das organizações não governamentais. 
+                            Nossa plataforma transforma a maneira como ONGs se conectam com a sociedade, 
+                            amplificando sua voz e maximizando seu impacto social.
+                        </p>
+                        <p class="story-description">
+                            Do cadastro de projetos à gestão de voluntários, da captação de recursos à 
+                            prestação de contas transparente, oferecemos soluções integradas que simplificam 
+                            a gestão organizacional e liberam mais tempo para o que realmente importa: 
+                            transformar vidas e comunidades.
+                        </p>
+                        <ul class="story-features" role="list">
+                            <li>
+                                <i class="fas fa-bullhorn feature-icon" aria-hidden="true"></i>
+                                <span>Visibilidade ampliada para projetos e causas sociais</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-user-friends feature-icon" aria-hidden="true"></i>
+                                <span>Conexão inteligente com voluntários qualificados</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-line feature-icon" aria-hidden="true"></i>
+                                <span>Dashboard com métricas de impacto em tempo real</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-shield-alt feature-icon" aria-hidden="true"></i>
+                                <span>Sistema de transparência total nas operações</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-mobile-alt feature-icon" aria-hidden="true"></i>
+                                <span>Gestão móvel para acompanhamento em qualquer lugar</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-graduation-cap feature-icon" aria-hidden="true"></i>
+                                <span>Treinamentos e capacitação para equipes</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Pessoa usando tablet para gerenciar projetos de ONG, mostrando interface moderna e intuitiva"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-laptop overlay-icon" aria-hidden="true"></i>
+                            <span class="overlay-text">Tecnologia Social</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-- Section 2.5: Para Voluntários (Image Left, Text Right) -->
+        <section id="voluntarios" class="story-section left-image" aria-labelledby="voluntarios-title">
+            <div class="story-container">
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Grupo de voluntários trabalhando juntos em projeto social comunitário"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-hands-helping overlay-icon" aria-hidden="true"></i>
+                            <span class="overlay-text">Voluntariado Transformador</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2 id="voluntarios-title" class="story-title">Para Voluntários</h2>
+                        <p class="story-description">
+                            Descubra como suas habilidades e paixões podem gerar impacto real na sociedade. 
+                            Nossa plataforma conecta você com oportunidades de voluntariado que verdadeiramente 
+                            combinam com seu perfil, interesses e disponibilidade de tempo.
+                        </p>
+                        <p class="story-description">
+                            Seja você um profissional experiente, estudante universitário ou alguém que 
+                            simplesmente quer fazer a diferença, temos o projeto perfeito para você. 
+                            Encontre causas que tocam seu coração e organizações que valorizam sua contribuição.
+                        </p>
+                        <ul class="story-features" role="list">
+                            <li>
+                                <i class="fas fa-search-plus feature-icon" aria-hidden="true"></i>
+                                <span>Busca inteligente por projetos compatíveis com suas habilidades</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-calendar-check feature-icon" aria-hidden="true"></i>
+                                <span>Flexibilidade total para adequar às suas agendas</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-award feature-icon" aria-hidden="true"></i>
+                                <span>Certificados digitais para comprovar suas horas voluntárias</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-network-wired feature-icon" aria-hidden="true"></i>
+                                <span>Networking com outros voluntários e organizações</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-book-open feature-icon" aria-hidden="true"></i>
+                                <span>Capacitação contínua em áreas de interesse social</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-trophy feature-icon" aria-hidden="true"></i>
+                                <span>Sistema de reconhecimento por conquistas e dedicação</span>
+                            </li>
+                        </ul>
+                        <div class="story-cta">
+                            <a href="voluntário.html" class="cta-button secondary" role="button">
+                                <i class="fas fa-user-plus" aria-hidden="true"></i>
+                                Seja um Voluntário
+                            </a>
+                            <a href="ongs.html" class="cta-button outline" role="button">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
+                                Ver Oportunidades
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-- Section 2.7: Para Doadores (Image Right, Text Left) -->
+        <section id="doadores" class="story-section right-image" aria-labelledby="doadores-title">
+            <div class="story-container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2 id="doadores-title" class="story-title">Para Doadores</h2>
+                        <p class="story-description">
+                            Transforme sua generosidade em impacto social concreto. Nossa plataforma oferece 
+                            total transparência sobre como suas doações são utilizadas, permitindo que você 
+                            acompanhe em tempo real o progresso dos projetos que apoia.
+                        </p>
+                        <p class="story-description">
+                            Com ferramentas avançadas de rastreamento e relatórios detalhados, garantimos 
+                            que cada centavo doado seja direcionado de forma eficiente para maximizar 
+                            o retorno social do seu investimento em causas que realmente importam.
+                        </p>
+                        <ul class="story-features" role="list">
+                            <li>
+                                <i class="fas fa-eye feature-icon" aria-hidden="true"></i>
+                                <span>Transparência total no uso de recursos doados</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-chart-pie feature-icon" aria-hidden="true"></i>
+                                <span>Relatórios detalhados de impacto social gerado</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-shield-check feature-icon" aria-hidden="true"></i>
+                                <span>Segurança máxima em todas as transações financeiras</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-receipt feature-icon" aria-hidden="true"></i>
+                                <span>Certificados fiscais automáticos para dedução no IR</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-heart feature-icon" aria-hidden="true"></i>
+                                <span>Opções flexíveis de doação única ou recorrente</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-mobile-alt feature-icon" aria-hidden="true"></i>
+                                <span>Acompanhamento móvel dos projetos apoiados</span>
+                            </li>
+                        </ul>
+                        <div class="story-cta">
+                            <a href="doador.html" class="cta-button primary" role="button">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Fazer uma Doação
+                            </a>
+                            <a href="projetos.html" class="cta-button outline" role="button">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                Explorar Projetos
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Pessoas beneficiadas por doações em projetos sociais, mostrando o impacto positivo das contribuições"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-donate overlay-icon" aria-hidden="true"></i>
+                            <span class="overlay-text">Doação Transparente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr> 
+        <!-- Section 3: Parcerias (Image Left, Text Right) -->
+        <section id="parcerias" class="story-section left-image" aria-labelledby="parcerias-title">
+            <div class="story-container">
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Reunião de parceiros empresariais discutindo projetos de responsabilidade social"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-handshake overlay-icon" aria-hidden="true"></i>
+                            <span class="overlay-text">Parcerias Estratégicas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2 id="parcerias-title" class="story-title">Parcerias que Transformam</h2>
+                        <p class="story-description">
+                            Trabalhamos em colaboração com empresas, governos e outras organizações para 
+                            criar um ecossistema robusto de responsabilidade social no Brasil.
+                        </p>
+                        <p class="story-description">
+                            Nossas parcerias estratégicas garantem que recursos, conhecimento e oportunidades 
+                            fluam de forma eficiente para onde são mais necessários, maximizando o impacto 
+                            social de cada iniciativa.
+                        </p>
+                        <div class="story-partners">
+                            <div class="partner-category">
+                                <h3 class="partner-title">
+                                    <i class="fas fa-building partner-icon" aria-hidden="true"></i>
+                                    Empresas Parceiras
+                                </h3>
+                                <p>Programas de voluntariado corporativo e investimento social</p>
+                            </div>
+                            <div class="partner-category">
+                                <h3 class="partner-title">
+                                    <i class="fas fa-university partner-icon" aria-hidden="true"></i>
+                                    Instituições Públicas
+                                </h3>
+                                <p>Colaboração em políticas públicas e programas governamentais</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-- Section 4: Impacto (Image Right, Text Left) -->
+        <section id="impacto" class="story-section right-image" aria-labelledby="impacto-title">
+            <div class="story-container">
+                <div class="story-content">
+                    <div class="story-text">
+                        <h2 id="impacto-title" class="story-title">Impacto Real e Mensurável</h2>
+                        <p class="story-description">
+                            Cada conexão feita através do ONGConnect gera impacto real na vida de milhares 
+                            de pessoas. Medimos nosso sucesso através de resultados concretos e transformações 
+                            positivas nas comunidades.
+                        </p>
+                        <p class="story-description">
+                            Utilizamos dados e tecnologia para garantir que cada recurso investido gere 
+                            o máximo retorno social possível, criando um ciclo virtuoso de transformação 
+                            e desenvolvimento sustentável.
+                        </p>
+                        <div class="impact-metrics">
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-number">250.000+</span>
+                                    <span class="metric-label">Vidas Impactadas</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-globe-americas" aria-hidden="true"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-number">27</span>
+                                    <span class="metric-label">Estados Atendidos</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-icon">
+                                    <i class="fas fa-clock" aria-hidden="true"></i>
+                                </div>
+                                <div class="metric-content">
+                                    <span class="metric-number">1.5M+</span>
+                                    <span class="metric-label">Horas Voluntárias</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="story-image">
+                    <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                         alt="Crianças felizes em projeto educacional, mostrando o impacto positivo das ações sociais"
+                         loading="lazy">
+                    <div class="image-overlay">
+                        <div class="overlay-content">
+                            <i class="fas fa-chart-line overlay-icon" aria-hidden="true"></i>
+                            <span class="overlay-text">Impacto Crescente</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+
+        <!-- Video Institucional Section -->
+        <section id="video-institucional" class="video-section" aria-labelledby="video-title">
+            <div class="video-container">
+                <div class="video-header">
+                    <h2 id="video-title" class="video-title">
+                        <i class="fas fa-play-circle" aria-hidden="true"></i>
+                        Conheça Nossa História
+                    </h2>
+                    <p class="video-description">
+                        Assista ao vídeo institucional do ONGConnect e descubra como estamos revolucionando 
+                        o terceiro setor brasileiro através da inovação tecnológica, transparência total 
+                        e conexões humanas genuínas que transformam vidas e comunidades inteiras.
+                    </p>
+                    <div class="video-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                            <span>Mais de 15.000 visualizações</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-thumbs-up" aria-hidden="true"></i>
+                            <span>98% de aprovação</span>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-share" aria-hidden="true"></i>
+                            <span>Compartilhado 3.2K vezes</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="video-player-container">
+                    <div class="video-player" 
+                         id="video-player"
+                         role="region" 
+                         aria-label="Player de vídeo institucional"
+                         tabindex="0">
+                        
+                        <!-- Video Element -->
+                        <video id="institutional-video" 
+                               class="video-element"
+                               controls
+                               preload="metadata"
+                               aria-describedby="video-description">
+                            <source src="../assets/videos/ongconnect-institucional.mp4" type="video/mp4">
+                            <source src="../assets/videos/ongconnect-institucional.webm" type="video/webm">
+                            <track kind="captions" 
+                                   src="../assets/videos/ongconnect-legendas-pt.vtt" 
+                                   srclang="pt" 
+                                   label="Português"
+                                   default>
+                            <p>Seu navegador não suporta o elemento de vídeo. 
+                               <a href="../assets/videos/ongconnect-institucional.mp4">
+                                   Baixe o vídeo aqui
+                               </a>.
+                            </p>
+                        </video>
+                        
+                        <!-- Video Overlay -->
+                        <div class="video-overlay" id="video-overlay">
+                            <div class="video-poster">
+                                <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                                     alt="Prévia do vídeo institucional ONGConnect"
+                                     class="poster-image">
+                                <button class="play-button" 
+                                        id="play-button"
+                                        aria-label="Reproduzir vídeo institucional">
+                                    <i class="fas fa-play" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+            
+                        <!-- Video Controls -->
+                        <div class="video-controls" id="video-controls">
+                            <button class="control-btn fullscreen-btn" 
+                                    id="fullscreen-btn"
+                                    aria-label="Expandir vídeo para tela cheia">
+                                <i class="fas fa-expand" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Video Description for Screen Readers -->
+                    <div id="video-description" class="visually-hidden">
+                        Vídeo institucional do ONGConnect mostrando a missão, visão e impacto da plataforma 
+                        no terceiro setor brasileiro. Inclui depoimentos de ONGs parceiras e voluntários 
+                        que fazem parte da nossa comunidade.
+                    </div>
+                </div>
+                
+                <!-- Video Features -->
+                <div class="video-features">
+                    <div class="feature-item">
+                        <i class="fas fa-closed-captioning feature-icon" aria-hidden="true"></i>
+                        <span>Legendas em Português</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-expand-arrows-alt feature-icon" aria-hidden="true"></i>
+                        <span>Modo Tela Cheia</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-universal-access feature-icon" aria-hidden="true"></i>
+                        <span>Totalmente Acessível</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <!-- Call to Action Section -->
+        <section class="cta-section" aria-labelledby="cta-title">
+            <div class="cta-container">
+                <div class="cta-header">
+                    <div class="cta-icon">
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
+                    </div>
+                    <h2 id="cta-title" class="cta-title">Pronto para Transformar o Mundo?</h2>
+                    <p class="cta-description">
+                        Junte-se à maior rede de transformação social do Brasil. Conecte-se com milhares 
+                        de pessoas que compartilham sua paixão por fazer a diferença.
+                    </p>
+                </div>
+
+                <div class="cta-cards">
+                    <div class="cta-card primary-card">
+                            <div class="card-content">
+                            <h3 class="card-title">Seja Voluntário</h3>
+                            <p class="card-description">
+                                Encontre projetos que combinam com suas habilidades e paixões. 
+                                Faça a diferença em sua comunidade.
+                            </p>
+                            <div class="card-stats">
+                                <span class="stat-number">15.000+</span>
+                                <span class="stat-label">Voluntários Ativos</span>
+                            </div>
+                            <a href="voluntario-portal.html" class="card-button">
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                Comece Agora
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="cta-card secondary-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Faça uma Doação</h3>
+                            <p class="card-description">
+                                Contribua financeiramente com projetos transparentes e 
+                                acompanhe o impacto de suas doações.
+                            </p>
+                            <div class="card-stats">
+                                <span class="stat-number">R$ 25M+</span>
+                                <span class="stat-label">Doações Facilitadas</span>
+                            </div>
+                            <a href="doador-portal.html" class="card-button">
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                Doar Agora
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="cta-card tertiary-card">
+                        <div class="card-content">
+                            <h3 class="card-title">Encontre ONGs</h3>
+                            <p class="card-description">
+                                Explore milhares de organizações verificadas e descubra 
+                                causas que tocam seu coração.
+                            </p>
+                            <div class="card-stats">
+                                <span class="stat-number">5.000+</span>
+                                <span class="stat-label">ONGs Cadastradas</span>
+                            </div>
+                            <a href="ONGs.html" class="card-button">
+                                <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                                Explorar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">ONGConnect</h3>
+                    <p class="footer-description">
+                        Conectando organizações não governamentais e pessoas para criar 
+                        um impacto social positivo e duradouro.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://facebook.com/ongconnect" 
+                           class="social-link"
+                           aria-label="Seguir no Facebook"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f social-icon" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://instagram.com/ongconnect" 
+                           class="social-link"
+                           aria-label="Seguir no Instagram"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fab fa-instagram social-icon" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://linkedin.com/company/ongconnect" 
+                           class="social-link"
+                           aria-label="Seguir no LinkedIn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <i class="fab fa-linkedin-in social-icon" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <i class="fas fa-sitemap" aria-hidden="true"></i>
+                        Navegação
+                    </h3>
+                    <ul class="footer-links" role="list">
+                        <li><a href="início.html"><i class="fas fa-home" aria-hidden="true"></i> Página Inicial</a></li>
+                        <li><a href="ONGs.html"><i class="fas fa-building" aria-hidden="true"></i> Encontrar ONGs</a></li>
+                        <li><a href="cadastro.html"><i class="fas fa-plus-circle" aria-hidden="true"></i> Cadastrar ONG</a></li>
+                        <li><a href="sobre.html"><i class="fas fa-info-circle" aria-hidden="true"></i> Sobre Nós</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <i class="fas fa-headset" aria-hidden="true"></i>
+                        Suporte
+                    </h3>
+                    <ul class="footer-links" role="list">
+                        <li><a href="contato.html"><i class="fas fa-phone" aria-hidden="true"></i> Contato</a></li>
+                        <li><a href="FAQ.html"><i class="fas fa-question-circle" aria-hidden="true"></i> FAQ</a></li>
+                        <li><a href="ajuda.html"><i class="fas fa-life-ring" aria-hidden="true"></i> Central de Ajuda</a></li>
+                        <li><a href="tutorial.html"><i class="fas fa-play-circle" aria-hidden="true"></i> Como Usar</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                        Legal
+                    </h3>
+                    <ul class="footer-links" role="list">
+                        <li><a href="privacidade.html"><i class="fas fa-user-shield" aria-hidden="true"></i> Política de Privacidade</a></li>
+                        <li><a href="termos.html"><i class="fas fa-file-contract" aria-hidden="true"></i> Termos de Uso</a></li>
+                        <li><a href="cookies.html"><i class="fas fa-cookie-bite" aria-hidden="true"></i> Política de Cookies</a></li>
+                        <li><a href="acessibilidade.html"><i class="fas fa-universal-access" aria-hidden="true"></i> Acessibilidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>&copy; 2025 ONGConnect. Todos os direitos reservados.</p>
+                    <div class="footer-host-info">
+                        <span class="host-trigger" 
+                              aria-describedby="host-info-tooltip"
+                              tabindex="0"
+                              role="button">
+                            Hospedado por TechForGood Solutions
+                        </span>
+                        <div id="host-info-tooltip" 
+                             class="host-tooltip" 
+                             role="tooltip"
+                             aria-hidden="true">
+                            <div class="host-tooltip-content">
+                                <h4>TechForGood Solutions</h4>
+                                <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
+                                <p><strong>Endereço:</strong> Av. Tecnologia, 789 - São Paulo, SP</p>
+                                <p><strong>Email:</strong> suporte@techforgood.com.br</p>
+                                <p><strong>Telefone:</strong> (11) 3000-0000</p>
+                                <p class="host-description">
+                                    Empresa especializada em soluções tecnológicas 
+                                    para organizações do terceiro setor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-accessibility">
+                    <a href="#accessibility-statement" 
+                       aria-label="Declaração de acessibilidade do site">
+                        <i class="fas fa-universal-access" aria-hidden="true"></i>
+                        <span>Acessibilidade WCAG 2.1 AA</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/inicio-page.js"></script>
+    <script src="../scripts/video-player.js"></script>
+    
+</body>
+</html>

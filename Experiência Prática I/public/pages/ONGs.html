@@ -1,0 +1,1074 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Security Headers for HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https:; connect-src 'self' https:; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    
+
+    <!-- Security Headers for HTTPS -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https://images.unsplash.com https:; connect-src 'self' https:; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
+    
+    <meta name="description" content="Descubra ONGs verificadas e transparentes. Conecte-se com organizações que fazem a diferença em educação, saúde, meio ambiente e causas sociais.">
+    <meta name="keywords" content="ONGs, organizações não governamentais, transparência, projetos sociais, voluntariado, doações, impacto social, terceiro setor">
+    <meta name="author" content="ONGConnect">
+    <meta name="theme-color" content="#1e40af">
+    <meta name="color-scheme" content="light dark">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ONGs Verificadas - ONGConnect">
+    <meta property="og:description" content="Explore organizações transparentes e impactantes. Encontre ONGs alinhadas com suas causas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ongconnect.org/ongs">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:locale" content="pt_BR">
+    
+    <title>ONGs Verificadas - ONGConnect</title>
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/cross-browser.css">
+    <link rel="stylesheet" href="../../src/styles/globals.css">
+    <link rel="stylesheet" href="../styles/ong-color-palette.css">
+    <link rel="stylesheet" href="../../src/styles/components/layout.css">
+    <link rel="stylesheet" href="../../src/styles/components/ui-components.css">
+    <link rel="stylesheet" href="../../src/styles/components/forms.css">
+    <link rel="stylesheet" href="../styles/ongs-custom.css">
+    <link rel="stylesheet" href="../styles/inicio-custom.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "ONGs Verificadas",
+        "description": "Diretório de organizações não governamentais verificadas e transparentes",
+        "url": "https://ongconnect.org/ongs",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "ONGConnect",
+            "url": "https://ongconnect.org"
+        }
+    }
+    </script>
+    
+    <style>
+        /* Modern Layout Styles */
+        :root {
+            --primary-blue: #1e40af;
+            --primary-blue-dark: #1e3a8a;
+            --text-primary: #111827;
+            --text-secondary: #374151;
+            --text-muted: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-accent: #eff6ff;
+            --border-light: #e5e7eb;
+            --success: #059669;
+            --warning: #d97706;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        /* Skip Links */
+        .skip-links {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            z-index: 1000;
+        }
+
+        .skip-link {
+            position: absolute;
+            padding: 8px 16px;
+            background: var(--text-primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .skip-link:focus {
+            position: static;
+            top: 6px;
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        /* Hero Section */
+        .hero-ongs {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            color: white;
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-ongs::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Search Section */
+        .search-section {
+            background: var(--bg-primary);
+            padding: 3rem 0;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .search-input {
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-light);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+        }
+
+        .filter-select {
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-light);
+            border-radius: 0.5rem;
+            background: white;
+            font-size: 1rem;
+            min-width: 180px;
+        }
+
+        .search-btn {
+            padding: 1rem 2rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search-btn:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Statistics Bar */
+        .stats-bar {
+            background: var(--bg-accent);
+            padding: 2rem 0;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* ONGs Grid */
+        .ongs-section {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .ongs-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .ongs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .ong-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .ong-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .ong-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(45deg, var(--primary-blue), var(--bg-accent));
+        }
+
+        .ong-content {
+            padding: 1.5rem;
+        }
+
+        .ong-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .ong-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .ong-category {
+            color: var(--primary-blue);
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .ong-description {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .ong-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .ong-stat {
+            text-align: center;
+        }
+
+        .ong-stat-number {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .ong-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .ong-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-blue-dark);
+            color: white;
+        }
+
+        .btn-outline {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--border-light);
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        /* Load More Section */
+        .load-more {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .load-more-btn {
+            padding: 1rem 2rem;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .load-more-btn:hover {
+            background: var(--primary-blue-dark);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .search-form {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .ongs-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .ong-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                padding: 0 1rem;
+            }
+
+            .search-container,
+            .ongs-container {
+                padding: 0 1rem;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body data-theme="ongs-page">
+    <!-- Skip Links -->
+    <div class="skip-links" aria-label="Links de navegação rápida">
+        <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+        <a href="#nav-menu" class="skip-link">Pular para o menu de navegação</a>
+        <a href="#search-section" class="skip-link">Pular para busca de ONGs</a>
+        <a href="#ongs-list" class="skip-link">Pular para lista de ONGs</a>
+    </div>
+
+    <!-- Live Region -->
+    <div id="live-region" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+
+    <!-- Header -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Menu principal">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html" aria-label="ONGConnect - Página inicial">
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
+                        <span>ONGConnect</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu" role="menubar" aria-label="Menu de navegação principal">
+                    <li class="nav-item" role="none">
+                        <a href="index.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="0">
+                            <i class="fas fa-home nav-icon" aria-hidden="true"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="ONGs.html"
+                           class="nav-link active"
+                           role="menuitem"
+                           aria-current="page"
+                           tabindex="0">
+                            <i class="fas fa-hands-helping nav-icon" aria-hidden="true"></i>
+                            <span>ONGs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="voluntario-portal.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="0">
+                            <i class="fas fa-user-friends nav-icon" aria-hidden="true"></i>
+                            <span>Voluntário</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="doador-portal.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="0">
+                            <i class="fas fa-heart nav-icon" aria-hidden="true"></i>
+                            <span>Doador</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="sobre.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="0">
+                            <i class="fas fa-info-circle nav-icon" aria-hidden="true"></i>
+                            <span>Sobre</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="contato.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="0">
+                            <i class="fas fa-envelope nav-icon" aria-hidden="true"></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Social Media Links -->
+                <div class="nav-social" role="navigation" aria-label="Redes sociais">
+                    <a href="https://instagram.com/ongconnect" 
+                       class="social-link" 
+                       aria-label="Instagram do ONGConnect"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/ongconnect" 
+                       class="social-link" 
+                       aria-label="LinkedIn do ONGConnect"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://facebook.com/ongconnect" 
+                       class="social-link" 
+                       aria-label="Facebook do ONGConnect"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" tabindex="-1">
+        <!-- Hero Section -->
+        <section class="hero-ongs" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title" class="hero-title">
+                    Descubra ONGs que 
+                    <span style="color: #60a5fa;">Transformam Vidas</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Explore organizações verificadas e transparentes. Encontre causas alinhadas com seus valores 
+                    e faça parte de uma rede de impacto social real e mensurável.
+                </p>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search-section" class="search-section" aria-labelledby="search-title">
+            <div class="search-container">
+                <h2 id="search-title" class="visually-hidden">Buscar ONGs</h2>
+                <form class="search-form" role="search" aria-label="Formulário de busca de ONGs">
+                    <input type="search" 
+                           class="search-input" 
+                           placeholder="Busque por nome, causa ou localização..."
+                           aria-label="Buscar ONGs por nome, causa ou localização">
+                    <select class="filter-select" aria-label="Filtrar por categoria">
+                        <option value="">Todas as categorias</option>
+                        <option value="educacao">Educação</option>
+                        <option value="saude">Saúde</option>
+                        <option value="meio-ambiente">Meio Ambiente</option>
+                        <option value="assistencia-social">Assistência Social</option>
+                        <option value="direitos-humanos">Direitos Humanos</option>
+                        <option value="cultura">Cultura e Arte</option>
+                        <option value="desenvolvimento">Desenvolvimento</option>
+                    </select>
+                    <button type="submit" class="search-btn" aria-label="Realizar busca">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                        Buscar
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Statistics Bar -->
+        <section class="stats-bar" aria-labelledby="stats-title">
+            <div class="stats-container">
+                <h2 id="stats-title" class="visually-hidden">Estatísticas da plataforma</h2>
+                <div class="stat-item">
+                    <div class="stat-number">247</div>
+                    <div class="stat-label">ONGs Verificadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">12.5k</div>
+                    <div class="stat-label">Voluntários Ativos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">R$ 2.8M</div>
+                    <div class="stat-label">Doações Realizadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">89%</div>
+                    <div class="stat-label">Taxa de Transparência</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ONGs Section -->
+        <section id="ongs-list" class="ongs-section" aria-labelledby="ongs-title">
+            <div class="ongs-container">
+                <div class="section-header">
+                    <h2 id="ongs-title" class="section-title">ONGs em Destaque</h2>
+                    <p class="section-subtitle">
+                        Organizações verificadas com alta transparência e impacto comprovado
+                    </p>
+                </div>
+
+                <div class="ongs-grid">
+                    <!-- ONG Card 1 -->
+                    <article class="ong-card">
+                        <div class="ong-badge">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            Verificada
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Crianças em atividade educacional" 
+                             class="ong-image">
+                        <div class="ong-content">
+                            <h3 class="ong-title">Instituto Educação para Todos</h3>
+                            <div class="ong-category">Educação • São Paulo, SP</div>
+                            <p class="ong-description">
+                                Promovemos educação de qualidade em comunidades vulneráveis através de programas 
+                                inovadores que combinam tecnologia e metodologias pedagógicas modernas.
+                            </p>
+                            <div class="ong-stats">
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">2.340</div>
+                                    <div class="ong-stat-label">Beneficiados</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">156</div>
+                                    <div class="ong-stat-label">Voluntários</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">98%</div>
+                                    <div class="ong-stat-label">Transparência</div>
+                                </div>
+                            </div>
+                            <div class="ong-actions">
+                                <a href="#" class="btn-primary">Conhecer ONG</a>
+                                <a href="#" class="btn-outline">Ser Voluntário</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ONG Card 2 -->
+                    <article class="ong-card">
+                        <div class="ong-badge">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            Verificada
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Profissionais de saúde atendendo pacientes" 
+                             class="ong-image">
+                        <div class="ong-content">
+                            <h3 class="ong-title">Saúde Solidária</h3>
+                            <div class="ong-category">Saúde • Rio de Janeiro, RJ</div>
+                            <p class="ong-description">
+                                Levamos atendimento médico gratuito para regiões carentes, oferecendo consultas, 
+                                exames e medicamentos através de uma rede de profissionais voluntários.
+                            </p>
+                            <div class="ong-stats">
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">5.120</div>
+                                    <div class="ong-stat-label">Atendimentos</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">89</div>
+                                    <div class="ong-stat-label">Médicos</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">95%</div>
+                                    <div class="ong-stat-label">Transparência</div>
+                                </div>
+                            </div>
+                            <div class="ong-actions">
+                                <a href="#" class="btn-primary">Conhecer ONG</a>
+                                <a href="#" class="btn-outline">Ser Voluntário</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ONG Card 3 -->
+                    <article class="ong-card">
+                        <div class="ong-badge">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            Verificada
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Voluntários plantando árvores" 
+                             class="ong-image">
+                        <div class="ong-content">
+                            <h3 class="ong-title">Verde Vida</h3>
+                            <div class="ong-category">Meio Ambiente • Brasília, DF</div>
+                            <p class="ong-description">
+                                Restauramos ecossistemas degradados e promovemos educação ambiental através de 
+                                projetos de reflorestamento e conservação da biodiversidade.
+                            </p>
+                            <div class="ong-stats">
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">12.500</div>
+                                    <div class="ong-stat-label">Árvores Plantadas</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">234</div>
+                                    <div class="ong-stat-label">Voluntários</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">92%</div>
+                                    <div class="ong-stat-label">Transparência</div>
+                                </div>
+                            </div>
+                            <div class="ong-actions">
+                                <a href="#" class="btn-primary">Conhecer ONG</a>
+                                <a href="#" class="btn-outline">Ser Voluntário</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ONG Card 4 -->
+                    <article class="ong-card">
+                        <div class="ong-badge">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            Verificada
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Assistência social em ação" 
+                             class="ong-image">
+                        <div class="ong-content">
+                            <h3 class="ong-title">Mãos que Ajudam</h3>
+                            <div class="ong-category">Assistência Social • Salvador, BA</div>
+                            <p class="ong-description">
+                                Oferecemos suporte integral a famílias em situação de vulnerabilidade através de 
+                                programas de distribuição de alimentos, capacitação profissional e acompanhamento social.
+                            </p>
+                            <div class="ong-stats">
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">890</div>
+                                    <div class="ong-stat-label">Famílias Atendidas</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">67</div>
+                                    <div class="ong-stat-label">Voluntários</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-label">Transparência</div>
+                                    <div class="ong-stat-number">97%</div>
+                                </div>
+                            </div>
+                            <div class="ong-actions">
+                                <a href="#" class="btn-primary">Conhecer ONG</a>
+                                <a href="#" class="btn-outline">Ser Voluntário</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ONG Card 5 -->
+                    <article class="ong-card">
+                        <div class="ong-badge">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            Verificada
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Atividades culturais com crianças" 
+                             class="ong-image">
+                        <div class="ong-content">
+                            <h3 class="ong-title">Arte e Cultura Comunitária</h3>
+                            <div class="ong-category">Cultura • Recife, PE</div>
+                            <p class="ong-description">
+                                Democratizamos o acesso à arte e cultura através de oficinas, apresentações e 
+                                projetos que valorizam a identidade cultural local e promovem inclusão social.
+                            </p>
+                            <div class="ong-stats">
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">1.450</div>
+                                    <div class="ong-stat-label">Participantes</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">43</div>
+                                    <div class="ong-stat-label">Artistas</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">94%</div>
+                                    <div class="ong-stat-label">Transparência</div>
+                                </div>
+                            </div>
+                            <div class="ong-actions">
+                                <a href="#" class="btn-primary">Conhecer ONG</a>
+                                <a href="#" class="btn-outline">Ser Voluntário</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ONG Card 6 -->
+                    <article class="ong-card">
+                        <div class="ong-badge">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            Verificada
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Defesa de direitos humanos" 
+                             class="ong-image">
+                        <div class="ong-content">
+                            <h3 class="ong-title">Direitos para Todos</h3>
+                            <div class="ong-category">Direitos Humanos • Porto Alegre, RS</div>
+                            <p class="ong-description">
+                                Defendemos e promovemos os direitos humanos através de assistência jurídica gratuita, 
+                                campanhas de conscientização e advocacy para políticas públicas inclusivas.
+                            </p>
+                            <div class="ong-stats">
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">2.100</div>
+                                    <div class="ong-stat-label">Casos Atendidos</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">28</div>
+                                    <div class="ong-stat-label">Advogados</div>
+                                </div>
+                                <div class="ong-stat">
+                                    <div class="ong-stat-number">96%</div>
+                                    <div class="ong-stat-label">Transparência</div>
+                                </div>
+                            </div>
+                            <div class="ong-actions">
+                                <a href="#" class="btn-primary">Conhecer ONG</a>
+                                <a href="#" class="btn-outline">Ser Voluntário</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Load More -->
+                <div class="load-more">
+                    <button class="load-more-btn" aria-label="Carregar mais ONGs">
+                        Carregar Mais ONGs
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">ONGConnect</h3>
+                    <p class="footer-description">
+                        Conectando organizações e pessoas para transformar o mundo através 
+                        do voluntariado e responsabilidade social.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Para ONGs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Cadastrar ONG</a></li>
+                        <li><a href="#">Área da ONG</a></li>
+                        <li><a href="#">Recursos</a></li>
+                        <li><a href="#">Suporte</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Para Voluntários</h4>
+                    <ul class="footer-links">
+                        <li><a href="voluntario-portal.html">Portal do Voluntário</a></li>
+                        <li><a href="#">Como Funciona</a></li>
+                        <li><a href="#">Oportunidades</a></li>
+                        <li><a href="#">Comunidade</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Institucional</h4>
+                    <ul class="footer-links">
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="#">Impacto</a></li>
+                        <li><a href="#">Transparência</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    © 2025 ONGConnect. Todos os direitos reservados.
+                </p>
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Accessibility enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Search form functionality
+            const searchForm = document.querySelector('.search-form');
+            const searchInput = document.querySelector('.search-input');
+            const filterSelect = document.querySelector('.filter-select');
+            const liveRegion = document.getElementById('live-region');
+
+            function announceToScreenReader(message) {
+                if (liveRegion) {
+                    liveRegion.textContent = message;
+                    setTimeout(() => {
+                        liveRegion.textContent = '';
+                    }, 1000);
+                }
+            }
+
+            if (searchForm) {
+                searchForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const query = searchInput.value.trim();
+                    const category = filterSelect.value;
+                    
+                    if (query || category) {
+                        announceToScreenReader(`Buscando por: ${query || 'todas as ONGs'} ${category ? `na categoria ${category}` : ''}`);
+                        // Here you would implement the actual search functionality
+                        console.log('Searching for:', { query, category });
+                    } else {
+                        announceToScreenReader('Por favor, digite um termo de busca ou selecione uma categoria');
+                    }
+                });
+            }
+
+            // Load more functionality
+            const loadMoreBtn = document.querySelector('.load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    announceToScreenReader('Carregando mais ONGs...');
+                    // Here you would implement load more functionality
+                    setTimeout(() => {
+                        announceToScreenReader('Mais ONGs foram carregadas');
+                    }, 1000);
+                });
+            }
+
+            // Language selector functionality
+            const languageBtns = document.querySelectorAll('.language-btn');
+            languageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    languageBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    languageBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+                    this.setAttribute('aria-pressed', 'true');
+                    
+                    const lang = this.getAttribute('data-lang');
+                    const langNames = { 'pt': 'Português', 'en': 'English', 'es': 'Español' };
+                    announceToScreenReader(`Idioma alterado para ${langNames[lang]}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

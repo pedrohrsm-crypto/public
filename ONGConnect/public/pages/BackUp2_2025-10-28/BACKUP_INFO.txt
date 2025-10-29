@@ -1,0 +1,33 @@
+﻿=== BACKUP ONGConnect - 2025-10-28 ===
+
+Data de criação: 28/10/2025 20:17:26
+Local: D:\GitHub\HTML\projeto-frontend\ONGConnect\public\pages\BackUp2_2025-10-28
+
+ARQUIVOS INCLUÍDOS NO BACKUP:
+
+PÁGINAS HTML:
+- início.html (59,456 bytes)
+- sobre.html (56,807 bytes)
+- contato.html (49,770 bytes)
+- doador-portal.html (169,260 bytes)
+- FAQ.html (73,322 bytes)
+- ONGs.html (44,300 bytes)
+- voluntario-portal.html (62,576 bytes)
+
+ARQUIVOS CSS PRINCIPAIS:
+- globals.css (14,983 bytes)
+- cross-browser.css (38,301 bytes)
+
+CONFIGURAÇÕES:
+- manifest.json (2,389 bytes)
+- sw.js (11,658 bytes)
+
+PASTAS INCLUÍDAS:
+- /styles/ (estilos customizados)
+- /scripts/ (arquivos JavaScript)
+- /components/ (componentes CSS)
+
+TOTAL DE ARQUIVOS: 27 arquivos
+TAMANHO TOTAL: 0.79 MB
+
+Este backup contém todos os arquivos vitais para o funcionamento do projeto ONGConnect.

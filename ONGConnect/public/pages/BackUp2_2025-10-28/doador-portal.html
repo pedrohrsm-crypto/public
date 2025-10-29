@@ -1,0 +1,4434 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portal do Doador - Faça doações seguras, acompanhe o impacto dos seus recursos e receba relatórios de transparência completos.">
+    <meta name="keywords" content="doação online, transparência, impacto social, prestação de contas, ONGs, doador, transformação social">
+    <meta name="author" content="ONGConnect">
+    <meta name="color-scheme" content="light dark">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Portal do Doador - ONGConnect">
+    <meta property="og:description" content="Faça doações seguras e acompanhe o impacto real dos seus recursos. Transforme vidas através da sua generosidade.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ongconnect.org/doador">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:locale" content="pt_BR">
+
+    <title>Portal do Doador - ONGConnect</title>
+
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Font Awesome 5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
+          integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
+          crossorigin="anonymous" 
+          referrerpolicy="no-referrer">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../../src/styles/cross-browser.css">
+    <link rel="stylesheet" href="../../src/styles/globals.css">
+    <link rel="stylesheet" href="../styles/ong-color-palette.css">
+    <link rel="stylesheet" href="../../src/styles/components/layout.css">
+    <link rel="stylesheet" href="../../src/styles/components/ui-components.css">
+    <link rel="stylesheet" href="../../src/styles/components/forms.css">
+    <link rel="stylesheet" href="../styles/ongs-custom.css">
+    <link rel="stylesheet" href="../styles/inicio-custom.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Portal do Doador - ONGConnect",
+        "description": "Portal para doações online seguras com transparência total e acompanhamento de impacto",
+        "url": "https://ongconnect.org/doador",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "ONGConnect",
+            "url": "https://ongconnect.org"
+        }
+    }
+    </script>
+
+    
+    <style>
+        /* Donor Portal Styles */
+        :root {
+            --primary-red: #dc2626;
+            --primary-red-dark: #b91c1c;
+            --primary-red-light: #ef4444;
+            --accent-pink: #ec4899;
+            --text-primary: #111827;
+            --text-secondary: #374151;
+            --text-muted: #6b7280;
+            --bg-primary: #ffffff;
+            --bg-secondary: #fef2f2;
+            --bg-accent: #fdf2f8;
+            --border-light: #e5e7eb;
+            --success: #059669;
+            --warning: #d97706;
+            --error: #dc2626;
+            --info: #3b82f6;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --gradient-red: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+        }
+
+        /* Correction classes for inline styles */
+        .hero-bg-red {
+            background: var(--gradient-red);
+        }
+        
+        .text-accent-pink {
+            color: #dc2626;
+        }
+        
+        .hero-title-size {
+            font-size: 3rem;
+        }
+        
+        .progress-73 {
+            width: 73%;
+        }
+        
+        .progress-45 {
+            width: 45%;
+        }
+        
+        .progress-89 {
+            width: 89%;
+        }
+        
+        .large-icon-red {
+            font-size: 3rem;
+            color: var(--primary-red);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+        }
+
+        /* Skip Links */
+        .skip-links {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            z-index: 1000;
+        }
+
+        .skip-link {
+            position: absolute;
+            padding: 8px 16px;
+            background: var(--text-primary);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .skip-link:focus {
+            position: static;
+            top: 6px;
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        /* Hero Section */
+        .hero-donor {
+            background: var(--gradient-red);
+            color: white;
+            padding: 5rem 0 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-donor::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50 0 L60 40 L100 40 L70 65 L80 100 L50 75 L20 100 L30 65 L0 40 L40 40 Z" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+            background-size: 100px 100px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn-donate {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary-red);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-donate:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            color: var(--primary-red-dark);
+        }
+
+        .btn-impact {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: white;
+            text-decoration: none;
+            border: 2px solid white;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-impact:hover {
+            background: white;
+            color: var(--primary-red);
+        }
+
+        /* Impact Stats */
+        .impact-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin-top: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 0 1 auto;
+            min-width: 200px;
+            padding: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            opacity: 0.9;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 4rem 0;
+            background: var(--bg-primary);
+        }
+
+        .how-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .step-card {
+            background: white;
+            padding: 2.5rem 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .step-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* Donation Options */
+        .donation-options {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .donation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .donation-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .donation-card.featured {
+            border: 2px solid var(--primary-red);
+            transform: scale(1.05);
+        }
+
+        .donation-card.featured::before {
+            content: 'Mais Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .donation-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--bg-accent);
+            color: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+
+        .donation-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .donation-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .donation-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .donation-frequency {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .donation-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .donation-features li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .donation-features .fas {
+            color: var(--success);
+        }
+
+        .btn-donate-card {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-donate-card:hover {
+            background: var(--primary-red-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 4rem 0;
+            background: var(--bg-primary);
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 1.125rem;
+        }
+
+        .project-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--primary-red);
+            color: white;
+            padding: 0.375rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-progress {
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        .progress-percentage {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary-red);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border-light);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary-red);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .progress-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .btn-project {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-project:hover {
+            background: var(--primary-red-dark);
+        }
+
+        /* Impact Metrics */
+        .impact-metrics {
+            padding: 4rem 0;
+            background: var(--bg-secondary);
+        }
+
+        .metrics-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            border: 1px solid var(--border-light);
+        }
+
+        .metric-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-accent);
+            color: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1rem;
+        }
+
+        .metric-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Transparency Section */
+        .transparency-section {
+            padding: 4rem 0;
+            background: var(--bg-primary);
+        }
+
+        .transparency-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .transparency-content {
+            background: white;
+            padding: 3rem;
+            border-radius: 1rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+        }
+
+        .transparency-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .transparency-description {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .transparency-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .transparency-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .transparency-feature i {
+            color: var(--success);
+            font-size: 1.25rem;
+        }
+
+        .transparency-feature span {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        .btn-transparency {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--primary-red);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-transparency:hover {
+            background: var(--primary-red-dark);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .impact-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .steps-grid,
+            .donation-grid,
+            .projects-grid,
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .donation-card.featured {
+                transform: none;
+            }
+
+            .transparency-content {
+                padding: 2rem;
+            }
+
+            .transparency-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content,
+            .how-container,
+            .donation-container,
+            .projects-container,
+            .metrics-container,
+            .transparency-container {
+                padding: 0 1rem;
+            }
+
+            .step-card,
+            .donation-card,
+            .transparency-content {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* ========================================
+           TRUST & SECURITY SECTION - RED THEME
+        ======================================== */
+        
+        .trust-security-section {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .trust-security-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23fee2e2" opacity="0.5"/><circle cx="80" cy="80" r="2" fill="%23fecaca" opacity="0.3"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .trust-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-red-dark));
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+            animation: pulse-subtle 2s infinite;
+        }
+
+        @keyframes pulse-subtle {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .trust-main-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .highlight-gradient {
+            background: linear-gradient(135deg, var(--primary-red), var(--accent-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .trust-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .security-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .security-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 10px 25px rgba(220, 38, 38, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+
+        .security-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-red), var(--accent-pink));
+        }
+
+        .security-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.2);
+        }
+
+        .security-icon-wrapper {
+            position: relative;
+            width: 4rem;
+            height: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .security-icon {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-accent));
+            color: var(--primary-red);
+        }
+
+        .icon-badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+
+        .icon-badge.ssl { background: var(--success); }
+        .icon-badge.transparency { background: var(--warning); }
+        .icon-badge.verified { background: var(--accent-pink); }
+
+        .security-content h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .security-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .security-features {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border: 1px solid var(--border-light);
+        }
+
+        .trust-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-light);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .stat-divider {
+            width: 1px;
+            height: 3rem;
+            background: var(--border-light);
+        }
+
+        .trust-certifications {
+            text-align: center;
+        }
+
+        .certifications-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 2rem;
+        }
+
+        .certification-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .cert-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-light);
+        }
+
+        .cert-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.15);
+            border-color: var(--primary-red);
+        }
+
+        .cert-badge i {
+            color: var(--primary-red);
+        }
+
+        /* Improved Donation Options Styling */
+        .donation-options-advanced {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .donation-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 160px;
+        }
+
+        .tab-btn i {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            transition: color 0.3s ease;
+        }
+
+        .tab-btn span {
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .tab-btn:hover {
+            border-color: var(--primary-red);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tab-btn:hover i {
+            color: var(--primary-red);
+        }
+
+        .tab-btn:hover span {
+            color: var(--primary-red);
+        }
+
+        .tab-btn.active {
+            background: var(--gradient-red);
+            border-color: var(--primary-red);
+            color: white;
+        }
+
+        .tab-btn.active i,
+        .tab-btn.active span {
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .donation-content-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-light);
+        }
+
+        .donation-card-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .donation-card-header .donation-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .donation-card-header .donation-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .donation-card-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .donation-card-description {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Amount Selection Styling */
+        .amount-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .amount-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .amount-btn {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .amount-btn:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .amount-btn.selected {
+            background: var(--gradient-red);
+            border-color: var(--primary-red);
+            color: white;
+        }
+
+        .amount-btn.custom {
+            background: var(--bg-light);
+            border-style: dashed;
+        }
+
+        .custom-amount-wrapper {
+            position: relative;
+            margin-top: 1rem;
+        }
+
+        .currency-symbol {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .custom-amount-input {
+            width: 100%;
+            border: 2px solid var(--border-light);
+            border-radius: 0.75rem;
+            padding: 1rem 1rem 1rem 3rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            transition: border-color 0.3s ease;
+        }
+
+        .custom-amount-input:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        .custom-amount-label {
+            display: block;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .help-text {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* Impact Preview Styling */
+        .impact-preview {
+            background: var(--bg-light);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .impact-preview-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .impact-preview-header i {
+            font-size: 1.5rem;
+        }
+
+        .impact-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .impact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .impact-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .impact-list li i {
+            color: var(--primary-red);
+            font-size: 1rem;
+        }
+
+        /* Donation Actions Styling */
+        .donation-actions {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .btn-donate-primary {
+            background: var(--gradient-red);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-donate-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .security-info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .security-info i {
+            color: var(--primary-red);
+        }
+
+        /* Monthly Plans Styling */
+        .monthly-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .plan-card {
+            background: white;
+            border: 2px solid var(--border-light);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .plan-card.featured {
+            border-color: var(--primary-red);
+            transform: scale(1.05);
+        }
+
+        .plan-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary-red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .plan-header {
+            margin-bottom: 2rem;
+        }
+
+        .plan-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            border: 2px solid var(--border-light);
+        }
+
+        .plan-icon.featured {
+            background: var(--gradient-red);
+            border-color: var(--primary-red);
+        }
+
+        .plan-icon i {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+        }
+
+        .plan-icon.featured i {
+            color: white;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .plan-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-red);
+        }
+
+        .plan-period {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-muted);
+        }
+
+        .plan-impact {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        .plan-benefits {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .plan-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0;
+            color: var(--text-secondary);
+        }
+
+        .plan-benefits li i {
+            color: var(--primary-red);
+            font-size: 0.875rem;
+        }
+
+        .btn-plan-primary,
+        .btn-plan-outline {
+            width: 100%;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .btn-plan-primary {
+            background: var(--gradient-red);
+            color: white;
+            border: 2px solid var(--primary-red);
+        }
+
+        .btn-plan-outline {
+            background: white;
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+        }
+
+        .btn-plan-primary:hover,
+        .btn-plan-outline:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-plan-outline:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        /* Monthly Benefits */
+        .monthly-benefits {
+            background: var(--bg-light);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefits-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .benefit-item i {
+            color: var(--primary-red);
+            font-size: 1.25rem;
+        }
+
+        /* Project Featured Cards */
+        .projects-featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .project-featured-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .project-featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+        }
+
+        .project-image-placeholder.education {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .project-image-placeholder.health {
+            background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+        }
+
+        .project-image-placeholder.environment {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        }
+
+        .project-category-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: white;
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .project-urgency {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary-red);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .project-urgency.success {
+            background: var(--success-green, #059669);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-impact-stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .impact-stat {
+            text-align: center;
+        }
+
+        .impact-stat strong {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+        }
+
+        .impact-stat span {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .progress-details {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+        }
+
+        .progress-details .raised {
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .progress-details .goal {
+            color: var(--text-muted);
+        }
+
+        .btn-project-primary,
+        .btn-project-outline {
+            width: 100%;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn-project-primary {
+            background: var(--gradient-red);
+            color: white;
+            border: 2px solid var(--primary-red);
+        }
+
+        .btn-project-outline {
+            background: white;
+            color: var(--primary-red);
+            border: 2px solid var(--primary-red);
+        }
+
+        .btn-project-primary:hover,
+        .btn-project-outline:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-project-outline:hover {
+            background: var(--primary-red);
+            color: white;
+        }
+
+        .projects-action {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .btn-view-all {
+            background: var(--bg-light);
+            color: var(--text-primary);
+            border: 2px solid var(--border-light);
+            border-radius: 0.75rem;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-view-all:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Progress Fill Classes */
+        .progress-67 { width: 67%; }
+        .progress-43 { width: 43%; }
+        .progress-81 { width: 81%; }
+        .progress-85 { width: 85%; }
+        .progress-92 { width: 92%; }
+        .progress-78 { width: 78%; }
+        .progress-95 { width: 95%; }
+
+        /* Enhanced Impact Report Styling */
+        .impact-report-advanced {
+            padding: 4rem 0;
+            background: var(--bg-light);
+        }
+
+        .impact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Impact Overview Cards */
+        .impact-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .overview-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .overview-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .overview-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overview-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .overview-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .overview-metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-growth {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            color: var(--success-green, #059669);
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .metric-growth i {
+            font-size: 0.75rem;
+        }
+
+        /* Detailed Impact Metrics */
+        .impact-metrics-detailed {
+            margin: 4rem 0;
+        }
+
+        .metrics-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .metrics-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .metrics-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .metric-card-enhanced {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .metric-card-enhanced:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .metric-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .metric-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .metric-icon-wrapper.education {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .metric-icon-wrapper.health {
+            background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+        }
+
+        .metric-icon-wrapper.environment {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        }
+
+        .metric-icon-wrapper.food {
+            background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+        }
+
+        .metric-icon-wrapper i {
+            font-size: 1.25rem;
+            color: var(--text-primary);
+        }
+
+        .metric-category {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .metric-stats {
+            margin-bottom: 1.5rem;
+        }
+
+        .primary-stat {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        .secondary-stats {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .secondary-stat {
+            text-align: center;
+            flex: 1;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .stat-desc {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .metric-progress {
+            margin-top: 1rem;
+        }
+
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Enhanced Impact Stories */
+        .impact-stories-enhanced {
+            margin: 4rem 0;
+        }
+
+        .stories-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .stories-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .stories-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stories-featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .story-featured-card {
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .story-featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .story-image-wrapper {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .story-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-image-placeholder.education {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        }
+
+        .story-image-placeholder.health {
+            background: linear-gradient(135deg, #fecaca 0%, #fca5a5 100%);
+        }
+
+        .story-image-placeholder.food {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        }
+
+        .story-image-placeholder .large-icon {
+            font-size: 4rem;
+            color: rgba(0, 0, 0, 0.1);
+        }
+
+        .story-category-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: white;
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .story-content {
+            padding: 2rem;
+        }
+
+        .story-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .story-text {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .story-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .story-impact {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .impact-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .impact-value {
+            font-size: 0.875rem;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .story-date {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        .stories-action {
+            text-align: center;
+        }
+
+        .btn-view-stories {
+            background: var(--gradient-red);
+            color: white;
+            border: none;
+            border-radius: 0.75rem;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-view-stories:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Interactive Impact Chart */
+        .impact-chart-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-light);
+            margin: 4rem 0;
+        }
+
+        .chart-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .chart-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .chart-subtitle {
+            color: var(--text-muted);
+        }
+
+        .chart-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .chart-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem;
+            background: var(--bg-light);
+            border-radius: 1rem;
+            text-align: center;
+        }
+
+        .chart-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .chart-icon i {
+            font-size: 2rem;
+            color: white;
+        }
+
+        .chart-info h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .chart-info p {
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .chart-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .legend-color.education {
+            background: linear-gradient(135deg, #fde68a 0%, #f59e0b 100%);
+        }
+
+        .legend-color.health {
+            background: linear-gradient(135deg, #fca5a5 0%, #dc2626 100%);
+        }
+
+        .legend-color.environment {
+            background: linear-gradient(135deg, #a7f3d0 0%, #059669 100%);
+        }
+
+        .legend-color.food {
+            background: linear-gradient(135deg, #fdba74 0%, #ea580c 100%);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .trust-security-section {
+                padding: 3rem 0;
+            }
+
+            .trust-container {
+                padding: 0 1rem;
+            }
+
+            .trust-header {
+                margin-bottom: 3rem;
+            }
+
+            .trust-badge {
+                font-size: 0.75rem;
+                padding: 0.375rem 0.75rem;
+            }
+
+            .security-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                margin-bottom: 3rem;
+            }
+
+            .security-card {
+                padding: 1.5rem;
+            }
+
+            .trust-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .stat-divider {
+                width: 3rem;
+                height: 1px;
+                transform: rotate(90deg);
+            }
+
+            .certification-badges {
+                gap: 0.75rem;
+            }
+
+            .cert-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            /* Donation Options Mobile Responsive */
+            .donation-options-advanced {
+                padding: 3rem 0;
+            }
+
+            .donation-tabs {
+                gap: 0.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .tab-btn {
+                min-width: 120px;
+                padding: 0.75rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            .tab-btn i {
+                font-size: 1.25rem;
+            }
+
+            .donation-content-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .donation-card-header .donation-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .donation-card-header .donation-icon i {
+                font-size: 1.5rem;
+            }
+
+            .donation-card-title {
+                font-size: 1.5rem;
+            }
+
+            .amount-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.75rem;
+            }
+
+            .amount-btn {
+                padding: 0.75rem;
+                font-size: 1rem;
+            }
+
+            .monthly-plans {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .plan-card.featured {
+                transform: none;
+            }
+
+            .projects-featured-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .project-image-wrapper {
+                height: 150px;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .project-impact-stats {
+                gap: 1rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 0.75rem;
+            }
+
+            .impact-preview {
+                padding: 1.5rem;
+            }
+
+            /* Impact Report Mobile Responsive */
+            .impact-report-advanced {
+                padding: 3rem 0;
+            }
+
+            .impact-container {
+                padding: 0 1rem;
+            }
+
+            .impact-overview {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .overview-card {
+                padding: 1.5rem;
+            }
+
+            .overview-icon {
+                width: 50px;
+                height: 50px;
+            }
+
+            .overview-icon i {
+                font-size: 1.25rem;
+            }
+
+            .metric-value {
+                font-size: 2.5rem;
+            }
+
+            .metrics-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .metric-card-enhanced {
+                padding: 1.5rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .secondary-stats {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .stories-featured-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .story-image-wrapper {
+                height: 150px;
+            }
+
+            .story-content {
+                padding: 1.5rem;
+            }
+
+            .story-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.75rem;
+            }
+
+            .chart-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .chart-placeholder {
+                padding: 2rem;
+            }
+
+            .impact-chart-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .trust-main-title {
+                font-size: 1.875rem;
+            }
+
+            .trust-subtitle {
+                font-size: 1rem;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .certifications-title {
+                font-size: 1.25rem;
+            }
+
+            /* Donation Options Small Mobile */
+            .donation-tabs {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+
+            .tab-btn {
+                min-width: auto;
+                flex-direction: row;
+                justify-content: center;
+                padding: 1rem;
+            }
+
+            .tab-btn span {
+                margin-left: 0.5rem;
+            }
+
+            .donation-content-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .amount-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .project-title {
+                font-size: 1.25rem;
+            }
+
+            .plan-price {
+                font-size: 1.75rem;
+            }
+
+            .impact-preview-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            /* Impact Report Small Mobile */
+            .overview-card {
+                padding: 1rem;
+            }
+
+            .overview-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+
+            .metric-value {
+                font-size: 2rem;
+            }
+
+            .metrics-title {
+                font-size: 1.5rem;
+            }
+
+            .metric-card-enhanced {
+                padding: 1rem;
+            }
+
+            .metric-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+
+            .stat-number {
+                font-size: 1.75rem;
+            }
+
+            .story-title {
+                font-size: 1.125rem;
+            }
+
+            .chart-title {
+                font-size: 1.25rem;
+            }
+
+            .chart-placeholder {
+                padding: 1.5rem;
+            }
+
+            .chart-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .chart-icon i {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body data-theme="donor-portal">
+    <!-- Skip Links -->
+    <div class="skip-links" aria-label="Links de navegação rápida">
+        <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+        <a href="#nav-menu" class="skip-link">Pular para o menu de navegação</a>
+        <a href="#donation-options" class="skip-link">Pular para opções de doação</a>
+    </div>
+
+    <!-- Live Region -->
+    <div id="live-region" aria-live="polite" aria-atomic="true" class="visually-hidden"></div>
+
+    <!-- Header and Navigation -->
+    <header class="header" role="banner">
+        <nav class="navbar" role="navigation" aria-label="Menu principal do site">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="início.html" aria-label="ONGConnect - Página inicial">
+                        <i class="fas fa-handshake" aria-hidden="true"></i>
+                        <span>ONGConnect</span>
+                    </a>
+                </div>
+                
+                <ul class="nav-menu" id="nav-menu" role="menubar" aria-label="Menu de navegação principal">
+                    <li class="nav-item" role="none">
+                        <a href="início.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-home nav-icon" aria-hidden="true"></i>
+                            <span>Início</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="ONGs.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-hands-helping nav-icon" aria-hidden="true"></i>
+                            <span>ONGs</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="voluntario-portal.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-user-friends nav-icon" aria-hidden="true"></i>
+                            <span>Voluntário</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="doador-portal.html"
+                           class="nav-link active"
+                           role="menuitem"
+                           aria-current="page"
+                           tabindex="0">
+                            <i class="fas fa-heart nav-icon" aria-hidden="true"></i>
+                            <span>Doador</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="sobre.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-info-circle nav-icon" aria-hidden="true"></i>
+                            <span>Sobre</span>
+                        </a>
+                    </li>
+                    <li class="nav-item" role="none">
+                        <a href="contato.html"
+                           class="nav-link"
+                           role="menuitem"
+                           tabindex="-1">
+                            <i class="fas fa-envelope nav-icon" aria-hidden="true"></i>
+                            <span>Contato</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Social Media Links -->
+                <div class="nav-social" role="region" aria-label="Links para redes sociais">
+                    <a href="https://instagram.com/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no Instagram (abre em nova aba)">
+                        <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://linkedin.com/company/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no LinkedIn (abre em nova aba)">
+                        <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://facebook.com/ongconnect" 
+                       class="social-link" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Seguir ONGConnect no Facebook (abre em nova aba)">
+                        <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <button class="nav-toggle"
+                        id="mobile-menu" 
+                        aria-label="Abrir menu de navegação" 
+                        aria-expanded="false" 
+                        aria-controls="nav-menu"
+                        aria-haspopup="true">
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                    <span class="hamburger-line" aria-hidden="true"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="main-content" tabindex="-1">
+        <!-- Hero Section -->
+        <section class="hero-donor" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <h1 id="hero-title" class="hero-title">
+                    Transforme Vidas com sua Generosidade
+                </h1>
+                <p class="hero-subtitle">
+                    Faça doações seguras, acompanhe o impacto real dos seus recursos 
+                    e receba relatórios completos de transparência. Sua contribuição 
+                    pode mudar o mundo.
+                </p>
+                <div class="hero-actions">
+                    <a href="#donation-options" class="btn-donate">
+                        <i class="fas fa-heart" aria-hidden="true"></i>
+                        Doar Agora
+                    </a>
+                    <a href="#impact" class="btn-impact">
+                        <i class="fas fa-chart-line" aria-hidden="true"></i>
+                        Ver Impacto
+                    </a>
+                </div>
+                
+                <!-- Impact Stats -->
+                <div class="impact-stats">
+                    <div class="stat-item">
+                        <div class="stat-number text-accent-pink">R$ 2.8M</div>
+                        <div class="stat-label">Arrecadado este ano</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number text-accent-pink">15K+</div>
+                        <div class="stat-label">Pessoas beneficiadas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number text-accent-pink">98%</div>
+                        <div class="stat-label">Dos recursos vão direto para projetos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="how-it-works" aria-labelledby="how-title">
+            <div class="how-container">
+                <div class="section-header">
+                    <h2 id="how-title" class="section-title">Como Funciona</h2>
+                    <p class="section-subtitle">
+                        Um processo simples e transparente para fazer a diferença
+                    </p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Escolha como Ajudar</h3>
+                        <p class="step-description">
+                            Selecione entre doação única, recorrente ou para projetos específicos. 
+                            Todas as ONGs são verificadas e auditadas.
+                        </p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Faça sua Doação</h3>
+                        <p class="step-description">
+                            Processo seguro com criptografia SSL. Aceitamos cartão, PIX, 
+                            boleto e transferência bancária.
+                        </p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Acompanhe o Impacto</h3>
+                        <p class="step-description">
+                            Receba relatórios regulares sobre como sua doação está sendo 
+                            utilizada e o impacto gerado na comunidade.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Options -->
+        <section id="donation-options" class="donation-options" aria-labelledby="donation-title">
+            <div class="donation-container">
+                <div class="section-header">
+                    <h2 id="donation-title" class="section-title">Escolha seu Plano de Doação</h2>
+                    <p class="section-subtitle">
+                        Diferentes formas de contribuir e acompanhar o impacto
+                    </p>
+                </div>
+
+                <div class="donation-grid">
+                    <div class="donation-card">
+                        <div class="donation-icon">
+                            <i class="fas fa-bolt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="donation-title">Doação Única</h3>
+                        <p class="donation-description">
+                            Contribuição pontual para causas urgentes ou projetos específicos
+                        </p>
+                        <div class="donation-amount">A partir de R$ 10</div>
+                        <div class="donation-frequency">Pagamento único</div>
+                        <ul class="donation-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Certificado de doação</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Relatório de impacto</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Dedução no IR</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Transparência total</li>
+                        </ul>
+                        <button class="btn-donate-card">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                            Doar Agora
+                        </button>
+                    </div>
+
+                    <div class="donation-card featured">
+                        <div class="donation-icon">
+                            <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="donation-title">Doação Mensal</h3>
+                        <p class="donation-description">
+                            Impacto contínuo com contribuições automáticas mensais
+                        </p>
+                        <div class="donation-amount">A partir de R$ 25</div>
+                        <div class="donation-frequency">Mensalmente</div>
+                        <ul class="donation-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Tudo do plano único</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Relatórios mensais</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Acesso a eventos</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Badge de apoiador</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Cancelamento a qualquer momento</li>
+                        </ul>
+                        <button class="btn-donate-card">
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                            Começar Doação
+                        </button>
+                    </div>
+
+                    <div class="donation-card">
+                        <div class="donation-icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="donation-title">Doação Corporativa</h3>
+                        <p class="donation-description">
+                            Soluções para empresas que querem fazer parte da transformação social
+                        </p>
+                        <div class="donation-amount">Sob consulta</div>
+                        <div class="donation-frequency">Personalizado</div>
+                        <ul class="donation-features">
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Plano personalizado</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Marketing social</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Eventos exclusivos</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Relatórios executivos</li>
+                            <li><i class="fas fa-check" aria-hidden="true"></i> Suporte dedicado</li>
+                        </ul>
+                        <button class="btn-donate-card">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            Fale Conosco
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section" aria-labelledby="projects-title">
+            <div class="projects-container">
+                <div class="section-header">
+                    <h2 id="projects-title" class="section-title">Projetos em Destaque</h2>
+                    <p class="section-subtitle">
+                        Conheça alguns dos projetos que você pode apoiar diretamente
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-category">Educação</div>
+                            <i class="fas fa-graduation-cap large-icon-red"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Escola Digital Comunitária</h3>
+                            <p class="project-description">
+                                Construção de laboratório de informática para 400 crianças em área rural do interior de São Paulo.
+                            </p>
+                            <div class="project-progress">
+                                <div class="progress-header">
+                                    <span class="progress-label">Progresso</span>
+                                    <span class="progress-percentage">73%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-73"></div>
+                                </div>
+                                <div class="progress-details">
+                                    <span>R$ 146.000 arrecadados</span>
+                                    <span>Meta: R$ 200.000</span>
+                                </div>
+                            </div>
+                            <button class="btn-project">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Apoiar Projeto
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-category">Saúde</div>
+                            <i class="fas fa-heartbeat large-icon-red"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Centro de Reabilitação</h3>
+                            <p class="project-description">
+                                Equipamentos de fisioterapia para centro que atende pessoas com deficiência em Recife.
+                            </p>
+                            <div class="project-progress">
+                                <div class="progress-header">
+                                    <span class="progress-label">Progresso</span>
+                                    <span class="progress-percentage">45%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-45"></div>
+                                </div>
+                                <div class="progress-details">
+                                    <span>R$ 67.500 arrecadados</span>
+                                    <span>Meta: R$ 150.000</span>
+                                </div>
+                            </div>
+                            <button class="btn-project">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Apoiar Projeto
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-image">
+                            <div class="project-category">Meio Ambiente</div>
+                            <i class="fas fa-leaf large-icon-red"></i>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Reflorestamento Amazônico</h3>
+                            <p class="project-description">
+                                Plantio de 10.000 mudas nativas em área desmatada na região amazônica.
+                            </p>
+                            <div class="project-progress">
+                                <div class="progress-header">
+                                    <span class="progress-label">Progresso</span>
+                                    <span class="progress-percentage">89%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-89"></div>
+                                </div>
+                                <div class="progress-details">
+                                    <span>R$ 89.000 arrecadados</span>
+                                    <span>Meta: R$ 100.000</span>
+                                </div>
+                            </div>
+                            <button class="btn-project">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                Apoiar Projeto
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Metrics -->
+        <section id="impact" class="impact-metrics" aria-labelledby="impact-title">
+            <div class="metrics-container">
+                <div class="section-header">
+                    <h2 id="impact-title" class="section-title">Nosso Impacto em Números</h2>
+                    <p class="section-subtitle">
+                        Resultados concretos da generosidade de nossos doadores
+                    </p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-number">5.247</div>
+                        <div class="metric-label">Crianças educadas</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-number">12.834</div>
+                        <div class="metric-label">Atendimentos médicos</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-seedling" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-number">25.678</div>
+                        <div class="metric-label">Árvores plantadas</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-utensils" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-number">45.234</div>
+                        <div class="metric-label">Refeições servidas</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-home" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-number">1.567</div>
+                        <div class="metric-label">Famílias abrigadas</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon">
+                            <i class="fas fa-tools" aria-hidden="true"></i>
+                        </div>
+                        <div class="metric-number">3.892</div>
+                        <div class="metric-label">Pessoas capacitadas</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transparency Section -->
+        <section class="transparency-section" aria-labelledby="transparency-title">
+            <div class="transparency-container">
+                <div class="transparency-content">
+                    <h2 class="transparency-title">Transparência Total</h2>
+                    <p class="transparency-description">
+                        Todos os recursos doados são rigorosamente auditados e rastreados. 
+                        Você tem acesso completo a como sua doação está transformando vidas.
+                    </p>
+                    
+                    <div class="transparency-features">
+                        <div class="transparency-feature">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            <span>Auditoria externa anual</span>
+                        </div>
+                        <div class="transparency-feature">
+                            <i class="fas fa-eye" aria-hidden="true"></i>
+                            <span>Relatórios mensais públicos</span>
+                        </div>
+                        <div class="transparency-feature">
+                            <i class="fas fa-chart-pie" aria-hidden="true"></i>
+                            <span>98% dos recursos para projetos</span>
+                        </div>
+                        <div class="transparency-feature">
+                            <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                            <span>Certificados de doação</span>
+                        </div>
+                    </div>
+
+                    <a href="transparencia.html" class="btn-transparency">
+                        <i class="fas fa-download" aria-hidden="true"></i>
+                        Baixar Relatórios
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Trust & Security -->
+        <section class="trust-security-section" aria-labelledby="trust-title">
+            <div class="trust-container">
+                <div class="trust-header">
+                    <div class="trust-badge">
+                        <i class="fas fa-shield-check" aria-hidden="true"></i>
+                        <span>Certificado de Segurança</span>
+                    </div>
+                    <h2 id="trust-title" class="trust-main-title">
+                        Doação <span class="highlight-gradient">Segura</span> e <span class="highlight-gradient">Transparente</span>
+                    </h2>
+                    <p class="trust-subtitle">
+                        Sua doação é protegida por criptografia de ponta e todos os recursos 
+                        são rastreados em tempo real para garantir máxima transparência.
+                    </p>
+                </div>
+                
+                <div class="security-grid">
+                    <div class="security-card">
+                        <div class="security-icon-wrapper">
+                            <i class="fas fa-shield-alt security-icon" aria-hidden="true"></i>
+                            <div class="icon-badge ssl"></div>
+                        </div>
+                        <div class="security-content">
+                            <h3 class="security-title">SSL Certificado</h3>
+                            <p class="security-description">
+                                Transações 100% seguras com criptografia de nível bancário
+                            </p>
+                            <div class="security-features">
+                                <span class="feature-tag">256-bit SSL</span>
+                                <span class="feature-tag">TLS 1.3</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="security-icon-wrapper">
+                            <i class="fas fa-eye security-icon" aria-hidden="true"></i>
+                            <div class="icon-badge transparency"></div>
+                        </div>
+                        <div class="security-content">
+                            <h3 class="security-title">Transparência Total</h3>
+                            <p class="security-description">
+                                Relatórios em tempo real e prestação de contas detalhada
+                            </p>
+                            <div class="security-features">
+                                <span class="feature-tag">Tempo Real</span>
+                                <span class="feature-tag">Open Data</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="security-icon-wrapper">
+                            <i class="fas fa-certificate security-icon" aria-hidden="true"></i>
+                            <div class="icon-badge verified"></div>
+                        </div>
+                        <div class="security-content">
+                            <h3 class="security-title">ONGs Verificadas</h3>
+                            <p class="security-description">
+                                Todas as organizações são auditadas e certificadas
+                            </p>
+                            <div class="security-features">
+                                <span class="feature-tag">Auditoria Externa</span>
+                                <span class="feature-tag">ISO 27001</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="trust-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">2M+</div>
+                        <div class="stat-label">Transações Seguras</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">0</div>
+                        <div class="stat-label">Vazamentos de Dados</div>
+                    </div>
+                </div>
+
+                <div class="trust-certifications">
+                    <h3 class="certifications-title">Nossas Certificações</h3>
+                    <div class="certification-badges">
+                        <div class="cert-badge">
+                            <i class="fas fa-award" aria-hidden="true"></i>
+                            <span>PCI DSS</span>
+                        </div>
+                        <div class="cert-badge">
+                            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                            <span>ISO 27001</span>
+                        </div>
+                        <div class="cert-badge">
+                            <i class="fas fa-lock" aria-hidden="true"></i>
+                            <span>LGPD</span>
+                        </div>
+                        <div class="cert-badge">
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>SOC 2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Options -->
+        <section id="donation-options" class="donation-options-advanced" aria-labelledby="donation-title">
+            <div class="donation-container">
+                <div class="section-header">
+                    <h2 id="donation-title" class="section-title">
+                        Como Você Quer Ajudar?
+                    </h2>
+                    <p class="section-subtitle">
+                        Escolha a forma de doação que mais combina com você e comece a transformar vidas hoje mesmo
+                    </p>
+                </div>
+                
+                <div class="donation-tabs" role="tablist" aria-labelledby="donation-title">
+                    <button class="tab-btn active" 
+                            data-tab="quick-donation" 
+                            onclick="switchTab('quick-donation')"
+                            role="tab"
+                            aria-selected="true"
+                            aria-controls="quick-donation"
+                            id="quick-donation-tab"
+                            type="button">
+                        <i class="fas fa-bolt" aria-hidden="true"></i>
+                        <span>Doação Rápida</span>
+                    </button>
+                    <button class="tab-btn" 
+                            data-tab="monthly-donation" 
+                            onclick="switchTab('monthly-donation')"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="monthly-donation-panel"
+                            id="monthly-donation-tab"
+                            type="button">
+                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        <span>Doação Mensal</span>
+                    </button>
+                    <button class="tab-btn" 
+                            data-tab="project-donation" 
+                            onclick="switchTab('project-donation')"
+                            role="tab"
+                            aria-selected="false"
+                            aria-controls="project-donation-panel"
+                            id="project-donation-tab"
+                            type="button">
+                        <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                        <span>Projeto Específico</span>
+                    </button>
+                </div>
+
+                <!-- Quick Donation Tab -->
+                <div id="quick-donation" 
+                     class="tab-content active"
+                     role="tabpanel"
+                     aria-labelledby="quick-donation-tab"
+                     aria-hidden="false">
+                    <div class="donation-content-card">
+                        <div class="donation-card-header">
+                            <div class="donation-icon">
+                                <i class="fas fa-bolt" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="donation-card-title">Doação Rápida</h3>
+                            <p class="donation-card-description">
+                                Sua doação será direcionada para onde há mais necessidade no momento. 
+                                Impacto imediato e transparência total.
+                            </p>
+                        </div>
+                        
+                        <div class="amount-selector" role="group" aria-labelledby="amount-selection-title">
+                            <h4 id="amount-selection-title" class="amount-title">Selecione o valor da doação</h4>
+                            <div class="amount-grid" role="radiogroup" aria-labelledby="amount-selection-title">
+                                <button class="amount-btn donation-amount" 
+                                        data-amount="25" 
+                                        onclick="selectAmount(25)"
+                                        role="radio"
+                                        aria-checked="false"
+                                        aria-label="Doar 25 reais"
+                                        type="button">R$ 25</button>
+                                <button class="amount-btn donation-amount" 
+                                        data-amount="50" 
+                                        onclick="selectAmount(50)"
+                                        role="radio"
+                                        aria-checked="false"
+                                        aria-label="Doar 50 reais"
+                                        type="button">R$ 50</button>
+                                <button class="amount-btn donation-amount selected" 
+                                        data-amount="100" 
+                                        onclick="selectAmount(100)"
+                                        role="radio"
+                                        aria-checked="true"
+                                        aria-label="Doar 100 reais"
+                                        type="button">R$ 100</button>
+                                <button class="amount-btn donation-amount" 
+                                        data-amount="200" 
+                                        onclick="selectAmount(200)"
+                                        role="radio"
+                                        aria-checked="false"
+                                        aria-label="Doar 200 reais"
+                                        type="button">R$ 200</button>
+                                <button class="amount-btn donation-amount" 
+                                        data-amount="500" 
+                                        onclick="selectAmount(500)"
+                                        role="radio"
+                                        aria-checked="false"
+                                        aria-label="Doar 500 reais"
+                                        type="button">R$ 500</button>
+                                <button class="amount-btn custom" 
+                                        onclick="enableCustomAmount()"
+                                        aria-label="Inserir valor personalizado"
+                                        type="button">
+                                    <i class="fas fa-edit" aria-hidden="true"></i>
+                                    Outro valor
+                                </button>
+                            </div>
+                            
+                            <div class="custom-amount hidden" id="custom-amount-container">
+                                <label for="custom-amount-input" class="custom-amount-label">Digite o valor personalizado</label>
+                                <div class="custom-amount-wrapper">
+                                    <span class="currency-symbol">R$</span>
+                                    <input type="number" 
+                                           id="custom-amount-input" 
+                                           class="custom-amount-input" 
+                                           placeholder="0,00" 
+                                           min="1" 
+                                           step="0.01"
+                                           aria-describedby="custom-amount-help">
+                                </div>
+                                <div id="custom-amount-help" class="help-text">Valor mínimo: R$ 1,00</div>
+                            </div>
+                        </div>
+
+                        <div class="impact-preview" id="impact-preview">
+                            <div class="impact-preview-header">
+                                <i class="fas fa-heart text-accent-pink" aria-hidden="true"></i>
+                                <h4 class="impact-title">Com R$ 100 você pode:</h4>
+                            </div>
+                            <ul class="impact-list">
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Alimentar 20 crianças por 1 dia</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Fornecer material escolar para 4 estudantes</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Comprar medicamentos básicos para 2 famílias</li>
+                                <li><i class="fas fa-check" aria-hidden="true"></i> Contribuir para 1 consulta médica</li>
+                            </ul>
+                        </div>
+
+                        <div class="donation-actions">
+                            <button class="btn-donate-primary" onclick="processDonation()">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                <span>Doar Agora</span>
+                            </button>
+                            <div class="security-info">
+                                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+                                <span>Pagamento 100% seguro</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monthly Donation Tab -->
+                <div id="monthly-donation" class="tab-content">
+                    <div class="donation-content-card">
+                        <div class="donation-card-header">
+                            <div class="donation-icon">
+                                <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="donation-card-title">Doação Mensal Recorrente</h3>
+                            <p class="donation-card-description">
+                                Tenha um impacto contínuo com doações automáticas mensais. 
+                                Acompanhe seu impacto mês a mês e receba relatórios exclusivos.
+                            </p>
+                        </div>
+                        
+                        <div class="monthly-plans">
+                            <div class="plan-card">
+                                <div class="plan-header">
+                                    <div class="plan-icon">
+                                        <i class="fas fa-seedling" aria-hidden="true"></i>
+                                    </div>
+                                    <h4 class="plan-name">Apoiador</h4>
+                                    <div class="plan-price">R$ 30<span class="plan-period">/mês</span></div>
+                                    <div class="plan-impact">Impacto: 60 refeições/mês</div>
+                                </div>
+                                <ul class="plan-benefits">
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Relatório mensal de impacto</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Newsletter exclusiva</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Badge de apoiador</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Certificado de doação</li>
+                                </ul>
+                                <button class="btn-plan-outline" onclick="selectPlan('supporter')">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                    Escolher Plano
+                                </button>
+                            </div>
+
+                            <div class="plan-card featured">
+                                <div class="plan-badge">Mais Popular</div>
+                                <div class="plan-header">
+                                    <div class="plan-icon featured">
+                                        <i class="fas fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <h4 class="plan-name">Patrocinador</h4>
+                                    <div class="plan-price">R$ 100<span class="plan-period">/mês</span></div>
+                                    <div class="plan-impact">Impacto: 200 refeições/mês</div>
+                                </div>
+                                <ul class="plan-benefits">
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Tudo do plano Apoiador</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Visitas aos projetos</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Relatórios detalhados</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Contato direto com beneficiários</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Eventos exclusivos</li>
+                                </ul>
+                                <button class="btn-plan-primary" onclick="selectPlan('sponsor')">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                    Escolher Plano
+                                </button>
+                            </div>
+
+                            <div class="plan-card">
+                                <div class="plan-header">
+                                    <div class="plan-icon">
+                                        <i class="fas fa-crown" aria-hidden="true"></i>
+                                    </div>
+                                    <h4 class="plan-name">Embaixador</h4>
+                                    <div class="plan-price">R$ 250<span class="plan-period">/mês</span></div>
+                                    <div class="plan-impact">Impacto: 500 refeições/mês</div>
+                                </div>
+                                <ul class="plan-benefits">
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Tudo do plano Patrocinador</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Participação em decisões</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Eventos VIP exclusivos</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Mentorias com a equipe</li>
+                                    <li><i class="fas fa-check" aria-hidden="true"></i> Nome em projetos</li>
+                                </ul>
+                                <button class="btn-plan-outline" onclick="selectPlan('ambassador')">
+                                    <i class="fas fa-heart" aria-hidden="true"></i>
+                                    Escolher Plano
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="monthly-benefits">
+                            <h4 class="benefits-title">Vantagens da Doação Mensal</h4>
+                            <div class="benefits-grid">
+                                <div class="benefit-item">
+                                    <i class="fas fa-infinity" aria-hidden="true"></i>
+                                    <span>Impacto contínuo</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-times-circle" aria-hidden="true"></i>
+                                    <span>Cancele quando quiser</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-chart-line" aria-hidden="true"></i>
+                                    <span>Acompanhe o progresso</span>
+                                </div>
+                                <div class="benefit-item">
+                                    <i class="fas fa-receipt" aria-hidden="true"></i>
+                                    <span>Dedução no IR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Donation Tab -->
+                <div id="project-donation" class="tab-content">
+                    <div class="donation-content-card">
+                        <div class="donation-card-header">
+                            <div class="donation-icon">
+                                <i class="fas fa-project-diagram" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="donation-card-title">Projetos Específicos</h3>
+                            <p class="donation-card-description">
+                                Apoie projetos específicos e acompanhe de perto como sua doação 
+                                está transformando vidas em comunidades reais.
+                            </p>
+                        </div>
+
+                        <div class="projects-featured-grid">
+                            <article class="project-featured-card">
+                                <div class="project-image-wrapper">
+                                    <div class="project-category-badge education">
+                                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                                        Educação
+                                    </div>
+                                    <div class="project-image-placeholder education">
+                                        <i class="fas fa-graduation-cap large-icon-red" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="project-urgency">Meta próxima!</div>
+                                </div>
+                                
+                                <div class="project-content">
+                                    <h4 class="project-title">Educação Infantil Transformadora</h4>
+                                    <p class="project-description">
+                                        Construção de uma nova escola para 300 crianças em comunidade carente 
+                                        na região metropolitana de São Paulo.
+                                    </p>
+                                    
+                                    <div class="project-impact-stats">
+                                        <div class="impact-stat">
+                                            <strong>300</strong>
+                                            <span>crianças beneficiadas</span>
+                                        </div>
+                                        <div class="impact-stat">
+                                            <strong>15</strong>
+                                            <span>professores contratados</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-progress">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Progresso da campanha</span>
+                                            <span class="progress-percentage">67%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill progress-67"></div>
+                                        </div>
+                                        <div class="progress-details">
+                                            <span class="raised">R$ 134.000 arrecadados</span>
+                                            <span class="goal">Meta: R$ 200.000</span>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn-project-primary" onclick="donateToProject(1)">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                        <span>Apoiar este Projeto</span>
+                                    </button>
+                                </div>
+                            </article>
+
+                            <article class="project-featured-card">
+                                <div class="project-image-wrapper">
+                                    <div class="project-category-badge health">
+                                        <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                                        Saúde
+                                    </div>
+                                    <div class="project-image-placeholder health">
+                                        <i class="fas fa-heartbeat large-icon-red" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-content">
+                                    <h4 class="project-title">Centro de Saúde Comunitária</h4>
+                                    <p class="project-description">
+                                        Equipamentos médicos modernos para posto de saúde que atende 
+                                        mais de 2.000 famílias em área rural.
+                                    </p>
+                                    
+                                    <div class="project-impact-stats">
+                                        <div class="impact-stat">
+                                            <strong>2.000</strong>
+                                            <span>famílias atendidas</span>
+                                        </div>
+                                        <div class="impact-stat">
+                                            <strong>24h</strong>
+                                            <span>funcionamento</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-progress">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Progresso da campanha</span>
+                                            <span class="progress-percentage">43%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill progress-43"></div>
+                                        </div>
+                                        <div class="progress-details">
+                                            <span class="raised">R$ 43.500 arrecadados</span>
+                                            <span class="goal">Meta: R$ 100.000</span>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn-project-outline" onclick="donateToProject(2)">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                        <span>Apoiar este Projeto</span>
+                                    </button>
+                                </div>
+                            </article>
+
+                            <article class="project-featured-card">
+                                <div class="project-image-wrapper">
+                                    <div class="project-category-badge environment">
+                                        <i class="fas fa-leaf" aria-hidden="true"></i>
+                                        Meio Ambiente
+                                    </div>
+                                    <div class="project-image-placeholder environment">
+                                        <i class="fas fa-leaf large-icon-red" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="project-urgency success">Quase completo!</div>
+                                </div>
+                                
+                                <div class="project-content">
+                                    <h4 class="project-title">Reflorestamento Urbano</h4>
+                                    <p class="project-description">
+                                        Plantio de 5.000 árvores nativas em áreas urbanas degradadas 
+                                        para recuperação ambiental.
+                                    </p>
+                                    
+                                    <div class="project-impact-stats">
+                                        <div class="impact-stat">
+                                            <strong>5.000</strong>
+                                            <span>árvores plantadas</span>
+                                        </div>
+                                        <div class="impact-stat">
+                                            <strong>50ha</strong>
+                                            <span>área recuperada</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-progress">
+                                        <div class="progress-header">
+                                            <span class="progress-label">Progresso da campanha</span>
+                                            <span class="progress-percentage">81%</span>
+                                        </div>
+                                        <div class="progress-bar">
+                                            <div class="progress-fill progress-81"></div>
+                                        </div>
+                                        <div class="progress-details">
+                                            <span class="raised">R$ 40.500 arrecadados</span>
+                                            <span class="goal">Meta: R$ 50.000</span>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn-project-outline" onclick="donateToProject(3)">
+                                        <i class="fas fa-heart" aria-hidden="true"></i>
+                                        <span>Apoiar este Projeto</span>
+                                    </button>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="projects-action">
+                            <a href="projetos.html" class="btn-view-all">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                                <span>Ver Todos os Projetos</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Impact Report -->
+        <section id="impact-report" class="impact-report-advanced" aria-labelledby="impact-title">
+            <div class="impact-container">
+                <div class="section-header">
+                    <h2 id="impact-title" class="section-title">
+                        Impacto das Suas Doações
+                    </h2>
+                    <p class="section-subtitle">
+                        Veja como suas contribuições estão transformando vidas e comunidades 
+                        ao redor do país. Transparência total, impacto real.
+                    </p>
+                </div>
+                
+                <!-- Impact Overview Cards -->
+                <div class="impact-overview">
+                    <div class="overview-card">
+                        <div class="overview-header">
+                            <div class="overview-icon">
+                                <i class="fas fa-chart-line" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="overview-title">Total Arrecadado</h3>
+                        </div>
+                        <div class="overview-metric">
+                            <div class="metric-value">R$ 2.8M</div>
+                            <div class="metric-growth">
+                                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                                <span>+32% este ano</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="overview-header">
+                            <div class="overview-icon">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="overview-title">Pessoas Beneficiadas</h3>
+                        </div>
+                        <div class="overview-metric">
+                            <div class="metric-value">15.234</div>
+                            <div class="metric-growth">
+                                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                                <span>+28% este ano</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="overview-card">
+                        <div class="overview-header">
+                            <div class="overview-icon">
+                                <i class="fas fa-handshake" aria-hidden="true"></i>
+                            </div>
+                            <h3 class="overview-title">Projetos Ativos</h3>
+                        </div>
+                        <div class="overview-metric">
+                            <div class="metric-value">127</div>
+                            <div class="metric-growth">
+                                <i class="fas fa-arrow-up" aria-hidden="true"></i>
+                                <span>+15% este ano</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Impact Metrics -->
+                <div class="impact-metrics-detailed">
+                    <div class="metrics-header">
+                        <h3 class="metrics-title">Impacto por Categoria</h3>
+                        <p class="metrics-subtitle">Resultados mensuráveis das suas doações</p>
+                    </div>
+
+                    <div class="metrics-grid">
+                        <div class="metric-card-enhanced">
+                            <div class="metric-header">
+                                <div class="metric-icon-wrapper education">
+                                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                                </div>
+                                <div class="metric-category">Educação</div>
+                            </div>
+                            <div class="metric-stats">
+                                <div class="primary-stat">
+                                    <div class="stat-number">2.547</div>
+                                    <div class="stat-label">Crianças educadas</div>
+                                </div>
+                                <div class="secondary-stats">
+                                    <div class="secondary-stat">
+                                        <span class="stat-value">18</span>
+                                        <span class="stat-desc">escolas apoiadas</span>
+                                    </div>
+                                    <div class="secondary-stat">
+                                        <span class="stat-value">127</span>
+                                        <span class="stat-desc">bolsas concedidas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-progress">
+                                <div class="progress-info">
+                                    <span>Meta anual</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-85"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="metric-card-enhanced">
+                            <div class="metric-header">
+                                <div class="metric-icon-wrapper health">
+                                    <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                                </div>
+                                <div class="metric-category">Saúde</div>
+                            </div>
+                            <div class="metric-stats">
+                                <div class="primary-stat">
+                                    <div class="stat-number">12.834</div>
+                                    <div class="stat-label">Atendimentos médicos</div>
+                                </div>
+                                <div class="secondary-stats">
+                                    <div class="secondary-stat">
+                                        <span class="stat-value">9</span>
+                                        <span class="stat-desc">postos de saúde</span>
+                                    </div>
+                                    <div class="secondary-stat">
+                                        <span class="stat-value">1.567</span>
+                                        <span class="stat-desc">famílias atendidas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-progress">
+                                <div class="progress-info">
+                                    <span>Meta anual</span>
+                                    <span>92%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-92"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="metric-card-enhanced">
+                            <div class="metric-header">
+                                <div class="metric-icon-wrapper environment">
+                                    <i class="fas fa-leaf" aria-hidden="true"></i>
+                                </div>
+                                <div class="metric-category">Meio Ambiente</div>
+                            </div>
+                            <div class="metric-stats">
+                                <div class="primary-stat">
+                                    <div class="stat-number">25.678</div>
+                                    <div class="stat-label">Árvores plantadas</div>
+                                </div>
+                                <div class="secondary-stats">
+                                    <div class="secondary-stat">
+                                        <span class="stat-value">320</span>
+                                        <span class="stat-desc">hectares recuperados</span>
+                                    </div>
+                                    <div class="secondary-stat">
+                                        <span class="stat-value">12</span>
+                                        <span class="stat-desc">projetos ambientais</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-progress">
+                                <div class="progress-info">
+                                    <span>Meta anual</span>
+                                    <span>78%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-78"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="metric-card-enhanced">
+                            <div class="metric-header">
+                                <div class="metric-icon-wrapper food">
+                                    <i class="fas fa-utensils" aria-hidden="true"></i>
+                                </div>
+                                <div class="metric-category">Alimentação</div>
+                            </div>
+                            <div class="metric-stats">
+                                <div class="primary-stat">
+                                    <div class="stat-number">45.234</div>
+                                    <div class="stat-label">Refeições servidas</div>
+                                </div>
+                                <div class="secondary-stats">
+                                    <div class="secondary-stat">
+                                        <span class="stat-value">15</span>
+                                        <span class="stat-desc">cozinhas comunitárias</span>
+                                    </div>
+                                    <div class="secondary-stat">
+                                        <span class="stat-value">892</span>
+                                        <span class="stat-desc">famílias alimentadas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="metric-progress">
+                                <div class="progress-info">
+                                    <span>Meta anual</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill progress-95"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact Stories -->
+                <div class="impact-stories-enhanced">
+                    <div class="stories-header">
+                        <h3 class="stories-title">Histórias de Transformação</h3>
+                        <p class="stories-subtitle">Conheça algumas das vidas que foram transformadas</p>
+                    </div>
+                    
+                    <div class="stories-featured-grid">
+                        <article class="story-featured-card">
+                            <div class="story-image-wrapper">
+                                <div class="story-category-badge education">
+                                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                                    Educação
+                                </div>
+                                <div class="story-image-placeholder education">
+                                    <i class="fas fa-user-graduate large-icon" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="story-content">
+                                <h4 class="story-title">Maria se formou em Enfermagem</h4>
+                                <p class="story-text">
+                                    Graças ao programa de bolsas da ONGConnect, Maria conseguiu se formar 
+                                    em enfermagem e hoje trabalha no hospital da sua comunidade, 
+                                    ajudando outras famílias.
+                                </p>
+                                <div class="story-meta">
+                                    <div class="story-impact">
+                                        <span class="impact-label">Impacto:</span>
+                                        <span class="impact-value">R$ 2.400 investidos</span>
+                                    </div>
+                                    <div class="story-date">
+                                        <i class="fas fa-calendar" aria-hidden="true"></i>
+                                        Há 2 dias
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="story-featured-card">
+                            <div class="story-image-wrapper">
+                                <div class="story-category-badge health">
+                                    <i class="fas fa-heartbeat" aria-hidden="true"></i>
+                                    Saúde
+                                </div>
+                                <div class="story-image-placeholder health">
+                                    <i class="fas fa-hospital large-icon" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="story-content">
+                                <h4 class="story-title">Centro de Saúde Inaugurado</h4>
+                                <p class="story-text">
+                                    O centro de saúde da Vila Esperança foi inaugurado e já atendeu 
+                                    mais de 500 pessoas em sua primeira semana, oferecendo 
+                                    cuidados médicos básicos gratuitos.
+                                </p>
+                                <div class="story-meta">
+                                    <div class="story-impact">
+                                        <span class="impact-label">Impacto:</span>
+                                        <span class="impact-value">R$ 85.000 investidos</span>
+                                    </div>
+                                    <div class="story-date">
+                                        <i class="fas fa-calendar" aria-hidden="true"></i>
+                                        Há 1 semana
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="story-featured-card">
+                            <div class="story-image-wrapper">
+                                <div class="story-category-badge food">
+                                    <i class="fas fa-seedling" aria-hidden="true"></i>
+                                    Alimentação
+                                </div>
+                                <div class="story-image-placeholder food">
+                                    <i class="fas fa-carrot large-icon" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="story-content">
+                                <h4 class="story-title">Horta Comunitária Alimenta 200 Famílias</h4>
+                                <p class="story-text">
+                                    A horta urbana criada no bairro São José já produz alimentos 
+                                    orgânicos frescos para toda a comunidade, promovendo 
+                                    segurança alimentar e sustentabilidade.
+                                </p>
+                                <div class="story-meta">
+                                    <div class="story-impact">
+                                        <span class="impact-label">Impacto:</span>
+                                        <span class="impact-value">R$ 12.500 investidos</span>
+                                    </div>
+                                    <div class="story-date">
+                                        <i class="fas fa-calendar" aria-hidden="true"></i>
+                                        Há 2 semanas
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="stories-action">
+                        <a href="historias.html" class="btn-view-stories">
+                            <i class="fas fa-book-open" aria-hidden="true"></i>
+                            <span>Ver Todas as Histórias</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Interactive Impact Chart -->
+                <div class="impact-chart-section">
+                    <div class="chart-header">
+                        <h3 class="chart-title">Distribuição de Recursos</h3>
+                        <p class="chart-subtitle">Veja como seus recursos são aplicados</p>
+                    </div>
+                    <div class="chart-container">
+                        <div class="chart-placeholder">
+                            <div class="chart-icon">
+                                <i class="fas fa-chart-pie" aria-hidden="true"></i>
+                            </div>
+                            <div class="chart-info">
+                                <h4>Gráfico Interativo</h4>
+                                <p>Visualização detalhada da distribuição de recursos por categoria</p>
+                            </div>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="legend-color education"></div>
+                                <span>Educação - 35%</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color health"></div>
+                                <span>Saúde - 28%</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color environment"></div>
+                                <span>Meio Ambiente - 20%</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color food"></div>
+                                <span>Alimentação - 17%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transparency -->
+        
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">ONGConnect</h3>
+                    <p class="footer-description">
+                        Conectando corações generosos com causas transformadoras 
+                        para construir um mundo melhor juntos.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Para Doadores</h4>
+                    <ul class="footer-links">
+                        <li><a href="#donation-options">Como Doar</a></li>
+                        <li><a href="transparencia.html">Transparência</a></li>
+                        <li><a href="relatorios.html">Relatórios</a></li>
+                        <li><a href="certificados.html">Certificados</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Suporte</h4>
+                    <ul class="footer-links">
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="FAQ.html">FAQ</a></li>
+                        <li><a href="ajuda.html">Central de Ajuda</a></li>
+                        <li><a href="seguranca.html">Segurança</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacidade.html">Política de Privacidade</a></li>
+                        <li><a href="termos.html">Termos de Uso</a></li>
+                        <li><a href="cookies.html">Política de Cookies</a></li>
+                        <li><a href="auditoria.html">Auditorias</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    © 2025 ONGConnect. Todos os direitos reservados.
+                </p>
+                <div class="footer-legal">
+                    <a href="privacidade.html">Privacidade</a>
+                    <a href="termos.html">Termos</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Donor portal enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            const liveRegion = document.getElementById('live-region');
+
+            function announceToScreenReader(message) {
+                if (liveRegion) {
+                    liveRegion.textContent = message;
+                    setTimeout(() => {
+                        liveRegion.textContent = '';
+                    }, 1000);
+                }
+            }
+
+            // Donation button interactions
+            const donationButtons = document.querySelectorAll('.btn-donate-card, .btn-project');
+            donationButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const action = this.textContent.includes('Doar') ? 'doação' : 'apoio ao projeto';
+                    announceToScreenReader(`Iniciando processo de ${action}`);
+                    
+                    // Simulate loading state
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Processando...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.disabled = false;
+                        announceToScreenReader('Redirecionando para página de pagamento');
+                    }, 2000);
+                });
+            });
+
+            // Progress bar animations
+            const progressBars = document.querySelectorAll('.progress-fill');
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -10% 0px'
+            };
+
+            const progressObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const progressBar = entry.target;
+                        const targetWidth = progressBar.style.width;
+                        progressBar.style.width = '0%';
+                        
+                        setTimeout(() => {
+                            progressBar.style.width = targetWidth;
+                        }, 200);
+                    }
+                });
+            }, observerOptions);
+
+            progressBars.forEach(bar => {
+                progressObserver.observe(bar);
+            });
+
+            // Language selector
+            const languageBtns = document.querySelectorAll('.language-btn');
+            languageBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    languageBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    languageBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+                    this.setAttribute('aria-pressed', 'true');
+                    
+                    const lang = this.getAttribute('data-lang');
+                    const langNames = { 'pt': 'Português', 'en': 'English', 'es': 'Español' };
+                    announceToScreenReader(`Idioma alterado para ${langNames[lang]}`);
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    
+                    if (target) {
+                        target.scrollIntoView({ 
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        target.focus();
+                        announceToScreenReader(`Navegando para seção ${target.getAttribute('aria-labelledby') || targetId}`);
+                    }
+                });
+            });
+
+            // Card hover animations
+            const cards = document.querySelectorAll('.step-card, .donation-card, .project-card, .metric-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('featured')) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            // Impact counter animation
+            const metricNumbers = document.querySelectorAll('.metric-number, .stat-number');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const element = entry.target;
+                        const finalText = element.textContent;
+                        const numberMatch = finalText.match(/[\d.,]+/);
+                        
+                        if (numberMatch) {
+                            const finalNumber = parseFloat(numberMatch[0].replace(/[.,]/g, ''));
+                            const suffix = finalText.replace(numberMatch[0], '');
+                            let currentNumber = 0;
+                            const increment = finalNumber / 50;
+                            
+                            const timer = setInterval(() => {
+                                currentNumber += increment;
+                                if (currentNumber >= finalNumber) {
+                                    element.textContent = finalText;
+                                    clearInterval(timer);
+                                } else {
+                                    const displayNumber = Math.floor(currentNumber);
+                                    element.textContent = displayNumber.toLocaleString('pt-BR') + suffix;
+                                }
+                            }, 40);
+                        }
+                        
+                        counterObserver.unobserve(element);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            metricNumbers.forEach(number => {
+                counterObserver.observe(number);
+            });
+
+            // Enhanced Donation Section Functionality
+            
+            // Tab switching
+            window.switchTab = function(tabName) {
+                // Remove active from all tabs and content
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                });
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                    content.setAttribute('aria-hidden', 'true');
+                });
+                
+                // Add active to clicked tab and corresponding content
+                const activeTab = document.querySelector(`[data-tab="${tabName}"]`);
+                const activeContent = document.getElementById(tabName);
+                
+                if (activeTab && activeContent) {
+                    activeTab.classList.add('active');
+                    activeTab.setAttribute('aria-selected', 'true');
+                    activeContent.classList.add('active');
+                    activeContent.setAttribute('aria-hidden', 'false');
+                    
+                    announceToScreenReader(`Aba ${tabName.replace('-', ' ')} ativada`);
+                }
+            };
+
+            // Amount selection
+            window.selectAmount = function(amount) {
+                // Remove selected from all amount buttons
+                document.querySelectorAll('.amount-btn.donation-amount').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.setAttribute('aria-checked', 'false');
+                });
+                
+                // Add selected to clicked button
+                const selectedBtn = document.querySelector(`[data-amount="${amount}"]`);
+                if (selectedBtn) {
+                    selectedBtn.classList.add('selected');
+                    selectedBtn.setAttribute('aria-checked', 'true');
+                }
+                
+                // Hide custom amount if showing
+                const customContainer = document.getElementById('custom-amount-container');
+                if (customContainer) {
+                    customContainer.classList.add('hidden');
+                }
+                
+                // Update impact preview
+                updateImpactPreview(amount);
+                announceToScreenReader(`Valor selecionado: R$ ${amount}`);
+            };
+
+            // Enable custom amount
+            window.enableCustomAmount = function() {
+                // Remove selected from all preset amounts
+                document.querySelectorAll('.amount-btn.donation-amount').forEach(btn => {
+                    btn.classList.remove('selected');
+                    btn.setAttribute('aria-checked', 'false');
+                });
+                
+                // Show custom amount input
+                const customContainer = document.getElementById('custom-amount-container');
+                if (customContainer) {
+                    customContainer.classList.remove('hidden');
+                    const input = customContainer.querySelector('.custom-amount-input');
+                    if (input) {
+                        input.focus();
+                    }
+                }
+                
+                announceToScreenReader('Campo de valor personalizado ativado');
+            };
+
+            // Update impact preview based on amount
+            function updateImpactPreview(amount) {
+                const preview = document.getElementById('impact-preview');
+                const title = preview?.querySelector('.impact-title');
+                const list = preview?.querySelector('.impact-list');
+                
+                if (!title || !list) return;
+                
+                title.textContent = `Com R$ ${amount} você pode:`;
+                
+                const impactData = {
+                    25: [
+                        'Alimentar 5 crianças por 1 dia',
+                        'Fornecer material escolar básico para 1 estudante',
+                        'Contribuir para medicamentos de 1 família'
+                    ],
+                    50: [
+                        'Alimentar 10 crianças por 1 dia',
+                        'Fornecer material escolar para 2 estudantes',
+                        'Comprar medicamentos básicos para 1 família'
+                    ],
+                    100: [
+                        'Alimentar 20 crianças por 1 dia',
+                        'Fornecer material escolar para 4 estudantes',
+                        'Comprar medicamentos básicos para 2 famílias',
+                        'Contribuir para 1 consulta médica'
+                    ],
+                    200: [
+                        'Alimentar 40 crianças por 1 dia',
+                        'Fornecer uniforme escolar completo para 8 crianças',
+                        'Comprar medicamentos para 4 famílias',
+                        'Financiar 2 consultas médicas especializadas'
+                    ],
+                    500: [
+                        'Alimentar 100 crianças por 1 dia',
+                        'Equipar 1 sala de aula completa',
+                        'Fornecer medicamentos para 10 famílias',
+                        'Financiar 5 consultas médicas especializadas',
+                        'Plantar 50 mudas de árvores nativas'
+                    ]
+                };
+                
+                const impacts = impactData[amount] || impactData[100];
+                list.innerHTML = impacts.map(impact => 
+                    `<li><i class="fas fa-check" aria-hidden="true"></i> ${impact}</li>`
+                ).join('');
+            }
+
+            // Custom amount input handling
+            const customInput = document.getElementById('custom-amount-input');
+            if (customInput) {
+                customInput.addEventListener('input', function() {
+                    const value = parseFloat(this.value) || 0;
+                    if (value >= 1) {
+                        updateImpactPreview(Math.ceil(value));
+                    }
+                });
+            }
+
+            // Plan selection
+            window.selectPlan = function(planType) {
+                const planNames = {
+                    supporter: 'Apoiador',
+                    sponsor: 'Patrocinador',
+                    ambassador: 'Embaixador'
+                };
+                
+                announceToScreenReader(`Plano ${planNames[planType]} selecionado`);
+                
+                // Simulate plan selection process
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Processando...';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                    announceToScreenReader('Redirecionando para configuração do plano');
+                }, 2000);
+            };
+
+            // Project donation
+            window.donateToProject = function(projectId) {
+                const projectNames = {
+                    1: 'Educação Infantil Transformadora',
+                    2: 'Centro de Saúde Comunitária',
+                    3: 'Reflorestamento Urbano'
+                };
+                
+                announceToScreenReader(`Iniciando doação para projeto ${projectNames[projectId]}`);
+                
+                // Simulate donation process
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Processando...';
+                button.disabled = true;
+                
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                    announceToScreenReader('Redirecionando para página de doação');
+                }, 2000);
+            };
+
+            // Process donation
+            window.processDonation = function() {
+                const selectedAmount = document.querySelector('.amount-btn.selected');
+                const customInput = document.getElementById('custom-amount-input');
+                
+                let amount = 0;
+                if (selectedAmount && selectedAmount.dataset.amount) {
+                    amount = selectedAmount.dataset.amount;
+                } else if (customInput && customInput.value) {
+                    amount = customInput.value;
+                }
+                
+                if (amount && parseFloat(amount) >= 1) {
+                    announceToScreenReader(`Processando doação de R$ ${amount}`);
+                    
+                    const button = event.target;
+                    const originalText = button.innerHTML;
+                    button.innerHTML = '<i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Processando...';
+                    button.disabled = true;
+                    
+                    setTimeout(() => {
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                        announceToScreenReader('Redirecionando para página de pagamento seguro');
+                    }, 2000);
+                } else {
+                    announceToScreenReader('Por favor, selecione um valor para doação');
+                }
+            };
+        });
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,183 @@
+/*
+ * Index Page Specific Styles
+ * Estilos específicos para a página inicial (index.html)
+ */
+
+/* Animações de entrada */
+.story-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+}
+
+.story-section.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hover effects para cards CTA */
+.cta-card:hover .card-icon {
+    transform: scale(1.1) rotate(5deg);
+    transition: transform 0.3s ease;
+}
+
+/* Animação para contadores */
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stat-number, .metric-number {
+    animation: countUp 0.8s ease-out;
+}
+
+/* Efeitos de hover para navegação */
+.nav-link:hover {
+    transform: translateY(-2px);
+    transition: transform 0.2s ease;
+}
+
+/* Indicador de scroll animado */
+.hero-scroll-indicator {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hero-scroll-indicator:hover {
+    transform: translateY(-5px);
+}
+
+.scroll-arrow {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Melhorias de acessibilidade */
+.skip-links a:focus {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: var(--ong-primary-dark);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 9999;
+}
+
+/* Tooltip para host */
+.host-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ong-primary-dark);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    max-width: 300px;
+    white-space: normal;
+}
+
+.host-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: var(--ong-primary-dark);
+}
+
+/* Navegação mobile melhorada */
+@media (max-width: 768px) {
+    .nav-menu.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+    }
+    
+    .nav-item {
+        margin: 0.5rem 0;
+    }
+    
+    .hero-scroll-indicator {
+        display: none;
+    }
+}
+
+/* Estados de foco melhorados */
+.nav-link:focus,
+.social-link:focus,
+.cta-button:focus,
+.card-button:focus {
+    outline: 2px solid var(--ong-accent-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Otimizações de performance */
+.story-image img {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* Melhorias de contraste */
+.hero-title .highlight {
+    background: linear-gradient(45deg, var(--ong-accent-primary), var(--ong-accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsividade adicional */
+@media (max-width: 480px) {
+    .cta-title {
+        font-size: 2rem;
+    }
+    
+    .card-title {
+        font-size: 1.25rem;
+    }
+    
+    .story-title {
+        font-size: 1.75rem;
+    }
+}
+
+/* Dark mode support (se necessário) */
+@media (prefers-color-scheme: dark) {
+    .host-tooltip {
+        background: var(--ong-bg-dark, #1a1a1a);
+        border: 1px solid var(--ong-border-dark, #333);
+    }
+}
