@@ -1,0 +1,422 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portal do Voluntário ONGConnect — versão em alto contraste e modo escuro">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <title>Portal do Voluntário — ONGConnect (Alto Contraste)</title>
+
+  <link rel="stylesheet" href="../styles/alto-contraste.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <div class="container">
+    <header role="banner">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <a class="brand" href="index-alto-contraste.html">ONGConnect</a>
+        <nav aria-label="Menu principal">
+          <ul class="nav-list" role="menubar">
+            <li class="nav-item" role="none"><a role="menuitem" href="index-alto-contraste.html">Início</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="ONGs-alto-contraste.html">ONGs</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="voluntario-portal-alto-contraste.html" aria-current="page">Portal Voluntário</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="doador-portal-alto-contraste.html">Portal Doador</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="sobre-alto-contraste.html">Sobre</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="contato-alto-contraste.html">Contato</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="FAQ-alto-contraste.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" role="main" tabindex="-1">
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Seja a Mudança que o Mundo Precisa</h1>
+        <p>Versão em alto contraste e modo escuro para facilitar a leitura. Descobrir oportunidades de voluntariado que combinam com o perfil e habilidades.</p>
+        <div class="hero-cta">
+          <a href="#opportunities" class="btn btn-apply">🔍 Encontrar Oportunidades</a>
+          <a href="#how-it-works" class="btn btn-learn-more">📖 Como Funciona</a>
+        </div>
+      </section>
+
+      <!-- Quick Stats -->
+      <section class="stats-section" aria-labelledby="stats-title">
+        <h2 id="stats-title" style="color:var(--success);font-size:1.4rem;margin-bottom:1.5rem;font-weight:900;text-align:center">Estatísticas de Impacto</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon" aria-hidden="true">👥</div>
+            <div class="stat-number">12.5k</div>
+            <div class="stat-label">Voluntários Ativos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" aria-hidden="true">🤝</div>
+            <div class="stat-number">1.2k</div>
+            <div class="stat-label">Oportunidades Ativas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" aria-hidden="true">💛</div>
+            <div class="stat-number">45k</div>
+            <div class="stat-label">Vidas Impactadas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon" aria-hidden="true">⭐</div>
+            <div class="stat-number">4.9</div>
+            <div class="stat-label">Avaliação Média</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Opportunities Section -->
+      <section id="opportunities" class="section" aria-labelledby="opportunities-title">
+        <h2 id="opportunities-title" class="section-title">Oportunidades em Destaque</h2>
+        <p class="section-subtitle">Encontrar projetos que combinam com habilidades e interesses</p>
+
+        <!-- Filters -->
+        <div class="filters-section">
+          <h3 style="color:var(--info);font-size:1.2rem;margin-bottom:1rem;font-weight:900">Filtros de Busca</h3>
+          <div class="filters-grid">
+            <div class="filter-group">
+              <label for="category-filter" class="filter-label">Categoria</label>
+              <select id="category-filter" class="filter-select">
+                <option value="">Todas as categorias</option>
+                <option value="educacao">Educação</option>
+                <option value="saude">Saúde</option>
+                <option value="meio-ambiente">Meio Ambiente</option>
+                <option value="assistencia-social">Assistência Social</option>
+                <option value="cultura">Cultura e Arte</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="location-filter" class="filter-label">Localização</label>
+              <select id="location-filter" class="filter-select">
+                <option value="">Todas as localizações</option>
+                <option value="remoto">Remoto</option>
+                <option value="sao-paulo">São Paulo</option>
+                <option value="rio-janeiro">Rio de Janeiro</option>
+                <option value="brasilia">Brasília</option>
+                <option value="salvador">Salvador</option>
+              </select>
+            </div>
+            <div class="filter-group">
+              <label for="commitment-filter" class="filter-label">Dedicação</label>
+              <select id="commitment-filter" class="filter-select">
+                <option value="">Qualquer dedicação</option>
+                <option value="pontual">Pontual (até 5h/semana)</option>
+                <option value="moderada">Moderada (5-15h/semana)</option>
+                <option value="intensiva">Intensiva (15h+/semana)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="opportunities-grid">
+          <article class="opportunity-card" aria-labelledby="opp1">
+            <div class="opportunity-header">
+              <div class="opportunity-urgency high">Urgente</div>
+              <h3 id="opp1" class="opportunity-title">Professor de Reforço Escolar</h3>
+              <div class="opportunity-ong">Instituto Educação para Todos</div>
+              <div class="opportunity-meta">
+                <div class="opportunity-meta-item">📍 São Paulo, SP</div>
+                <div class="opportunity-meta-item">⏰ 10h/semana</div>
+                <div class="opportunity-meta-item">📅 3 meses</div>
+              </div>
+            </div>
+            <div class="opportunity-content">
+              <p class="opportunity-description">
+                Procurar voluntários para dar aulas de reforço escolar para crianças de 8 a 12 anos em comunidades vulneráveis. Ajudar a melhorar o desempenho acadêmico e autoestima das crianças.
+              </p>
+              <div class="opportunity-skills">
+                <div class="skills-label">Habilidades desejadas:</div>
+                <div class="skills-list">
+                  <span class="skill-tag">Pedagogia</span>
+                  <span class="skill-tag">Paciência</span>
+                  <span class="skill-tag">Matemática</span>
+                  <span class="skill-tag">Português</span>
+                </div>
+              </div>
+              <div class="opportunity-actions">
+                <button class="btn btn-apply">🤝 Candidatar-se</button>
+                <a href="#" class="btn btn-learn-more">📄 Saiba Mais</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="opportunity-card" aria-labelledby="opp2">
+            <div class="opportunity-header">
+              <div class="opportunity-urgency medium">Moderada</div>
+              <h3 id="opp2" class="opportunity-title">Psicólogo Voluntário</h3>
+              <div class="opportunity-ong">Saúde Solidária</div>
+              <div class="opportunity-meta">
+                <div class="opportunity-meta-item">📍 Rio de Janeiro, RJ</div>
+                <div class="opportunity-meta-item">⏰ 6h/semana</div>
+                <div class="opportunity-meta-item">📅 6 meses</div>
+              </div>
+            </div>
+            <div class="opportunity-content">
+              <p class="opportunity-description">
+                Oferecer atendimento psicológico gratuito para famílias em situação de vulnerabilidade social. Realizar atendimentos individuais e em grupo para a saúde mental da comunidade.
+              </p>
+              <div class="opportunity-skills">
+                <div class="skills-label">Habilidades desejadas:</div>
+                <div class="skills-list">
+                  <span class="skill-tag">CRP Ativo</span>
+                  <span class="skill-tag">Experiência Clínica</span>
+                  <span class="skill-tag">Empatia</span>
+                  <span class="skill-tag">Terapia de Grupo</span>
+                </div>
+              </div>
+              <div class="opportunity-actions">
+                <button class="btn btn-apply">🤝 Candidatar-se</button>
+                <a href="#" class="btn btn-learn-more">📄 Saiba Mais</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="opportunity-card" aria-labelledby="opp3">
+            <div class="opportunity-header">
+              <div class="opportunity-urgency low">Flexível</div>
+              <h3 id="opp3" class="opportunity-title">Mentor de Sustentabilidade</h3>
+              <div class="opportunity-ong">Verde Vida</div>
+              <div class="opportunity-meta">
+                <div class="opportunity-meta-item">📍 Remoto</div>
+                <div class="opportunity-meta-item">⏰ 4h/semana</div>
+                <div class="opportunity-meta-item">📅 Contínuo</div>
+              </div>
+            </div>
+            <div class="opportunity-content">
+              <p class="opportunity-description">
+                Procurar especialistas em sustentabilidade para orientar comunidades rurais em práticas de agricultura sustentável e conservação ambiental. Trabalho remoto com visitas mensais.
+              </p>
+              <div class="opportunity-skills">
+                <div class="skills-label">Habilidades desejadas:</div>
+                <div class="skills-list">
+                  <span class="skill-tag">Agronomia</span>
+                  <span class="skill-tag">Sustentabilidade</span>
+                  <span class="skill-tag">Ensino</span>
+                  <span class="skill-tag">Comunicação</span>
+                </div>
+              </div>
+              <div class="opportunity-actions">
+                <button class="btn btn-apply">🤝 Candidatar-se</button>
+                <a href="#" class="btn btn-learn-more">📄 Saiba Mais</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="opportunity-card" aria-labelledby="opp4">
+            <div class="opportunity-header">
+              <div class="opportunity-urgency medium">Moderada</div>
+              <h3 id="opp4" class="opportunity-title">Assistente Social</h3>
+              <div class="opportunity-ong">Mãos que Ajudam</div>
+              <div class="opportunity-meta">
+                <div class="opportunity-meta-item">📍 Salvador, BA</div>
+                <div class="opportunity-meta-item">⏰ 8h/semana</div>
+                <div class="opportunity-meta-item">📅 4 meses</div>
+              </div>
+            </div>
+            <div class="opportunity-content">
+              <p class="opportunity-description">
+                Apoiar famílias em situação de vulnerabilidade através de acompanhamento social, orientação sobre direitos e articulação com rede de serviços públicos.
+              </p>
+              <div class="opportunity-skills">
+                <div class="skills-label">Habilidades desejadas:</div>
+                <div class="skills-list">
+                  <span class="skill-tag">CRESS Ativo</span>
+                  <span class="skill-tag">Acompanhamento Social</span>
+                  <span class="skill-tag">Direitos Sociais</span>
+                  <span class="skill-tag">Escuta Ativa</span>
+                </div>
+              </div>
+              <div class="opportunity-actions">
+                <button class="btn btn-apply">🤝 Candidatar-se</button>
+                <a href="#" class="btn btn-learn-more">📄 Saiba Mais</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align:center;margin-top:2rem">
+          <button class="btn btn-apply" style="min-width:300px">
+            👀 Ver Todas as Oportunidades
+          </button>
+        </div>
+      </section>
+
+      <!-- How It Works -->
+      <section id="how-it-works" class="section" aria-labelledby="how-title">
+        <h2 id="how-title" class="section-title">Como Funciona</h2>
+        <p class="section-subtitle">Processo simples em 4 passos para começar a fazer a diferença</p>
+
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3 class="step-title">Criar Perfil</h3>
+            <p class="step-description">
+              Cadastrar-se gratuitamente e contar sobre habilidades, interesses e disponibilidade. O sistema encontrará as melhores oportunidades.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3 class="step-title">Explorar Oportunidades</h3>
+            <p class="step-description">
+              Navegar através de centenas de oportunidades verificadas. Usar filtros para encontrar projetos que combinam com agenda e localização.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3 class="step-title">Candidatar-se</h3>
+            <p class="step-description">
+              Aplicar para as oportunidades de maior interesse. As ONGs revisarão o perfil e entrarão em contato para próximos passos.
+            </p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">4</div>
+            <h3 class="step-title">Fazer a Diferença</h3>
+            <p class="step-description">
+              Começar a jornada de voluntariado! Acompanhar o impacto, ganhar certificados e conectar-se com uma comunidade transformadora.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Impact Section -->
+      <section class="section" aria-labelledby="impact-title">
+        <h2 id="impact-title" class="section-title">Impacto em Números</h2>
+        <p class="section-subtitle">Como os voluntários estão transformando comunidades</p>
+
+        <div class="impact-grid">
+          <div class="impact-card">
+            <div class="impact-icon" aria-hidden="true">🎓</div>
+            <div class="impact-number">28.5k</div>
+            <div class="impact-label">Pessoas Educadas</div>
+            <p class="impact-description">
+              Através de programas de alfabetização, reforço escolar e capacitação profissional.
+            </p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon" aria-hidden="true">💓</div>
+            <div class="impact-number">15.2k</div>
+            <div class="impact-label">Atendimentos de Saúde</div>
+            <p class="impact-description">
+              Consultas médicas, psicológicas e odontológicas oferecidas gratuitamente.
+            </p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon" aria-hidden="true">🌱</div>
+            <div class="impact-number">67.8k</div>
+            <div class="impact-label">Árvores Plantadas</div>
+            <p class="impact-description">
+              Projetos de reflorestamento e educação ambiental em todo o país.
+            </p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon" aria-hidden="true">🏠</div>
+            <div class="impact-number">3.4k</div>
+            <div class="impact-label">Famílias Assistidas</div>
+            <p class="impact-description">
+              Programas de assistência social, distribuição de alimentos e moradia.
+            </p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon" aria-hidden="true">🎨</div>
+            <div class="impact-number">9.1k</div>
+            <div class="impact-label">Jovens em Atividades Culturais</div>
+            <p class="impact-description">
+              Oficinas de arte, música, teatro e dança para desenvolvimento cultural.
+            </p>
+          </div>
+          <div class="impact-card">
+            <div class="impact-icon" aria-hidden="true">⚖️</div>
+            <div class="impact-number">5.7k</div>
+            <div class="impact-label">Casos Jurídicos Atendidos</div>
+            <p class="impact-description">
+              Assistência jurídica gratuita e defesa de direitos humanos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="cta-section" aria-labelledby="cta-title">
+        <h2 id="cta-title" class="cta-title">Pronto para Fazer a Diferença?</h2>
+        <p class="cta-description">
+          Juntar-se a milhares de voluntários que estão transformando o mundo. O tempo e talento podem criar um impacto duradouro.
+        </p>
+        <a href="cadastro-alto-contraste.html" class="btn btn-apply" style="min-width:250px;font-size:1.1rem">
+          ✋ Começar Agora
+        </a>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div style="display:flex;flex-direction:column;gap:.75rem;align-items:flex-start">
+        <div style="font-weight:900;color:var(--accent)">Portal do Voluntário — Alto Contraste</div>
+        <nav aria-label="links do rodapé">
+          <a href="sobre-alto-contraste.html">Sobre</a>
+          <span style="display:inline-block;width:.5rem"></span>
+          <a href="contato-alto-contraste.html">Contato</a>
+          <span style="display:inline-block;width:.5rem"></span>
+          <a href="FAQ-alto-contraste.html">FAQ</a>
+          <span style="display:inline-block;width:.5rem"></span>
+          <a href="doador-portal-alto-contraste.html">Portal Doador</a>
+        </nav>
+        <small style="color:var(--muted)">© 2025 ONGConnect — Todos os direitos reservados</small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Live region for screen reader announcements -->
+  <div id="live-region" aria-live="polite" aria-atomic="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0"></div>
+
+  <script>
+    (function(){
+      var liveRegion = document.getElementById('live-region');
+
+      function announceToScreenReader(message) {
+        if (liveRegion) {
+          liveRegion.textContent = message;
+          setTimeout(function(){ liveRegion.textContent = ''; }, 1000);
+        }
+      }
+
+      // Filter functionality
+      var filters = document.querySelectorAll('.filter-select');
+      filters.forEach(function(filter) {
+        filter.addEventListener('change', function() {
+          var filterType = this.id.replace('-filter', '');
+          var value = this.value;
+          
+          if (value) {
+            announceToScreenReader('Filtro ' + filterType + ' aplicado: ' + value);
+          } else {
+            announceToScreenReader('Filtro ' + filterType + ' removido');
+          }
+        });
+      });
+
+      // Application buttons
+      var applyButtons = document.querySelectorAll('.btn-apply');
+      applyButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+          var card = this.closest('.opportunity-card');
+          if (card) {
+            var opportunityTitle = card.querySelector('.opportunity-title').textContent;
+            announceToScreenReader('Candidatura enviada para: ' + opportunityTitle);
+          } else {
+            announceToScreenReader('Ação realizada com sucesso');
+          }
+        });
+      });
+
+      // Announce page loaded
+      window.addEventListener('load', function(){
+        setTimeout(function(){ 
+          announceToScreenReader('Portal do voluntário em alto contraste carregado'); 
+        }, 500);
+      });
+    })();
+  </script>
+</body>
+</html>

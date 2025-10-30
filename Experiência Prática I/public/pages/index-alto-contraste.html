@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ONGConnect — versão em alto contraste e modo escuro para leitura acessível">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <title>ONGConnect — Início (Alto Contraste / Modo Escuro)</title>
+
+  <link rel="stylesheet" href="../styles/alto-contraste.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <div class="container">
+    <header role="banner">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <a class="brand" href="index-alto-contraste.html">ONGConnect</a>
+        <nav aria-label="Menu principal">
+          <ul class="nav-list" role="menubar">
+            <li class="nav-item" role="none"><a role="menuitem" href="ONGs-alto-contraste.html">ONGs</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="voluntario-portal-alto-contraste.html">Portal Voluntário</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="doador-portal-alto-contraste.html">Portal Doador</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="contato-alto-contraste.html">Contato</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="cadastro-alto-contraste.html">Cadastrar-se</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="sobre-alto-contraste.html">Sobre</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="FAQ-alto-contraste.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" role="main" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Conectando Pessoas e Causas</h1>
+        <p>Versão em alto contraste e modo escuro para facilitar a leitura. Encontre ONGs, candidate-se como voluntário ou doe com transparência.</p>
+
+        <div class="actions" role="region" aria-label="Ações principais">
+          <a class="btn btn-primary" href="ONGs.html">Encontrar ONGs</a>
+          <a class="btn btn-secondary" href="cadastro.html">Cadastrar-se</a>
+        </div>
+      </section>
+
+      <section aria-labelledby="how-title">
+        <h2 id="how-title" style="color:var(--accent);font-size:1.4rem;margin-top:1rem;font-weight:900">Como ajudamos</h2>
+        <div class="card-grid">
+          <article class="card" aria-labelledby="c1">
+            <h3 id="c1">Busca por Causa</h3>
+            <p>Filtre ONGs por área de atuação, localização e necessidades.</p>
+          </article>
+
+          <article class="card" aria-labelledby="c2">
+            <h3 id="c2">Portal do Voluntário</h3>
+            <p>Acompanhe vagas, horários e atividades.</p>
+          </article>
+
+          <article class="card" aria-labelledby="c3">
+            <h3 id="c3">Transparência nas Doações</h3>
+            <p>Relatórios de uso de recursos e impactos mensuráveis.</p>
+          </article>
+        </div>
+      </section>
+
+      <section aria-labelledby="contact-title">
+        <h2 id="contact-title" style="color:var(--accent);font-size:1.4rem;margin-top:1.5rem;font-weight:900">Precisa de ajuda?</h2>
+        <p style="color:var(--muted)">Se tiver dificuldades com a navegação ou precisar de suporte em leitura, contate <a href="mailto:acessibilidade@ongconnect.org">acessibilidade@ongconnect.org</a></p>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div style="display:flex;flex-direction:column;gap:.75rem;align-items:flex-start">
+        <div style="font-weight:900;color:var(--accent)">ONGConnect — Alto Contraste</div>
+        <nav aria-label="links do rodapé">
+          <a href="sobre-alto-contraste.html">Sobre</a>
+          <span style="display:inline-block;width:.5rem"></span>
+          <a href="FAQ-alto-contraste.html">FAQ</a>
+            <span style="display:inline-block;width:.5rem"></span>
+            <a href="index.html">Versão Normal</a>
+        </nav>
+        <small style="color:var(--muted)">© ONGConnect — Todos os direitos reservados</small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Small script to announce page loaded for screen readers -->
+  <script>
+    (function(){
+      var live = document.createElement('div');
+      live.setAttribute('aria-live','polite');
+      live.className='visually-hidden';
+      live.style.position='absolute';live.style.width='1px';live.style.height='1px';live.style.overflow='hidden';live.style.clip='rect(0 0 0 0)';
+      document.body.appendChild(live);
+      window.addEventListener('load', function(){
+        setTimeout(function(){ live.textContent = 'Página em alto contraste carregada'; },500);
+      });
+    })();
+  </script>
+</body>
+</html>

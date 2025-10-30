@@ -1,0 +1,351 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="ONGs Verificadas ONGConnect — versão em alto contraste e modo escuro para acessibilidade">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
+  <title>ONGs Verificadas — ONGConnect (Alto Contraste)</title>
+
+  <link rel="stylesheet" href="../styles/alto-contraste.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+  <div class="container">
+    <header role="banner">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+        <a class="brand" href="index-alto-contraste.html">ONGConnect</a>
+        <nav aria-label="Menu principal">
+          <ul class="nav-list" role="menubar">
+            <li class="nav-item" role="none"><a role="menuitem" href="index-alto-contraste.html">Início</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="ONGs-alto-contraste.html" aria-current="page">ONGs</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="voluntario-portal-alto-contraste.html">Portal Voluntário</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="doador-portal-alto-contraste.html">Portal Doador</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="sobre-alto-contraste.html">Sobre</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="contato-alto-contraste.html">Contato</a></li>
+            <li class="nav-item" role="none"><a role="menuitem" href="FAQ-alto-contraste.html">FAQ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content" role="main" tabindex="-1">
+      <!-- Hero Section -->
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">ONGs Verificadas</h1>
+        <p>Versão em alto contraste e modo escuro para facilitar a leitura. Descubra organizações transparentes e impactantes. Encontre ONGs alinhadas com causas importantes.</p>
+      </section>
+
+      <!-- Search Section -->
+      <section class="search-section" aria-labelledby="search-title">
+        <h2 id="search-title" style="color:var(--info);font-size:1.4rem;margin-bottom:1.5rem;font-weight:900;text-align:center">Buscar ONGs</h2>
+        <form class="search-form" role="search" aria-label="Formulário de busca de ONGs">
+          <input type="text" class="search-input" placeholder="Nome da ONG ou palavra-chave..." aria-label="Campo de busca">
+          <select class="filter-select" aria-label="Filtrar por categoria">
+            <option value="">Todas as Categorias</option>
+            <option value="educacao">Educação</option>
+            <option value="saude">Saúde</option>
+            <option value="meio-ambiente">Meio Ambiente</option>
+            <option value="assistencia-social">Assistência Social</option>
+            <option value="direitos-humanos">Direitos Humanos</option>
+            <option value="cultura">Cultura e Arte</option>
+          </select>
+          <button type="submit" class="search-btn">
+            🔍 Buscar
+          </button>
+        </form>
+      </section>
+
+      <!-- Statistics Section -->
+      <section class="stats-section" aria-labelledby="stats-title">
+        <h2 id="stats-title" style="color:var(--success);font-size:1.4rem;margin-bottom:1.5rem;font-weight:900;text-align:center">Estatísticas da Plataforma</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">ONGs Verificadas</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5.000+</span>
+            <span class="stat-label">Voluntários Ativos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">R$ 3M+</span>
+            <span class="stat-label">Doações Realizadas</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50.000+</span>
+            <span class="stat-label">Pessoas Beneficiadas</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ONGs Section -->
+      <section class="section" aria-labelledby="ongs-title">
+        <h2 id="ongs-title" class="section-title">Organizações em Destaque</h2>
+        <p class="section-subtitle">Todas as ONGs listadas passaram por processo rigoroso de verificação e prestam contas regularmente</p>
+
+        <div class="ongs-grid">
+          <article class="ong-card" aria-labelledby="ong1">
+            <div class="ong-badge">✅ Verificada</div>
+            <div class="ong-image" aria-hidden="true">📚</div>
+            <div class="ong-content">
+              <h3 id="ong1" class="ong-title">Instituto Educação para Todos</h3>
+              <div class="ong-category">Educação • São Paulo, SP</div>
+              <p class="ong-description">
+                Promove educação de qualidade em comunidades carentes através de programas de alfabetização, reforço escolar e inclusão digital. Atende mais de 500 crianças e jovens.
+              </p>
+              <div class="ong-stats">
+                <div class="ong-stat">
+                  <div class="ong-stat-number">500+</div>
+                  <div class="ong-stat-label">Beneficiados</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">15</div>
+                  <div class="ong-stat-label">Projetos</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">8</div>
+                  <div class="ong-stat-label">Anos</div>
+                </div>
+              </div>
+              <div class="ong-actions">
+                <a href="#" class="btn btn-primary">🤝 Ser Voluntário</a>
+                <a href="#" class="btn btn-outline">💝 Doar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="ong-card" aria-labelledby="ong2">
+            <div class="ong-badge">✅ Verificada</div>
+            <div class="ong-image" aria-hidden="true">🌱</div>
+            <div class="ong-content">
+              <h3 id="ong2" class="ong-title">Verde Sustentável</h3>
+              <div class="ong-category">Meio Ambiente • Rio de Janeiro, RJ</div>
+              <p class="ong-description">
+                Atua na preservação ambiental através de plantio de árvores, educação ambiental e projetos de sustentabilidade em comunidades urbanas e rurais.
+              </p>
+              <div class="ong-stats">
+                <div class="ong-stat">
+                  <div class="ong-stat-number">10K+</div>
+                  <div class="ong-stat-label">Árvores</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">25</div>
+                  <div class="ong-stat-label">Projetos</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">12</div>
+                  <div class="ong-stat-label">Anos</div>
+                </div>
+              </div>
+              <div class="ong-actions">
+                <a href="#" class="btn btn-primary">🤝 Ser Voluntário</a>
+                <a href="#" class="btn btn-outline">💝 Doar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="ong-card" aria-labelledby="ong3">
+            <div class="ong-badge">✅ Verificada</div>
+            <div class="ong-image" aria-hidden="true">❤️</div>
+            <div class="ong-content">
+              <h3 id="ong3" class="ong-title">Saúde & Vida</h3>
+              <div class="ong-category">Saúde • Belo Horizonte, MG</div>
+              <p class="ong-description">
+                Oferece assistência médica gratuita, campanhas de prevenção e apoio a famílias em situação de vulnerabilidade social na região metropolitana.
+              </p>
+              <div class="ong-stats">
+                <div class="ong-stat">
+                  <div class="ong-stat-number">2K+</div>
+                  <div class="ong-stat-label">Atendimentos</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">8</div>
+                  <div class="ong-stat-label">Programas</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">6</div>
+                  <div class="ong-stat-label">Anos</div>
+                </div>
+              </div>
+              <div class="ong-actions">
+                <a href="#" class="btn btn-primary">🤝 Ser Voluntário</a>
+                <a href="#" class="btn btn-outline">💝 Doar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="ong-card" aria-labelledby="ong4">
+            <div class="ong-badge">✅ Verificada</div>
+            <div class="ong-image" aria-hidden="true">🏠</div>
+            <div class="ong-content">
+              <h3 id="ong4" class="ong-title">Lar Esperança</h3>
+              <div class="ong-category">Assistência Social • Porto Alegre, RS</div>
+              <p class="ong-description">
+                Acolhe pessoas em situação de rua, oferecendo moradia temporária, alimentação, capacitação profissional e apoio psicossocial para reinserção social.
+              </p>
+              <div class="ong-stats">
+                <div class="ong-stat">
+                  <div class="ong-stat-number">150+</div>
+                  <div class="ong-stat-label">Acolhidos</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">12</div>
+                  <div class="ong-stat-label">Programas</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">10</div>
+                  <div class="ong-stat-label">Anos</div>
+                </div>
+              </div>
+              <div class="ong-actions">
+                <a href="#" class="btn btn-primary">🤝 Ser Voluntário</a>
+                <a href="#" class="btn btn-outline">💝 Doar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="ong-card" aria-labelledby="ong5">
+            <div class="ong-badge">✅ Verificada</div>
+            <div class="ong-image" aria-hidden="true">⚖️</div>
+            <div class="ong-content">
+              <h3 id="ong5" class="ong-title">Direitos Iguais</h3>
+              <div class="ong-category">Direitos Humanos • Brasília, DF</div>
+              <p class="ong-description">
+                Promove e defende direitos humanos através de assessoria jurídica gratuita, campanhas de conscientização e advocacy para políticas públicas inclusivas.
+              </p>
+              <div class="ong-stats">
+                <div class="ong-stat">
+                  <div class="ong-stat-number">800+</div>
+                  <div class="ong-stat-label">Atendimentos</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">20</div>
+                  <div class="ong-stat-label">Campanhas</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">7</div>
+                  <div class="ong-stat-label">Anos</div>
+                </div>
+              </div>
+              <div class="ong-actions">
+                <a href="#" class="btn btn-primary">🤝 Ser Voluntário</a>
+                <a href="#" class="btn btn-outline">💝 Doar</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="ong-card" aria-labelledby="ong6">
+            <div class="ong-badge">✅ Verificada</div>
+            <div class="ong-image" aria-hidden="true">🎭</div>
+            <div class="ong-content">
+              <h3 id="ong6" class="ong-title">Arte & Cultura Popular</h3>
+              <div class="ong-category">Cultura • Salvador, BA</div>
+              <p class="ong-description">
+                Valoriza e preserva a cultura local através de oficinas de arte, música e dança para crianças e jovens, promovendo inclusão social através da cultura.
+              </p>
+              <div class="ong-stats">
+                <div class="ong-stat">
+                  <div class="ong-stat-number">300+</div>
+                  <div class="ong-stat-label">Participantes</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">18</div>
+                  <div class="ong-stat-label">Oficinas</div>
+                </div>
+                <div class="ong-stat">
+                  <div class="ong-stat-number">5</div>
+                  <div class="ong-stat-label">Anos</div>
+                </div>
+              </div>
+              <div class="ong-actions">
+                <a href="#" class="btn btn-primary">🤝 Ser Voluntário</a>
+                <a href="#" class="btn btn-outline">💝 Doar</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Load More -->
+        <div class="load-more">
+          <button class="load-more-btn">
+            ⬇️ Carregar Mais ONGs
+          </button>
+        </div>
+      </section>
+
+      <section aria-labelledby="help-title">
+        <h2 id="help-title" style="color:var(--accent);font-size:1.4rem;margin-top:1.5rem;font-weight:900">Quer cadastrar uma ONG?</h2>
+        <p style="color:var(--muted)">Organizações interessadas em fazer parte da plataforma devem entrar em contato através do email <a href="mailto:parcerias@ongconnect.org">parcerias@ongconnect.org</a> ou pela <a href="contato-alto-contraste.html">página de contato</a>.</p>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div style="display:flex;flex-direction:column;gap:.75rem;align-items:flex-start">
+        <div style="font-weight:900;color:var(--accent)">ONGConnect — Alto Contraste</div>
+        <nav aria-label="links do rodapé">
+          <a href="sobre-alto-contraste.html">Sobre</a>
+          <span style="display:inline-block;width:.5rem"></span>
+          <a href="contato-alto-contraste.html">Contato</a>
+          <span style="display:inline-block;width:.5rem"></span>
+          <a href="FAQ-alto-contraste.html">FAQ</a>
+          <span style="display:inline-block;width:.5rem"></span>
+          <a href="ONGs.html">Versão Normal</a>
+        </nav>
+        <small style="color:var(--muted)">© 2025 ONGConnect — Todos os direitos reservados</small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Live region for screen reader announcements -->
+  <div id="live-region" aria-live="polite" aria-atomic="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0"></div>
+
+  <script>
+    (function(){
+      var liveRegion = document.getElementById('live-region');
+
+      function announceToScreenReader(message) {
+        if (liveRegion) {
+          liveRegion.textContent = message;
+          setTimeout(function(){ liveRegion.textContent = ''; }, 1000);
+        }
+      }
+
+      // Search form functionality
+      var searchForm = document.querySelector('.search-form');
+      if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          var searchTerm = document.querySelector('.search-input').value;
+          var category = document.querySelector('.filter-select').value;
+          
+          if (searchTerm || category) {
+            announceToScreenReader('Busca realizada. Resultados atualizados.');
+          } else {
+            announceToScreenReader('Digite um termo para buscar');
+          }
+        });
+      }
+
+      // Load more functionality
+      var loadMoreBtn = document.querySelector('.load-more-btn');
+      if (loadMoreBtn) {
+        loadMoreBtn.addEventListener('click', function() {
+          announceToScreenReader('Carregando mais ONGs...');
+          setTimeout(function() {
+            announceToScreenReader('Mais ONGs carregadas com sucesso');
+          }, 1500);
+        });
+      }
+
+      // Announce page loaded
+      window.addEventListener('load', function(){
+        setTimeout(function(){ 
+          announceToScreenReader('Página de ONGs em alto contraste carregada'); 
+        }, 500);
+      });
+    })();
+  </script>
+</body>
+</html>
